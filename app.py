@@ -18,10 +18,11 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_category')
 def get_categories():
-    return render_template("category.html")
+    #    categories = mongo.db.categories.find()
+    #    print(categories)
+    return render_template("category.html")  # categories=categories)
 
 
-# categories=mongo.db.categories.find()
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")), debug=True)
