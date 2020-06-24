@@ -5,10 +5,12 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
 from os import getenv
+load_dotenv()
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipedb'
-app.config['MONGO_URI'] = os.getenv('MONGO_URI', 'mongodb+srv://sab:arri@sabcluster-l4t09.mongodb.net/recipedb')
+app.config['MONGO_URI'] = os.getenv(
+    'MONGO_URI')
 
 mongo = PyMongo(app)
 

@@ -1,4 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Playfair+Display:wght@400;500&display=swap');
+
 .main-logo img {
 padding-right: 10%;
 padding-left: 10%;
 }
+
+.nav-link {
+    font-family: 'Arimo', sans-serif!important;
+}
+/*
+font-family: 'Arimo', sans-serif;
+font-family: 'Playfair Display', serif;
+*/
