@@ -1,14 +1,105 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Playfair+Display:wght@400;500&display=swap');
-
-.main-logo img {
-padding-right: 10%;
-padding-left: 10%;
-}
-
-.nav-link {
-    font-family: 'Arimo', sans-serif!important;
-}
 /*
 font-family: 'Arimo', sans-serif;
 font-family: 'Playfair Display', serif;
 */
+
+
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Arimo', sans-serif;
+
+  }
+.wrap {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+  a {
+    text-decoration: none;
+    color: rgb(53, 53, 53)!important;
+    cursor:pointer;
+    font-weight: 600;
+  }
+
+  a:hover 
+{
+    color: rgb(14, 14, 14)!important;
+     text-decoration:none; 
+     cursor:pointer;  
+}
+
+ /* FIRST NAV */
+.site-header {
+background-color: rgb(228, 226, 226); 
+}
+
+.small-link {
+    font-size: small;
+}
+.py-2 {
+    margin-left: 5%;
+}
+
+/* SITE LOGO */
+
+.main-logo img {
+    padding-right: 0%;
+    padding-left: 0%;
+    }
+    
+/* MAIN NAV */
+    
+.navbar-light {
+    border-top: 2px solid rgb(19, 19, 19);
+    border-bottom: 2px solid rgb(19, 19, 19);
+}
+
+/* SEARCH BAR */
+
+#custom-search-form {
+    margin:0;
+    margin-top: 5px;
+    padding: 0;
+}
+
+#custom-search-form .search-query {
+    padding-right: 3px;
+    padding-right: 4px \9;
+    padding-left: 3px;
+    padding-left: 4px \9;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+#custom-search-form button {
+    border: 0;
+    background: none;
+    /** belows styles are working good */
+    padding: 2px 5px;
+    margin-top: 2px;
+    position: relative;
+    left: -28px;
+    /* IE7-8 doesn't have border-radius, so don't indent the padding */
+    margin-bottom: 0;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.search-query:focus + button {
+    z-index: 3;   
+}

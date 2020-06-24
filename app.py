@@ -18,9 +18,8 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/get_category')
 def get_categories():
-    #    categories = mongo.db.categories.find()
-    #    print(categories)
-    return render_template("category.html")  # categories=categories)
+    categories_cursor = mongo.db.categories.find()
+    return render_template("category.html", categories=categories_cursor)
 
 
 if __name__ == '__main__':

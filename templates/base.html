@@ -4,43 +4,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Document</title>
+    <title>Vegan Minus Gluten</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/9237abd782.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
+    <!--- FIRST NAV-->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="navbar-collapse">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">HOME</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">SHOP</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-dark" href="#">SUBSCRIBE</a>
-                </li>
-            </ul>
-            <span class="navbar-text">
-                <a class=" text-dark" href="#">LOGIN/SIGNUP</a>
-            </span>
+    <nav class="site-header">
+        <div class="container d-flex flex-md-row justify-content-end grey-bg">
+            <a class="py-2 small-link" href="#">HOME</a>
+            <a class="py-2 small-link" href="#">SHOP</a>
+            <a class="py-2 small-link" href="#">SUBSCRIBE</a>
+            <a class="py-2 small-link" href="#">LOGIN/SIGNUP</a>
         </div>
     </nav>
+    <div class="wrap">
 
-    <div class="main-logo">
-        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png"
-            class="img-fluid">
+        <!--- BANNER -->
+
+        <div class="main-logo">
+            <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png"
+                class="img-fluid">
+        </div>
+
+        <!---MAIN NAV-->
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">ALL</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">MAINS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">APPETIZERS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">DESSERTS</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">OTHER</a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <div class="input-group col-md-4"></div>
+                    <input class="form-control py-2 border-right-0 border" type="search" value="search"
+                        id="example-search-input">
+                    <span class="input-group-append">
+                        <button class="btn btn-outline-secondary border-left-0 border" type="button">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </span>
+                </form>
+            </div>
     </div>
+    </nav>
 
+    <!---CONTENT-->
 
     <div class="container">
         {% block content %}
         {% endblock %}
     </div>
+
+    </div>
+
+    <!---FOOTER-->
+
+    <!---SCRIPTS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
         integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.2/umd/popper.min.js"
