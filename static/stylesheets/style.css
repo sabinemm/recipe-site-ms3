@@ -4,8 +4,6 @@ font-family: 'Arimo', sans-serif;
 font-family: 'Playfair Display', serif;
 */
 
-
-
 html {
     box-sizing: border-box;
   }
@@ -16,31 +14,34 @@ html {
     padding: 0;
   }
   
-  body {
+body {
     font-family: 'Arimo', sans-serif;
 
   }
+
 .wrap {
     padding-left: 10%;
     padding-right: 10%;
 }
-  a {
+
+a {
     text-decoration: none;
     color: rgb(53, 53, 53)!important;
     cursor:pointer;
     font-weight: 600;
   }
 
-  a:hover 
-{
+a:hover {
     color: rgb(14, 14, 14)!important;
      text-decoration:none; 
      cursor:pointer;  
 }
 
- /* FIRST NAV */
+/* FIRST NAV */
+
 .site-header {
-background-color: rgb(228, 226, 226); 
+background-color: rgb(228, 226, 226);
+
 }
 
 .small-link {
@@ -77,29 +78,143 @@ background-color: rgb(228, 226, 226);
     padding-right: 4px \9;
     padding-left: 3px;
     padding-left: 4px \9;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
-
     margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
 #custom-search-form button {
     border: 0;
     background: none;
-    /** belows styles are working good */
     padding: 2px 5px;
     margin-top: 2px;
     position: relative;
     left: -28px;
-    /* IE7-8 doesn't have border-radius, so don't indent the padding */
     margin-bottom: 0;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
 }
 
 .search-query:focus + button {
     z-index: 3;   
+}
+
+/* FOOTER */
+
+.footer_area {
+	padding:60px 0 20px;
+	position: relative;
+	color: #fff;
+	z-index: 100;
+	background: rgb(228, 226, 226);
+	word-break: break-all;
+	word-wrap: break-word;
+}
+
+.single_ftr form{
+	margin-top: 8px;
+}
+.single_ftr p{
+	margin-bottom: 10px;
+}
+
+.newsletter_form .form-control {
+    height: 50px;
+    line-height: 50px;
+    margin: 0;
+    padding: 8px 20px;
+    width: 100%;
+	position: relative;
+	background: transparent;
+	color: #fff;
+	border-radius: 0;
+}
+
+.newsletter_form button {
+	border: inherit;
+	border-radius: 0;
+	background: transparent;
+	color: #6C757D;
+	text-transform: uppercase;
+	box-shadow: none;
+	border: 1px solid #d6d5d5;
+	transition: 0.5s;
+	position: relative;
+
+	padding: 12px 17px;
+	transition: .5s;
+}
+.newsletter_form button:hover,
+.newsletter_form button:hover{
+	background: transparent;
+	color: #83A153;
+	opacity: .9;
+}
+.newsletter_form ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #fff;
+    opacity: 1
+}
+
+.newsletter_form ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #fff;
+    opacity: 1
+}
+
+.newsletter_form :-moz-placeholder {
+    /* Firefox 18- */
+    color: #fff;
+    opacity: 1
+}
+
+.single_ftr li {
+    padding-bottom: 7px;
+    color: #fff;
+}
+.single_ftr a {
+    color: #fff;
+}
+.single_ftr a:hover {
+    color: #83A153;
+}
+
+.ftr_social_icon li {
+	display: inline-block;
+	text-align: center;
+	padding: 4px;
+}
+
+.ftr_social_icon ul li a {
+    border: 1px solid #fff;
+    border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    font-size: 17px;
+    height: 40px;
+    line-height: 32px;
+    padding: 4px 8px;
+    width: 40px;
+	transition: .5s;
+}
+.ftr_social_icon ul li a:hover{
+	background: #83A153;
+	border-color: #83A153;
+	color: #fff;
+}
+
+.ftr_btm_area {
+	background: transparent;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px dotted #888;
+	margin-top: 28px;
+	z-index: 100;
+	position: relative;
+}
+
+ul {
+    list-style: none;
 }
