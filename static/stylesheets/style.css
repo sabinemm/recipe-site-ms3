@@ -23,6 +23,12 @@ body {
     padding-left: 10%;
     padding-right: 10%;
 }
+@media (max-width: 992px) { 
+    .wrap {
+        padding-left: 0%;
+        padding-right: 0%;
+    } 
+}
 
 a {
     text-decoration: none;
@@ -69,19 +75,14 @@ background-color: rgb(228, 226, 226);
 
 #custom-search-form {
     margin:0;
-    margin-top: 5px;
+    margin-top: 0px;
     padding: 0;
 }
 
 #custom-search-form .search-query {
-    padding-right: 3px;
-    padding-right: 4px \9;
+    padding-right: 0px;
     padding-left: 3px;
-    padding-left: 4px \9;
     margin-bottom: 0;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
 }
 
 #custom-search-form button {
@@ -90,11 +91,7 @@ background-color: rgb(228, 226, 226);
     padding: 2px 5px;
     margin-top: 2px;
     position: relative;
-    left: -28px;
     margin-bottom: 0;
-    -webkit-border-radius: 0px;
-    -moz-border-radius: 0px;
-    border-radius: 0px;
 }
 
 .search-query:focus + button {
@@ -109,7 +106,6 @@ background-color: rgb(228, 226, 226);
 	color: #fff;
 	z-index: 100;
 	background: rgb(228, 226, 226);
-	word-break: break-all;
 	word-wrap: break-word;
 }
 
