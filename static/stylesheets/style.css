@@ -16,7 +16,6 @@ html {
   
 body {
     font-family: 'Arimo', sans-serif;
-
   }
 
 .wrap {
@@ -214,3 +213,50 @@ background-color: rgb(228, 226, 226);
 ul {
     list-style: none;
 }
+
+/* RECIPE STYLE */
+
+.receipe-headline span {
+    font-size: 14px;
+    display: block;
+    color: #a4a4a4;
+    margin-bottom: 0; }
+  .receipe-headline h2 {
+    font-size: 36px;
+    color: #474747;
+    margin-bottom: 30px; }
+    @media only screen and (max-width: 767px) {
+      .receipe-headline h2 {
+        font-size: 24px; } }
+  .receipe-headline .receipe-duration {
+    border-left: 3px solid #40ba37;
+    padding: 15px; }
+    .receipe-headline .receipe-duration h6 {
+      font-size: 15px;
+      margin-bottom: 5px; }
+      .receipe-headline .receipe-duration h6:last-child {
+        margin-bottom: 0; }
+
+        .single-preparation-step {
+            position: relative;
+            z-index: 1;
+            margin-bottom: 50px; }
+            .single-preparation-step h4 {
+              color: #474747;
+              -webkit-box-flex: 0;
+              -ms-flex: 0 0 60px;
+              flex: 0 0 60px;
+              max-width: 60px;
+              width: 60px;
+              margin-bottom: 0; }
+          
+          @media only screen and (min-width: 768px) and (max-width: 991px) {
+            .ingredients {
+              margin-bottom: 80px; } }
+          @media only screen and (max-width: 767px) {
+            .ingredients {
+              margin-bottom: 80px; } }
+          .ingredients h4 {
+            color: #474747;
+            margin-bottom: 30px; }
+          

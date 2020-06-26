@@ -1,0 +1,73 @@
+{% extends 'base.html' %} {% block content %}
+
+
+
+{% for rec in recipe %}
+
+<!-- Receipe Img -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6 col-md-12">
+            <img src="{{rec.image_url}}" alt="recipe picture">
+        </div>
+    </div>
+</div>
+
+<!-- Receipe Content Area -->
+<div class="receipe-content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8">
+                <div class="receipe-headline my-5">
+                    <span>{{rec.date_added}}</span>
+                    <h2>{{rec.name}}</h2>
+                    <div class="receipe-duration">
+                        <h6>Prep: {{rec.prep}}</h6>
+                        <h6>Cook: {{rec.cooks}}</h6>
+                        <h6>Yields: {{rec.serves}} Servings</h6>
+                        <h6>Yields: {{rec.difficulty}}</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12 col-lg-8">
+                <!-- Single Preparation Step -->
+                <div class="single-preparation-step d-flex">
+                    <h4>01.</h4>
+                    <p>{{rec.method}}</p>
+                </div>
+                <!-- Single Preparation Step -->
+                <div class="single-preparation-step d-flex">
+                    <h4>02.</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse
+                        potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor
+                        enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et
+                        magnis dis parturient montes, nascetur ridiculus mus. </p>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="col-12 col-lg-4">
+                    <div class="ingredients">
+                        <h4>Ingredients</h4>
+
+                        <!-- Ingredient -->
+                        <div class="ingredient">
+                            <p>{{rec.ingredients}} </p>
+                        </div>
+
+                        <!-- Ingredient -->
+                        <div class="ingredient">
+                            <p>{{rec.ingredients}} </p>
+                        </div>
+
+                        <!-- Ingredient -->
+                        <div class="ingredient">
+                            <p>{{rec.ingredients}} </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+            {% endblock %}
