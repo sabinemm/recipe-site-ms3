@@ -1,0 +1,78 @@
+{% extends 'base.html' %} {% block content %}
+<h1>Submit Recipe</h1>
+
+
+<form>
+    <div class="form-group">
+        <label for="">Recipe Title</label>
+        <input type="" class="form-control" id="" aria-describedby="recipe title">
+    </div>
+    <div class="form-group">
+        <label for="">Description</label>
+        <input type="" class="form-control" id="" aria-describedby="recipe description">
+        <small id="" class="form-text text-muted">Short, juicy description of the dish</small>
+    </div>
+    <div class="form-group">
+        <label for="">Image Url</label>
+        <input type="" class="form-control" id="" aria-describedby="recipe description">
+        <small id="" class="form-text text-muted">Picture of the dish. Use a valid URL, for exaple a shared picture
+            hosted on Google Drive</small>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="">Prep Time</label>
+                <input type="" class="form-control" id="" aria-describedby="preparation time">
+                <small id="" class="form-text text-muted">Example: "15 minutes"</small>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="">Cooking Time</label>
+                <input type="" class="form-control" id="" aria-describedby="cooking time">
+                <small id="" class="form-text text-muted">Example: "1 hour 30 minutes"</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="">Amount of Servings</label>
+                <select id="inputState" class="form-control">
+                    <option selected>2</option>
+                    <option>4</option>
+                    <option>6</option>
+                    <option>8</option>
+                    <option>10</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6">
+            <div class="form-group">
+                <label for="inputDifficulty">Difficulty</label>
+                <select id="inputState" class="form-control">
+                    <option selected>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">Instructions</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+{% endblock %}

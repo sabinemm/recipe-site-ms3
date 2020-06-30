@@ -28,6 +28,11 @@ def get_recipe():
     return render_template("recipe.html", recipe=recipe_cursor)
 
 
+@app.route('/submit_recipe')
+def add_recipe():
+    return render_template("submit_recipe.html")
+
+
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")), debug=True)
