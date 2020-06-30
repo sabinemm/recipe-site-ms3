@@ -1,32 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Playfair+Display:wght@400;500&display=swap');
+@import url("https://use.typekit.net/ofu8gcr.css");
 /*
 font-family: 'Arimo', sans-serif;
 font-family: 'Playfair Display', serif;
+
+font-family: linotype-didot-headline, serif;
+font-weight: 400;
+font-style: normal;
+
+font-family: linotype-didot, serif;
+font-weight: 700;
+font-style: italic;
 */
 
 html {
     box-sizing: border-box;
   }
   
-  *, *::before, *::after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
 body {
     font-family: 'Arimo', sans-serif;
   }
 
-.wrap {
+.wrapp {
     padding-left: 10%;
     padding-right: 10%;
-}
-@media (max-width: 992px) { 
-    .wrap {
-        padding-left: 0%;
-        padding-right: 0%;
-    } 
 }
 
 a {
@@ -46,7 +43,6 @@ a:hover {
 
 .site-header {
 background-color: rgb(228, 226, 226);
-
 }
 
 .small-link {
@@ -103,9 +99,8 @@ background-color: rgb(228, 226, 226);
 	padding:60px 0 20px;
 	position: relative;
 	color: #fff;
-	z-index: 100;
 	background: rgb(228, 226, 226);
-	word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .single_ftr form{
@@ -137,7 +132,6 @@ background-color: rgb(228, 226, 226);
 	border: 1px solid #d6d5d5;
 	transition: 0.5s;
 	position: relative;
-
 	padding: 12px 17px;
 	transition: .5s;
 }
@@ -216,47 +210,73 @@ ul {
 
 /* RECIPE STYLE */
 
-.receipe-headline span {
-    font-size: 14px;
-    display: block;
-    color: #a4a4a4;
-    margin-bottom: 0; }
-  .receipe-headline h2 {
-    font-size: 36px;
-    color: #474747;
-    margin-bottom: 30px; }
-    @media only screen and (max-width: 767px) {
-      .receipe-headline h2 {
-        font-size: 24px; } }
-  .receipe-headline .receipe-duration {
-    border-left: 3px solid #40ba37;
-    padding: 15px; }
-    .receipe-headline .receipe-duration h6 {
-      font-size: 15px;
-      margin-bottom: 5px; }
-      .receipe-headline .receipe-duration h6:last-child {
-        margin-bottom: 0; }
+.recipe-pic {
+    width: 100%;
+}
 
-        .single-preparation-step {
-            position: relative;
-            z-index: 1;
-            margin-bottom: 50px; }
-            .single-preparation-step h4 {
-              color: #474747;
-              -webkit-box-flex: 0;
-              -ms-flex: 0 0 60px;
-              flex: 0 0 60px;
-              max-width: 60px;
-              width: 60px;
-              margin-bottom: 0; }
+.recipe-headline p {
+    font-size: 14px;
+    color: #a4a4a4; 
+}
+
+.recipe-headline h2 {
+    font-family: linotype-didot, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 36px;
+    color: rgb(14, 14, 14);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.recipe-info {
+    background-color:rgb(238, 238, 238);
+    text-align: center;
+}
+.recipe-info h6 {
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 30px;
+ }
+
+.recipe-info p {
+    color: #474747;
+    margin-bottom: 30px;
+}
+
+.description h6 {
+    font-family: linotype-didot, serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size: 18px;
+    margin: 50px 0px 50px;
+    color: #474747;
+    text-align: center;
+}
+
+.single-preparation-step {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 30px; }
+
+.single-preparation-step h4 {
+    color: #474747;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 60px;
+    flex: 0 0 60px;
+    max-width: 60px;
+    width: 60px;
+}
           
-          @media only screen and (min-width: 768px) and (max-width: 991px) {
-            .ingredients {
-              margin-bottom: 80px; } }
-          @media only screen and (max-width: 767px) {
-            .ingredients {
-              margin-bottom: 80px; } }
-          .ingredients h4 {
-            color: #474747;
-            margin-bottom: 30px; }
-          
+.ingredients h4 {
+    margin-bottom: 30px;
+    margin-top: 50px;
+}
+
+.instructions h4, .ingredients {
+    margin-bottom: 30px;
+}
+
+.instructions {
+    margin-bottom: 100px;
+}

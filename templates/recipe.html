@@ -1,73 +1,100 @@
 {% extends 'base.html' %} {% block content %}
 
-
-
 {% for rec in recipe %}
 
+<div class="recipe-headline">
+    <h2>{{rec.name}}</h2>
+    <p>Posted: {{rec.date_added}}</p>
+</div>
+
 <!-- Receipe Img -->
-<div class="container">
+<img class="recipe-pic" src="{{rec.image_url}}" alt="recipe picture">
+
+<!-- Info -->
+
+<div class="description">
+    <h6>{{rec.description}}</h6>
+</div>
+
+<div class="recipe-info">
     <div class="row">
-        <div class="col-sm-6 col-md-12">
-            <img src="{{rec.image_url}}" alt="recipe picture">
+        <div class="col-3">
+            <h6>PREP TIME: </h6>
+            <p>{{rec.prep}}</p>
+        </div>
+        <div class="col-3">
+            <h6>COOK TIME:</h6>
+            <p>{{rec.cooks}}</p>
+        </div>
+        <div class="col-3">
+            <h6>YIELDS:</h6>
+            <p>{{rec.serves}} servings</p>
+        </div>
+        <div class="col-3">
+            <h6>DIFFICULTY</h6>
+            <p>{{rec.difficulty}}</p>
         </div>
     </div>
 </div>
 
-<!-- Receipe Content Area -->
-<div class="receipe-content-area">
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-md-8">
-                <div class="receipe-headline my-5">
-                    <span>{{rec.date_added}}</span>
-                    <h2>{{rec.name}}</h2>
-                    <div class="receipe-duration">
-                        <h6>Prep: {{rec.prep}}</h6>
-                        <h6>Cook: {{rec.cooks}}</h6>
-                        <h6>Yields: {{rec.serves}} Servings</h6>
-                        <h6>Yields: {{rec.difficulty}}</h6>
-                    </div>
-                </div>
-            </div>
+
+<!-- Ingredients -->
+
+<div class="ingredients">
+    <h4>Ingredients</h4>
+    <ul>
+        <!-- Ingredient -->
+        <div class="ingredient">
+            <li>
+                <p>{{rec.ingredients}}</p>
+            </li>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-8">
-                <!-- Single Preparation Step -->
-                <div class="single-preparation-step d-flex">
-                    <h4>01.</h4>
-                    <p>{{rec.method}}</p>
-                </div>
-                <!-- Single Preparation Step -->
-                <div class="single-preparation-step d-flex">
-                    <h4>02.</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui. Suspendisse
-                        potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a tortor
-                        enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus et
-                        magnis dis parturient montes, nascetur ridiculus mus. </p>
-                </div>
+        <!-- Ingredient -->
+        <div class="ingredient">
+            <li>
+                <p>{{rec.ingredients}}</p>
+            </li>
+        </div>
 
-                <!-- Ingredients -->
-                <div class="col-12 col-lg-4">
-                    <div class="ingredients">
-                        <h4>Ingredients</h4>
+        <!-- Ingredient -->
+        <div class="ingredient">
+            <li>
+                <p>{{rec.ingredients}}</p>
+            </li>
+        </div>
+    </ul>
+</div>
 
-                        <!-- Ingredient -->
-                        <div class="ingredient">
-                            <p>{{rec.ingredients}} </p>
-                        </div>
+<!-- Preparation -->
 
-                        <!-- Ingredient -->
-                        <div class="ingredient">
-                            <p>{{rec.ingredients}} </p>
-                        </div>
+<div class="row instructions">
+    <div class="col-12">
+        <h4>Instructions</h4>
+        <!-- Single Preparation Step -->
+        <div class="single-preparation-step d-flex">
+            <h4>01.</h4>
+            <p>{{rec.method}}</p>
+        </div>
+        <!-- Single Preparation Step -->
+        <div class="single-preparation-step d-flex">
+            <h4>02.</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum nec varius dui.
+                Suspendisse
+                potenti. Vestibulum ac pellentesque tortor. Aenean congue sed metus in iaculis. Cras a
+                tortor
+                enim. Phasellus posuere vestibulum ipsum, eget lobortis purus. Orci varius natoque penatibus
+                et
+                magnis dis parturient montes, nascetur ridiculus mus. </p>
+        </div>
 
-                        <!-- Ingredient -->
-                        <div class="ingredient">
-                            <p>{{rec.ingredients}} </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            {% endblock %}
+        <h4>Tips</h4>
+        <p>{{rec.tips}}</p>
+    </div>
+</div>
+
+
+</div>
+
+{% endfor %}
+{% endblock %}
