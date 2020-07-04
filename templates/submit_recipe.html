@@ -1,6 +1,8 @@
 {% extends 'base.html' %} {% block content %}
-<h1>Submit Recipe</h1>
 
+<div class="recipe-headline">
+    <h2>Submit Recipe</h2>
+</div>
 
 <form>
     <div class="form-group">
@@ -15,7 +17,8 @@
     <div class="form-group">
         <label for="">Image Url</label>
         <input type="" class="form-control" id="" aria-describedby="recipe description">
-        <small id="" class="form-text text-muted">Picture of the dish. Use a valid URL, for exaple a shared picture
+        <small id="" class="form-text text-muted">Picture of the dish. Use a valid URL
+            - for example - shared picture
             hosted on Google Drive</small>
     </div>
 
@@ -61,49 +64,26 @@
         </div>
     </div>
 
-    <hr>
-    <div class="ingredients">
-        <!-- HIDDEN DYNAMIC ELEMENT TO CLONE -->
-        <!-- you can replace it with any other elements -->
-        <label for="exampleFormControlTextarea1">Ingredients</label>
-        <div class="form-group dynamic-element" style="display:none">
-            <div class="row">
-                <!-- Replace these fields -->
-                <div class="form-group col-11">
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="1"></textarea>
-                </div>
-                <!-- End of fields-->
-                <div class="col-1">
-                    <p class="delete">x</p>
-                </div>
-            </div>
-        </div>
-        <!-- END OF HIDDEN ELEMENT -->
-
-        <div class="dynamic-stuff">
-            <!-- Dynamic element will be cloned here -->
-            <!-- You can call clone function once if you want it to show it a first element-->
-        </div>
-
-        <!-- Button -->
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-12">
-                    <p class="add-one">+ Add ingredient</p>
-                </div>
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-12">
+                <label for="exampleFormControlTextarea1">Ingredients</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Each ingredient in it's own line."></textarea>
             </div>
         </div>
     </div>
-    <hr>
 
     <div class="form-group">
         <div class="row">
             <div class="col-md-12">
                 <label for="exampleFormControlTextarea1">Instructions</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    placeholder="Put each step in a new line."></textarea>
             </div>
         </div>
     </div>
+
     <div class="form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar</label>
@@ -112,5 +92,5 @@
 
 </form>
 
-<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
 {% endblock %}

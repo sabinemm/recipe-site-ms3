@@ -22,9 +22,18 @@ body {
     font-family: 'Arimo', sans-serif;
   }
 
-.wrapp {
-    padding-left: 10%;
-    padding-right: 10%;
+
+@media (max-width: 767.98px) {
+    .wrapp {
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+@media (min-width: 768px) {
+    .wrapp {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
 
 a {
@@ -143,19 +152,6 @@ background-color: rgb(228, 226, 226);
 	opacity: .9;
 }
 .newsletter_form ::-webkit-input-placeholder {
-    /* Chrome/Opera/Safari */
-    color: #fff;
-    opacity: 1
-}
-
-.newsletter_form ::-moz-placeholder {
-    /* Firefox 19+ */
-    color: #fff;
-    opacity: 1
-}
-
-.newsletter_form :-moz-placeholder {
-    /* Firefox 18- */
     color: #fff;
     opacity: 1
 }
@@ -216,7 +212,7 @@ ul {
 }
 
 .recipe-headline p {
-    font-size: 14px;
+    font-size: 1rem;
     color: #a4a4a4; 
 }
 
@@ -224,7 +220,7 @@ ul {
     font-family: linotype-didot, serif;
     font-weight: 700;
     font-style: italic;
-    font-size: 36px;
+    font-size: 2rem;
     color: rgb(14, 14, 14);
     margin-top: 50px;
     margin-bottom: 20px;
@@ -235,7 +231,7 @@ ul {
     text-align: center;
 }
 .recipe-info h6 {
-    font-size: 15px;
+    font-size: 1rem;
     font-weight: 700;
     margin-top: 30px;
  }
@@ -249,7 +245,7 @@ ul {
     font-family: linotype-didot, serif;
     font-weight: 700;
     font-style: italic;
-    font-size: 18px;
+    font-size: 1.2rem;
     margin: 50px 0px 50px;
     color: #474747;
     text-align: center;
@@ -262,8 +258,6 @@ ul {
 
 .single-preparation-step h4 {
     color: #474747;
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 60px;
     flex: 0 0 60px;
     max-width: 60px;
     width: 60px;
@@ -282,37 +276,7 @@ ul {
     margin-bottom: 100px;
 }
 
-/* form */
+.form-check , .btn-primary { 
+    margin-bottom: 30px;
+}
 
-  .add-one{
-    color:green;
-    text-align:center;
-    cursor:pointer;
-    margin-top:10px;
-  }
-  
-  .delete{
-    color:white;
-    background-color:rgb(231, 76, 60);
-    text-align:center;
-    margin-top:6px;
-    font-weight:700;
-    border-radius:5px;
-    min-width:20px;
-    cursor:pointer;
-  }
-  
-  #singlebutton{
-    width:100%;
-    margin-top:20px;
-  }
-  
-  .title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:40px;
-  }
-  
-  .dynamic-element{
-    margin-bottom:0px;
-  }
