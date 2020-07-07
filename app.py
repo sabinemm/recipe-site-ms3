@@ -5,6 +5,7 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
 from os import getenv
+from datetime import datetime
 load_dotenv()
 
 app = Flask(__name__)
@@ -13,6 +14,10 @@ app.config['MONGO_URI'] = os.getenv(
     'MONGO_URI')
 
 mongo = PyMongo(app)
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M")
+#print("now =", now)
 
 
 @app.route('/')
@@ -24,13 +29,26 @@ def get_categories():
 
 @app.route('/recipe')
 def get_recipe():
-    recipe_cursor = mongo.db.recipe.find()
+    recipe_cursor = mongo.db.recipe.find(
+        {'title': 'Chickpea Curry'})
     return render_template("recipe.html", recipe=recipe_cursor)
 
 
 @app.route('/submit_recipe')
-def add_recipe():
-    return render_template("submit_recipe.html")
+def submit_recipe():
+    categories_cursor = mongo.db.categories.find()
+    return render_template("submit_recipe.html", categories=categories_cursor)
+
+
+@app.route('/send_recipe', methods=['POST'])
+def send_recipe():
+    recipe_cursor = mongo.db.recipe
+    return_data = request.form.to_dict()
+    return_data["date_added"] = dt_string
+    print(return_data)
+    recipe_cursor.insert_one(return_data)
+
+    return redirect(url_for('submit_recipe'))
 
 
 if __name__ == '__main__':
