@@ -50,19 +50,6 @@
             </li>
         </div>
 
-        <!-- Ingredient -->
-        <div class="ingredient">
-            <li>
-                <p>{{rec.ingredients}}</p>
-            </li>
-        </div>
-
-        <!-- Ingredient -->
-        <div class="ingredient">
-            <li>
-                <p>{{rec.ingredients}}</p>
-            </li>
-        </div>
     </ul>
 </div>
 
@@ -88,16 +75,17 @@
                 magnis dis parturient montes, nascetur ridiculus mus. </p>
         </div>
 
+        {% if rec.tips is defined %}
         <h4>Tips</h4>
         <p>{{rec.tips}}</p>
+        {% else %}
+        {% endif %}
     </div>
 </div>
-
-
-
-
+<button class="btn btn-primary"><a href="{{url_for('edit_recipe', recipe_id=rec._id)}}"> edit</a></button>
 
 </div>
 
 {% endfor %}
+
 {% endblock %}

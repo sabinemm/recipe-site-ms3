@@ -33,7 +33,7 @@ def login():
 @app.route('/recipe')
 def get_recipe():
     recipe_cursor = mongo.db.recipe.find(
-        {'title': 'werwe'})
+        {'title': 'Chickpea Curry'})
     return render_template("recipe.html", recipe=recipe_cursor)
 
 
@@ -58,6 +58,12 @@ def send_recipe():
     print(return_data)
     recipe_cursor.insert_one(return_data)
     return redirect(url_for('submit_recipe'))
+
+
+@app.route('/edit_recipe/<recipe_id>')
+def edit_recipe(recipe_id):
+    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template('edit_recipe.html', the_recipe=the_recipe)
 
 
 if __name__ == '__main__':
