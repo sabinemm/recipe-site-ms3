@@ -49,6 +49,11 @@ a:hover {
      cursor:pointer;  
 }
 
+.container {
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
+
 /* FIRST NAV */
 
 .site-header {
@@ -296,4 +301,26 @@ ul {
 
 .entry-data i {
     padding-right: 1em;
+}
+
+/* HOMEPAGE */
+
+
+.jumbotron {
+    background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594219521/vegansite/Vegan-Frittata__2x_dyguf9.png) center no-repeat;
+    background-size: cover;
+   }
+
+   .jumbotron h1 {
+    font-family: 'Playfair Display', serif; 
+    font-weight: 400;
+    font-size: 3em;
+   }
+
+   .square {
+    width: 100%;
+    padding-bottom: 100%;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 30px;
 }
