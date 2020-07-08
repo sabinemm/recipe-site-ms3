@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block content %}
+
+<div class="recipe-headline">
+    <h2>All Recipes</h2>
+</div>
+
+<div class="row">
+    {% for rec in recipe %}
+    <div class="col-lg-4 col-md-6 col-sm-6 col-12 pt-3">
+        <div class="product-box">
+            <figure class="image-square"><a href="#"><img src="{{rec.image_url}}" alt="Recipe Image"></a></figure>
+            <div class="item-content">
+                <h3 class="item-title"><a href="#">{{rec.title}}</a></h3>
+                <p>{{rec.description}}</p>
+                <div class="row entry-data">
+                    <div class="col-6"><i class="fas fa-clock"></i>{{rec.cooks}}</div>
+                    <div class="col-6"><i class="fas fa-user"></i>by Jane</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

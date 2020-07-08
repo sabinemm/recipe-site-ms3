@@ -21,6 +21,10 @@ dt_string = now.strftime("%d/%m/%Y %H:%M")
 
 
 @app.route('/')
+def index():
+    return render_template("index.html")
+
+
 @app.route('/get_category')
 def get_categories():
     categories_cursor = mongo.db.categories.find()
@@ -30,8 +34,14 @@ def get_categories():
 @app.route('/recipe')
 def get_recipe():
     recipe_cursor = mongo.db.recipe.find(
-        {'title': 'Chickpea Curry'})
+        {'title': 'werwe'})
     return render_template("recipe.html", recipe=recipe_cursor)
+
+
+@app.route('/all')
+def get_all():
+    recipe_cursor = mongo.db.recipe.find()
+    return render_template("all.html", recipe=recipe_cursor)
 
 
 @app.route('/submit_recipe')

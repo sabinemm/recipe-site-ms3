@@ -280,3 +280,20 @@ ul {
     margin-bottom: 30px;
 }
 
+/* ALL RECIPES STYLES */
+
+.image-square {
+    overflow: hidden;
+    width: 250px;
+    height: 250px;
+}
+
+.entry-data {
+    display: inline;
+    color: #474747;
+    text-align: left;
+}
+
+.entry-data i {
+    padding-right: 1em;
+}
