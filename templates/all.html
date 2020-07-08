@@ -4,6 +4,16 @@
     <h2>All Recipes</h2>
 </div>
 
+<div class="">
+    <div class="row">
+        {% for category in categories %}
+        <div class="col-sm-6 col-md-3 mx-auto p-3 pt-4 text-center text-uppercase">
+            <h6> {{category.category_name}}</h6>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
 <div class="row">
     {% for rec in recipe %}
     <div class="col-lg-4 col-md-6 col-sm-6 col-12 pt-3">

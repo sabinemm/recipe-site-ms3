@@ -25,10 +25,9 @@ def index():
     return render_template("index.html")
 
 
-@app.route('/get_category')
-def get_categories():
-    categories_cursor = mongo.db.categories.find()
-    return render_template("category.html", categories=categories_cursor)
+@app.route('/login')
+def login():
+    return render_template("login.html")
 
 
 @app.route('/recipe')
@@ -41,7 +40,8 @@ def get_recipe():
 @app.route('/all')
 def get_all():
     recipe_cursor = mongo.db.recipe.find()
-    return render_template("all.html", recipe=recipe_cursor)
+    categories_cursor = mongo.db.categories.find()
+    return render_template("all.html", recipe=recipe_cursor, categories=categories_cursor)
 
 
 @app.route('/submit_recipe')
@@ -57,7 +57,6 @@ def send_recipe():
     return_data["date_added"] = dt_string
     print(return_data)
     recipe_cursor.insert_one(return_data)
-
     return redirect(url_for('submit_recipe'))
 
 

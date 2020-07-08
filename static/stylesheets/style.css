@@ -305,9 +305,8 @@ ul {
 
 /* HOMEPAGE */
 
-
 .jumbotron {
-    background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594219521/vegansite/Vegan-Frittata__2x_dyguf9.png) center no-repeat;
+    background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594225831/vegansite/Vegan-Frittata__rxd4dw.png) center no-repeat;
     background-size: cover;
    }
 
@@ -324,3 +323,44 @@ ul {
     background-position: center;
     margin-bottom: 30px;
 }
+
+
+/* LOGIN */
+
+
+/* .card-body {
+    border: 2px solid black;
+  } */
+  
+  .card-signin .card-title {
+    margin-bottom: 2rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+  
+  .card-signin .card-body {
+    padding: 2rem;
+  }
+  
+  .form-signin {
+    width: 100%;
+  }
+  
+  .form-signin .btn {
+    font-size: 80%;
+    border-radius: 0rem;
+    letter-spacing: .1rem;
+    font-weight: bold;
+    padding: 1rem;
+    transition: all 0.2s;
+  }
+  
+  .form-label-group {
+    position: relative;
+    margin-bottom: 1rem;
+  }
+
+  .login-bg {
+ background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594225733/vegansite/close-up-photo-of-thyme-leaves-4113901-2_p62mvv.jpg);
+ background-size: cover;
+    }

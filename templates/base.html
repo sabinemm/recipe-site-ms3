@@ -17,10 +17,10 @@
 
     <nav class="site-header">
         <div class="container d-flex flex-md-row justify-content-end grey-bg">
-            <a class="py-2 small-link" href="#">HOME</a>
+            <a class="py-2 small-link" href="{{ url_for('index') }}">HOME</a>
             <a class="py-2 small-link" href="#">SHOP</a>
-            <a class="py-2 small-link" href="#">SUBSCRIBE</a>
-            <a class="py-2 small-link" href="#">LOGIN/SIGNUP</a>
+            <a class="py-2 small-link" href="#subscribe">SUBSCRIBE</a>
+            <a class="py-2 small-link" href="{{ url_for('login') }}">LOGIN/SIGNUP</a>
         </div>
     </nav>
 
@@ -90,16 +90,16 @@
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="single_ftr">
                         <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">ALL RECIPES</a></li>
-                            <li><a href="#">SUBMIT RECIPE</a></li>
+                            <li><a href="{{ url_for('index') }}">HOME</a></li>
+                            <li><a href="{{ url_for('get_all') }}">ALL RECIPES</a></li>
+                            <li><a href="{{ url_for('submit_recipe') }}">SUBMIT RECIPE</a></li>
                             <li><a href="#">SHOP</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-md-6 col-sm-12 col-xs-12">
-                    <div class="single_ftr content">
+                    <div class="single_ftr content" id="subscribe">
                         <div class="newsletter_form">
                             <a>SIGN UP FOR WEEKLY RECIPE IDEAS</a>
                             <form method="post" class="form-inline">
