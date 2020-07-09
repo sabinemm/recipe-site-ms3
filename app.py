@@ -57,7 +57,12 @@ def send_recipe():
     return_data["date_added"] = dt_string
     print(return_data)
     recipe_cursor.insert_one(return_data)
-    return redirect(url_for('submit_recipe'))
+    return redirect(url_for('thank_you'))
+
+
+@app.route('/thank_you')
+def thank_you():
+    return render_template("thank_you.html")
 
 
 @app.route('/edit_recipe/<recipe_id>')
@@ -84,7 +89,7 @@ def update_recipe(recipe_id):
         'method': request.form.get('method'),
         'tips': request.form.get('tips'),
     })
-    return redirect(url_for('all'))
+    return redirect(url_for('get_all'))
 
 
 if __name__ == '__main__':

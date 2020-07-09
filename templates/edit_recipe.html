@@ -4,7 +4,7 @@
     <h2>Edit Recipe</h2>
 </div>
 
-<form method="POST" action="{{ url_for('update_recipe', recipe_id=recipe._id) }}">
+<form method="POST" action="{{ url_for('update_recipe', recipe_id=the_recipe._id) }}">
     <div class="form-group">
         <label for="title">Recipe Title</label>
         <input value="{{the_recipe.title}}" type="text" class="form-control" id="title" name="title"
