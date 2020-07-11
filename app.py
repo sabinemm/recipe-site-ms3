@@ -17,7 +17,7 @@ mongo = PyMongo(app)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M")
-#print("now =", now)
+# print("now =", now)
 
 
 @app.route('/')
@@ -30,27 +30,26 @@ def login():
     return render_template("login.html")
 
 
-@app.route('/recipe')
-def get_recipe():
-    recipe = mongo.db.recipe.find(
-        {'title': 'Chickpea Curry'})
+@app.route('/recipe/<recipe_id>')
+def get_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=recipe)
 
 
-@app.route('/all')
+@ app.route('/all')
 def get_all():
-    recipe_cursor = mongo.db.recipe.find()
-    categories_cursor = mongo.db.categories.find()
-    return render_template("all.html", recipe=recipe_cursor, categories=categories_cursor)
+    recipe = mongo.db.recipe.find()
+    categories = mongo.db.categories.find()
+    return render_template("all.html", recipe=recipe, categories=categories)
 
 
-@app.route('/submit_recipe')
+@ app.route('/submit_recipe')
 def submit_recipe():
-    categories_cursor = mongo.db.categories.find()
-    return render_template("submit_recipe.html", categories=categories_cursor)
+    categories = mongo.db.categories.find()
+    return render_template("submit_recipe.html", categories=categories)
 
 
-@app.route('/send_recipe', methods=['POST'])
+@ app.route('/send_recipe', methods=['POST'])
 def send_recipe():
     recipe = mongo.db.recipe
     return_data = request.form.to_dict()
@@ -60,19 +59,19 @@ def send_recipe():
     return redirect(url_for('thank_you'))
 
 
-@app.route('/thank_you')
+@ app.route('/thank_you')
 def thank_you():
     return render_template("thank_you.html")
 
 
-@app.route('/edit_recipe/<recipe_id>')
+@ app.route('/edit_recipe/<recipe_id>')
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     categories_cursor = mongo.db.categories.find()
     return render_template('edit_recipe.html', the_recipe=the_recipe, categories=categories_cursor)
 
 
-@app.route('/update_recipe/<recipe_id>', methods=['POST'])
+@ app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     categories_cursor = mongo.db.categories.find()

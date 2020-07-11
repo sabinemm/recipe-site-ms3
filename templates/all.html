@@ -22,7 +22,8 @@
                 <img src="{{rec.image_url}}">
             </div>
             <div class="item-content">
-                <h3 class="item-title"><a href="#">{{rec.title}}</a></h3>
+                <h3 class="item-title"><a href="{{url_for('get_recipe', recipe_id=rec._id)}}">{{rec.title}}</a>
+                </h3>
                 <p>{{rec.description}}</p>
                 <div class="row entry-data">
                     <div class="col-6"><i class="fas fa-clock"></i>{{rec.cooks}}</div>
