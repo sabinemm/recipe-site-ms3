@@ -64,6 +64,7 @@ a:hover {
     border-radius: 0!important;
     } 
 
+
 /* FIRST NAV */
 
 .site-header {
@@ -170,6 +171,9 @@ background-color: rgb(228, 226, 226);
     color: #fff;
     opacity: 1
 }
+.ftr_social_icon ul {
+    padding-inline-start: 0;
+}
 
 .single_ftr li {
     padding-bottom: 7px;
@@ -216,7 +220,7 @@ background-color: rgb(228, 226, 226);
 	position: relative;
 }
 
-ul {
+.footer_area ul {
     list-style: none;
 }
 

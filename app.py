@@ -32,9 +32,9 @@ def login():
 
 @app.route('/recipe')
 def get_recipe():
-    recipe_cursor = mongo.db.recipe.find(
+    recipe = mongo.db.recipe.find(
         {'title': 'Chickpea Curry'})
-    return render_template("recipe.html", recipe=recipe_cursor)
+    return render_template("recipe.html", recipe=recipe)
 
 
 @app.route('/all')
@@ -52,11 +52,11 @@ def submit_recipe():
 
 @app.route('/send_recipe', methods=['POST'])
 def send_recipe():
-    recipe_cursor = mongo.db.recipe
+    recipe = mongo.db.recipe
     return_data = request.form.to_dict()
     return_data["date_added"] = dt_string
     print(return_data)
-    recipe_cursor.insert_one(return_data)
+    recipe.insert_one(return_data)
     return redirect(url_for('thank_you'))
 
 
@@ -75,6 +75,7 @@ def edit_recipe(recipe_id):
 @app.route('/update_recipe/<recipe_id>', methods=['POST'])
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
+    categories_cursor = mongo.db.categories.find()
     recipe.update({"_id": ObjectId(recipe_id)},
                   {
         'title': request.form.get('title'),
@@ -89,7 +90,7 @@ def update_recipe(recipe_id):
         'method': request.form.get('method'),
         'tips': request.form.get('tips'),
     })
-    return redirect(url_for('get_all'))
+    return redirect(url_for('thank_you'))
 
 
 if __name__ == '__main__':
