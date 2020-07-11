@@ -7,12 +7,13 @@
 <form method="POST" action="{{ url_for('send_recipe') }}">
     <div class="form-group">
         <label for="title">Recipe Title</label>
-        <input type="text" class="form-control" id="title" name="title" aria-describedby="recipe title">
+        <input required type="text" class="form-control" id="title" name="title" aria-describedby="recipe title"
+            maxlength="45">
     </div>
 
     <div class="form-group">
         <label for="category_name">Category</label>
-        <select name="category_name" id="category_name" class="form-control">
+        <select required name="category_name" id="category_name" class="form-control">
             <option selected disabled>Select Category</option>
             {% for category in categories %}
             <option value="{{category.category_name}}">{{category.category_name}}</option>
@@ -22,14 +23,15 @@
 
     <div class="form-group">
         <label for="description">Description</label>
-        <input type="text" class="form-control" id="description" name="description"
-            aria-describedby="recipe description">
-        <small class="form-text text-muted">Short, juicy description of the dish</small>
+        <input required type="text" class="form-control" id="description" name="description"
+            aria-describedby="recipe description" maxlength="130">
+        <small class="form-text text-muted">Short, juicy description of the dish. Max 130 characters.</small>
     </div>
 
     <div class="form-group">
         <label for="image_url">Image Url</label>
-        <input type="text" class="form-control" name="image_url" id="image_url" aria-describedby="recipe description">
+        <input required type="text" class="form-control" name="image_url" id="image_url"
+            aria-describedby="recipe description">
         <small id="" class="form-text text-muted">Picture of the dish. Use a valid URL
             - for example - shared picture
             hosted on Google Drive</small>
@@ -39,7 +41,8 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="prep">Prep Time</label>
-                <input type="text" class="form-control" id="prep" name="prep" aria-describedby="preparation time">
+                <input required type="text" class="form-control" id="prep" name="prep"
+                    aria-describedby="preparation time" placeholder="X hours X minutes" maxlength="20">
                 <small class="form-text text-muted">Example: "15 minutes"</small>
             </div>
         </div>
@@ -47,7 +50,8 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="cooks">Cooking Time</label>
-                <input type="" class="form-control" id="cooks" name="cooks" aria-describedby="cooking time">
+                <input required type="text" class="form-control" id="cooks" name="cooks" aria-describedby="cooking time"
+                    placeholder="X hours X minutes" maxlength="20">
                 <small class="form-text text-muted">Example: "1 hour 30 minutes"</small>
             </div>
         </div>
@@ -57,7 +61,7 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="serves">Amount of Servings</label>
-                <select id="serves" name="serves" class="form-control">
+                <select required id="serves" name="serves" class="form-control">
                     <option selected>2</option>
                     <option>4</option>
                     <option>6</option>
@@ -70,7 +74,7 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="difficulty">Difficulty</label>
-                <select id="difficulty" name="difficulty" class="form-control">
+                <select required id="difficulty" name="difficulty" class="form-control">
                     <option selected>Easy</option>
                     <option>Medium</option>
                     <option>Hard</option>
@@ -83,7 +87,7 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea class="form-control" id="ingredients" name="ingredients" rows="3"
+                <textarea required class="form-control" id="ingredients" name="ingredients" rows="3"
                     placeholder="Each ingredient in it's own line."></textarea>
             </div>
         </div>
@@ -93,7 +97,7 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="instructions">Instructions</label>
-                <textarea class="form-control" id="instructions" name="instructions" rows="3"
+                <textarea required class="form-control" id="instructions" name="instructions" rows="3"
                     placeholder="Put each step in a new line."></textarea>
             </div>
         </div>
@@ -110,7 +114,7 @@
     </div>
 
     <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <input required type="checkbox" class="form-check-input" id="exampleCheck1">
         <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar</label>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

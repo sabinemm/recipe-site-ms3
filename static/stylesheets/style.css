@@ -301,11 +301,21 @@ background-color: rgb(228, 226, 226);
 
 /* ALL RECIPES STYLES */
 
-.image-square {
+.image-wrapper {
+    width: 300px;
+    height: 300px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
     overflow: hidden;
-    width: 250px;
-    height: 250px;
-}
+    position: relative;
+  }
+  .image-wrapper img {
+      object-fit: cover;
+    flex: 1;
+    height: 100%;
+    width: auto;
+  }
 
 .entry-data {
     display: inline;
