@@ -15,7 +15,7 @@
         <label for="category_name">Category</label>
         <select required name="category_name" id="category_name" class="form-control">
             {% for category in categories %}
-            {% if category in categories == the_recipe.category_name %}
+            {% if category == the_recipe.category_name %}
             <option value="{{category.category_name}}" selected>{{category.category_name}}</option>
             {% else %}
             <option value="{{category.category_name}}">{{category.category_name}}</option>
@@ -92,8 +92,8 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="ingredients">Ingredients</label>
-                <textarea required value="{{the_recipe.ingredients}}" class="form-control" id="ingredients"
-                    name="ingredients" rows="3" placeholder="Each ingredient in it's own line."></textarea>
+                <textarea required class="form-control" id="ingredients" name="ingredients" rows="3"
+                    placeholder="Each ingredient in it's own line.">{{the_recipe.ingredients}}</textarea>
             </div>
         </div>
     </div>
@@ -102,8 +102,8 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="instructions">Instructions</label>
-                <textarea required value="{{the_recipe.instructions}}" class="form-control" id="instructions"
-                    name="instructions" rows="3" placeholder="Put each step in a new line."></textarea>
+                <textarea required class="form-control" id="instructions" name="instructions" rows="3"
+                    placeholder="Put each step in a new line.">{{the_recipe.instructions}}</textarea>
             </div>
         </div>
     </div>
@@ -112,8 +112,8 @@
         <div class="row">
             <div class="col-md-12">
                 <label for="tips">Tips</label>
-                <textarea value="{{the_recipe.tips}}" class="form-control" id="tips" name="tips" rows="2"
-                    placeholder="Put each tip in a new line."></textarea>
+                <textarea class="form-control" id="tips" name="tips" rows="2"
+                    placeholder="Put each tip in a new line.">{{the_recipe.tips}}</textarea>
             </div>
         </div>
     </div>

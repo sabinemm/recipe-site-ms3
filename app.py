@@ -86,7 +86,7 @@ def update_recipe(recipe_id):
         'prep': request.form.get('prep'),
         'cooks': request.form.get('cooks'),
         'difficulty': request.form.get('difficulty'),
-        'method': request.form.get('method'),
+        'instructions': request.form.get('instructions'),
         'tips': request.form.get('tips'),
     })
     return redirect(url_for('thank_you'))
