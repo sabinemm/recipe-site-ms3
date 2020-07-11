@@ -59,16 +59,15 @@
 <div class="row instructions">
     <div class="col-12">
         <h4>Instructions</h4>
-        <ul>
-            {% for line in recipe.instructions.splitlines() %}
-            <!-- Single Preparation Step -->
-            <div class="single-preparation-step d-flex">
-                <li>
-                    <p>{{line}}</p>
-                </li>
-            </div>
-            {% endfor %}
-        </ul>
+
+        {% for line in recipe.instructions.splitlines() %}
+        <!-- Single Preparation Step -->
+        <div class="single-preparation-step d-flex">
+            <h4><i class="far fa-circle"></i></h4>
+            <p>{{line}}</p>
+        </div>
+        {% endfor %}
+
 
         {% if recipe.tips is defined %}
         <h4>Tips</h4>
