@@ -1,4 +1,6 @@
 autopep8==1.5.3
+bcrypt==3.1.7
+cffi==1.14.0
 click==7.1.2
 dnspython==1.16.0
 Flask==1.1.2
@@ -8,7 +10,9 @@ Jinja2==2.11.2
 MarkupSafe==1.1.1
 pep8==1.7.1
 pycodestyle==2.6.0
+pycparser==2.20
 pymongo==3.10.1
 python-dotenv==0.13.0
+six==1.15.0
 toml==0.10.1
 Werkzeug==1.0.1

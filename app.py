@@ -1,6 +1,6 @@
 
 import os
-from flask import Flask, render_template, redirect, request, url_for
+from flask import Flask, render_template, redirect, request, url_for, session, flash
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
@@ -12,7 +12,8 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = 'recipedb'
 app.config['MONGO_URI'] = os.getenv(
     'MONGO_URI')
-
+app.config['SECRET_KEY'] = os.getenv(
+    'SECRET_KEY')
 mongo = PyMongo(app)
 
 now = datetime.now()
@@ -27,6 +28,11 @@ def index():
 @app.route('/login')
 def login():
     return render_template("login.html")
+
+
+@app.route('/register')
+def register():
+    return render_template("register.html")
 
 
 @app.route('/recipe/<recipe_id>')
@@ -106,7 +112,7 @@ def sub():
     sub = mongo.db.subscribers
     return_data = request.form.to_dict()
     sub.insert_one(return_data)
-    print(return_data)
+    flash("Sucessfully Subscribed")
     return redirect(url_for('index'))
 
 
