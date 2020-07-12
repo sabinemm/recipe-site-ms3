@@ -4,7 +4,7 @@
     <h2>Submit Recipe</h2>
 </div>
 
-<form method="POST" action="{{ url_for('send_recipe') }}">
+<form method="POST" action="{{ url_for('send_recipe') }}" class="pb-5">
     <div class="form-group">
         <label for="title">Recipe Title</label>
         <input required type="text" class="form-control" id="title" name="title" aria-describedby="recipe title"
@@ -62,7 +62,8 @@
             <div class="form-group">
                 <label for="serves">Amount of Servings</label>
                 <select required id="serves" name="serves" class="form-control">
-                    <option selected>2</option>
+                    <option selected disabled>Select servings</option>
+                    <option>2</option>
                     <option>4</option>
                     <option>6</option>
                     <option>8</option>
@@ -75,7 +76,8 @@
             <div class="form-group">
                 <label for="difficulty">Difficulty</label>
                 <select required id="difficulty" name="difficulty" class="form-control">
-                    <option selected>Easy</option>
+                    <option selected disabled>Select difficulty</option>
+                    <option>Easy</option>
                     <option>Medium</option>
                     <option>Hard</option>
                 </select>
@@ -121,7 +123,7 @@
         <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar. The recipe
             is plant based and gluten-free.</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
 
 </form>
 

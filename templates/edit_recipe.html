@@ -4,7 +4,7 @@
     <h2>Edit Recipe</h2>
 </div>
 
-<form method="POST" action="{{ url_for('update_recipe', recipe_id=the_recipe._id) }}">
+<form method="POST" action="{{ url_for('update_recipe', recipe_id=the_recipe._id) }}" class="pb-5">
     <div class="form-group">
         <label for="title">Recipe Title</label>
         <input required value="{{the_recipe.title}}" type="text" class="form-control" id="title" name="title"
@@ -127,7 +127,7 @@
         <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar. The recipe
             is plant based and gluten-free.</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit Edit</button>
+    <button type="submit" class="btn btn-success">Submit Edit</button>
 
 </form>
 

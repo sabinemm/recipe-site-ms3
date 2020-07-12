@@ -98,6 +98,11 @@ def update_recipe(recipe_id):
     return redirect(url_for('thank_you'))
 
 
+@ app.route('/shop')
+def shop():
+    return render_template("shop.html")
+
+
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
             port=int(os.getenv("PORT", "5000")), debug=True)
