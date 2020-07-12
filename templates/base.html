@@ -103,8 +103,9 @@
                     <div class="single_ftr content" id="subscribe">
                         <div class="newsletter_form">
                             <a>SIGN UP FOR WEEKLY RECIPE IDEAS</a>
-                            <form method="post" class="form-inline">
-                                <input type="email" class="form-control" placeholder="Enter your email">
+                            <form method="POST" action="{{url_for('sub')}}" class="form-inline">
+                                <input type="email" class="form-control" placeholder="Enter your email" name="sub_email"
+                                    id="sub_email">
                                 <span class="input-group-btn">
                                     <button class="btn" type="submit"><i class="fas fa-check"></i></button>
                                 </span>

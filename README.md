@@ -10,11 +10,11 @@
 - [**About**](#About)
 - [**Demo**](#Demo)
 - [**UX**](#UX)
-    - [User Stories](#User-Stories)
+  - [User Stories](#User-Stories)
   - [Research](#Research)
   - [Wireframes](#Wireframes)
   - [Design](#Design)
- - [Color Scheme](#Color-Scheme)
+  - [Color Scheme](#Color-Scheme)
 - [**Features**](#Features)
     - [Functionality](#Functionality)
     - [Existing features](#Existing-features)
@@ -39,6 +39,9 @@
 ### Wireframes
 ### Design
 ### Color Scheme
+
+I kept the color pallette very simple and clean because the content of the page are inevitably very colorful.
+
 ![Color Palette](https://res.cloudinary.com/www-madine-se/image/upload/v1594581862/vegansite/palette-2_bhhqtr.png)
 
 ## Features
@@ -72,6 +75,20 @@ Categories Collection
     "category_name": "<string>",
 }
 ```
+Users Collection
+```
+"users":{
+    "_id": "ObjectId()"
+    "user_name": "<string>",
+}
+```
+Subscribers Collection
+```
+"subscribers":{
+    "_id": "ObjectId()"
+    "sub_email": "<string>",
+}
+```
 For the needs of this website I did not find the need to use other data types in MongoDB.
 
 ## Technologies used
@@ -81,32 +98,27 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * HTML5
 * CSS3
 * jQuery
-* Python
+* Python 3.8.2
     * Flask
-* Pip
-* Pyenv
 * MongoDB
 * Bootstrap
 * Visual Studio Code development environment
     * Live Server Extension
     * Color Picker Extension
     * Markdown Preview Extension
-* Git & GitHub
-* Heroku pages
-* Markdown (README.md)
-* Font Awesome
+* Git & GitHub.com
+* Heroku.com pages
+* Markdown
+* FontAwesome.com
 * Google Fonts
 * Adobe Fonts
 * Google Chrome Developer tools
 * Firefox Inspector
 * Safari Web Inspector
-* Adobe Photoshop CC image editing
-* Adobe Illustrator CC to create logo
-* Adobe XD to create mockup and prototype
-* Cloudinary to store all images
+* Adobe Suite CC
+* Cloudinary.com
 * Favicon.io
-* Adobe Premiere to edit gameplay video
-* EZGIF to convert video to GIF for ReadMe file
+* EZGIF
 
 ## Testing
 Devices and platforms used for testing:
@@ -165,26 +177,29 @@ After pressing Enter the project will be created and cloned locally.
 
 Create a free account on MongoDb and reproduce the 3 collections as described [here](#Information-Architecture).
 
-Install Pip, Pyenv
+Make sure to upgrade PIP. 
+```
+pip install -U pip 
+```
 
-Create a virtual enviroment by typing
+
+
+Install all dependencies
 ```
-pyenv
+pip3 install -r requirements.txt
 ```
+Create `.env` file with following data
+```
+MONGO_URI=mongodb+srv://..."
+```
+add your .env file to .gitignore
+
 Activate virtual environment 
 ```
 source env/bin/activate
 ```
 
-Install all dependencies
-
-
-Create `.env` file with following data
-```
-MONGO_URI=mongodb+srv://..."
-```
-
-You will then be able to run the app locally by typing either python app.py  flask run. 
+You will then be able to run the app locally by typing python app.py or   flask run. 
 
 ### Heroku
 
@@ -198,9 +213,9 @@ Linked that app to the GitHub repository by going to the "Deploy" tab in the mai
 In the Settings tab, added the corresponding Config Variables as present in my local development:
 
 ```
-   MONGO_URI mongodb+srv://...
-   IP 0.0.0.0
-   PORT 5000
+MONGO_URI mongodb+srv://...
+IP 0.0.0.0
+PORT 5000
 ```
 
 I also created a "Procfile" by typing 
@@ -223,11 +238,14 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Thyme](https://www.pexels.com/photo/close-up-photo-of-thyme-leaves-4113901/)
 
 [Almonds](https://www.pexels.com/photo/white-table-with-tasty-scattered-almonds-4033328/)
+
 [Book](https://unsplash.com/photos/CXYPfveiuis)
+
 [Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y)
 
 ## Acknowledgements
-A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi)
+A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support, Slack
+
 ## Disclaimer
 This project is for educational purposes only.
 

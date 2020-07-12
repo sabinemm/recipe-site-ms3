@@ -17,7 +17,6 @@ mongo = PyMongo(app)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M")
-# print("now =", now)
 
 
 @app.route('/')
@@ -54,7 +53,6 @@ def send_recipe():
     recipe = mongo.db.recipe
     return_data = request.form.to_dict()
     return_data["date_added"] = dt_string
-    print(return_data)
     recipe.insert_one(return_data)
     return redirect(url_for('thank_you'))
 
@@ -101,6 +99,15 @@ def update_recipe(recipe_id):
 @ app.route('/shop')
 def shop():
     return render_template("shop.html")
+
+
+@ app.route('/sub', methods=['POST'])
+def sub():
+    sub = mongo.db.subscribers
+    return_data = request.form.to_dict()
+    sub.insert_one(return_data)
+    print(return_data)
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
