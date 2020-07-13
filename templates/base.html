@@ -60,16 +60,19 @@
                         <a class="nav-link" href="#">OTHER</a>
                     </li>
                 </ul>
-                <form class="form-inline my-2 my-lg-0">
-                    <div class="input-group col-md-4"></div>
-                    <input class="form-control border-right-0 border" type="search" value="search"
-                        id="example-search-input">
-                    <span class="input-group-append">
-                        <button class="btn border-left-0 border" type="button">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
+                <!---SEARCH BAR-->
+                <form action="{{ url_for('search') }}" class="form-inline my-2 my-lg-0">
+                    <div class="input-group md-form form-sm form-2 pl-0">
+                        <input class="form-control my-0 py-1" name="query" id="query" type="text" placeholder="Search"
+                            aria-label="Search">
+                        <div class="input-group-append">
+                            <span><button class="btn border-left-0 border" type="submit" name="search" value="search">
+                                    <i class="fa fa-search"></i>
+                                </button></span>
+                        </div>
+                    </div>
                 </form>
+
             </div>
 
         </nav>

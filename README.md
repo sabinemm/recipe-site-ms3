@@ -232,6 +232,9 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Datetime](https://www.programiz.com/python-programming/datetime/current-datetime)
 
 [Login](https://startbootstrap.com/snippets/login/)
+
+[Flash](https://pythonprogramming.net/flash-flask-tutorial/)
+
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
 
@@ -247,6 +250,7 @@ After that process, the app was live and running remotely in Heroku's servers.
 A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support, Slack
 
 ## Disclaimer
+I had accidentally committed mongodb password but changed it and hid it later. All secure.
 This project is for educational purposes only.
 
 

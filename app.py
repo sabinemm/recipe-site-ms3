@@ -1,6 +1,7 @@
 
 import os
 from flask import Flask, render_template, redirect, request, url_for, session, flash
+from flask_login import LoginManager, UserMixin
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
@@ -8,21 +9,30 @@ from os import getenv
 from datetime import datetime
 load_dotenv()
 
+# config
+
 app = Flask(__name__)
-app.config["MONGO_DBNAME"] = 'recipedb'
+app.config["MONGO_DBNAME"] = os.getenv(
+    'MONGO_DBNAME')
 app.config['MONGO_URI'] = os.getenv(
     'MONGO_URI')
 app.config['SECRET_KEY'] = os.getenv(
     'SECRET_KEY')
 mongo = PyMongo(app)
 
-now = datetime.now()
-dt_string = now.strftime("%d/%m/%Y %H:%M")
 
-
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template("index.html")
+
+
+# variables
+
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M")
+users_collection = mongo.db.users
+
+# users
 
 
 @app.route('/login')
@@ -34,11 +44,7 @@ def login():
 def register():
     return render_template("register.html")
 
-
-@app.route('/recipe/<recipe_id>')
-def get_recipe(recipe_id):
-    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=recipe)
+# app
 
 
 @ app.route('/all')
@@ -46,6 +52,21 @@ def get_all():
     recipe = mongo.db.recipe.find()
     categories = mongo.db.categories.find()
     return render_template("all.html", recipe=recipe, categories=categories)
+
+
+@app.route('/search', methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    result = mongo.db.recipe.find({"$text": {"$search": query}})
+    print(query)
+    print(result)
+    return render_template("search_results.html", result=result)
+
+
+@app.route('/recipe/<recipe_id>')
+def get_recipe(recipe_id):
+    recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
+    return render_template("recipe.html", recipe=recipe)
 
 
 @ app.route('/submit_recipe')
@@ -114,6 +135,17 @@ def sub():
     sub.insert_one(return_data)
     flash("Sucessfully Subscribed")
     return redirect(url_for('index'))
+
+# test
+
+
+def fin():
+    found = mongo.db.recipe.find(
+        {'title': 'Chickpea Curry'})
+    print(found)
+
+
+fin
 
 
 if __name__ == '__main__':
