@@ -3,7 +3,7 @@
 
 ![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png)
 
-[Deployed site](https://git.heroku.com/vegan-gluten.git)
+[Deployed site](https://vegan-gluten.herokuapp.com)
 
 ## Table of Contents
 
@@ -40,7 +40,7 @@
 ### Design
 ### Color Scheme
 
-I kept the color pallette very simple and clean because the content of the page are inevitably very colorful.
+I kept the color pallette very simple and clean because the content of the page is inevitably very colorful.
 
 ![Color Palette](https://res.cloudinary.com/www-madine-se/image/upload/v1594581862/vegansite/palette-2_bhhqtr.png)
 

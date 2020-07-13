@@ -56,11 +56,13 @@ def get_all():
 
 @app.route('/search', methods=["GET", "POST"])
 def search():
+    #indexes = mongo.db.recipe.create_index({"query": "text"})
+    mongo.db.recipe.create_index(
+        {"ingredients": "text", "description": "text"})
     query = request.form.get("query")
-    result = mongo.db.recipe.find({"$text": {"$search": query}})
-    print(query)
-    print(result)
-    return render_template("search_results.html", result=result)
+    print("query: {}".format(str(query)))
+    result = list(mongo.db.recipe.find({"$text": {"$search": query}}))
+    return render_template("search_results.html", result=result, query=query)
 
 
 @app.route('/recipe/<recipe_id>')
@@ -107,19 +109,21 @@ def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     categories_cursor = mongo.db.categories.find()
     recipe.update({"_id": ObjectId(recipe_id)},
-                  {
-        'title': request.form.get('title'),
-        'category_name': request.form.get('category_name'),
-        'description': request.form.get('description'),
-        'image_url': request.form.get('image_url'),
-        'ingredients': request.form.get('ingredients'),
-        'serves': request.form.get('serves'),
-        'prep': request.form.get('prep'),
-        'cooks': request.form.get('cooks'),
-        'difficulty': request.form.get('difficulty'),
-        'instructions': request.form.get('instructions'),
-        'tips': request.form.get('tips'),
-    })
+                  {'$set': {
+                      'title': request.form.get('title'),
+                      'category_name': request.form.get('category_name'),
+                      'description': request.form.get('description'),
+                      'image_url': request.form.get('image_url'),
+                      'ingredients': request.form.get('ingredients'),
+                      'serves': request.form.get('serves'),
+                      'prep': request.form.get('prep'),
+                      'cooks': request.form.get('cooks'),
+                      'difficulty': request.form.get('difficulty'),
+                      'instructions': request.form.get('instructions'),
+                      'tips': request.form.get('tips'),
+
+                  }})
+
     return redirect(url_for('thank_you'))
 
 
