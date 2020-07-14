@@ -1,0 +1,29 @@
+html, body {
+    height: 100%;
+}
+
+.container, .row.justify-content-center.align-items-center {
+    height: 100%;
+    min-height: 100%;
+}
+
+.error-img img {
+    width: 100%;
+}
+
+p {
+    font-size: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(53, 53, 53)!important;
+    cursor: pointer;
+    font-weight: 800;
+}
+
+a:hover {
+    color: rgb(14, 14, 14);
+    text-decoration: none;
+    cursor: pointer;
+}

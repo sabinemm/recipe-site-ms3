@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/errors.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container h-100">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="col-8 error-img">
+                <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1594763094/vegansite/500_vu0tdq.png"
+                    alt="500">
+                <p class="text-center pt-2">Woops, something went wrong!</p>
+                <p class="text-center"><a href="{{ url_for('index') }}">Take me back
+                        home!</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

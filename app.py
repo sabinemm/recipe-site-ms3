@@ -9,7 +9,7 @@ from os import getenv
 from datetime import datetime
 load_dotenv()
 
-# config
+# ---- CONFIG ----- #
 
 app = Flask(__name__)
 app.config["MONGO_DBNAME"] = os.getenv(
@@ -20,19 +20,18 @@ app.config['SECRET_KEY'] = os.getenv(
     'SECRET_KEY')
 mongo = PyMongo(app)
 
-
-@app.route('/', methods=['GET', 'POST'])
-def index():
-    return render_template("index.html")
-
-
-# variables
+# ---- VARIABLES ----- #
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M")
 users_collection = mongo.db.users
 
-# users
+# ---- USER ----- #
+
+
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    return render_template("index.html")
 
 
 @app.route('/login')
@@ -44,19 +43,37 @@ def login():
 def register():
     return render_template("register.html")
 
-# app
+# ---- RECIPE PAGES ----- #
 
 
-@app.route('/search', methods=["GET", "POST"])
-def search():
-    mongo.db.recipe.create_index([('$**', 'text')])
-    query = request.form.get("query")
-    result = mongo.db.recipe.find({"$text": {"$search": query}})
-    result_num = mongo.db.recipe.find({"$text": {"$search": query}}).count()
-    if result_num > 0:
-        return render_template("search_results.html", result=result, query=query)
-    else:
-        return render_template("search_results.html", message="No results found. Please try again")
+@app.route('/all')
+def get_all():
+    recipe = mongo.db.recipe.find()
+    return render_template("all.html", recipe=recipe, page_title="All Recipes")
+
+
+@ app.route('/mains')
+def mains():
+    recipe = mongo.db.recipe.find({"$text": {"$search": "mains"}})
+    return render_template("all.html", recipe=recipe, page_title="Mains")
+
+
+@ app.route('/appetizers')
+def appetizers():
+    recipe = mongo.db.recipe.find({"$text": {"$search": "appetizers"}})
+    return render_template("all.html", recipe=recipe, page_title="Appetizers")
+
+
+@ app.route('/desserts')
+def desserts():
+    recipe = mongo.db.recipe.find({"$text": {"$search": "desserts"}})
+    return render_template("all.html", recipe=recipe, page_title="Desserts")
+
+
+@ app.route('/other')
+def other():
+    recipe = mongo.db.recipe.find({"$text": {"$search": "other"}})
+    return render_template("all.html", recipe=recipe, page_title="Other")
 
 
 @ app.route('/recipe/<recipe_id>')
@@ -133,39 +150,33 @@ def sub():
     flash("Sucessfully Subscribed")
     return redirect(url_for('index'))
 
-# Recipe pages
+## ---- SEARCH ----- #
 
 
-@app.route('/all')
-def get_all():
-    recipe = mongo.db.recipe.find()
-    return render_template("all.html", recipe=recipe, page_title="All Recipes")
+@app.route('/search', methods=["GET", "POST"])
+def search():
+    mongo.db.recipe.create_index([('$**', 'text')])
+    query = request.form.get("query")
+    result = mongo.db.recipe.find({"$text": {"$search": query}})
+    result_num = mongo.db.recipe.find({"$text": {"$search": query}}).count()
+    if result_num > 0:
+        return render_template("search_results.html", result=result, query=query)
+    else:
+        return render_template("search_results.html", message="No results found. Please try again")
+
+# ---- ERRORS ----- #
 
 
-@ app.route('/mains')
-def mains():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "mains"}})
-    return render_template("all.html", recipe=recipe, page_title="Mains")
+@app.errorhandler(404)
+def not_found(error):
+    return render_template('errors/404.html'), 404
 
 
-@ app.route('/appetizers')
-def appetizers():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "appetizers"}})
-    return render_template("all.html", recipe=recipe, page_title="Appetizers")
-
-
-@ app.route('/desserts')
-def desserts():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "desserts"}})
-    return render_template("all.html", recipe=recipe, page_title="Desserts")
-
-
-@ app.route('/other')
-def other():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "other"}})
-    return render_template("all.html", recipe=recipe, page_title="Other")
+@app.errorhandler(500)
+def internal_error(error):
+    return render_template('errors/500.html'), 500
 
 
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
-            port=int(os.getenv("PORT", "5000")), debug=True)
+            port=int(os.getenv("PORT", "5000")), debug=True

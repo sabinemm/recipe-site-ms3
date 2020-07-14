@@ -65,12 +65,37 @@
             <div class="form-group">
                 <label for="serves">Amount of Servings</label>
                 <select required value="" id="serves" name="serves" class="form-control">
+                    {% if the_recipe.serves == "2" %}
+                    <option selected>{{the_recipe.serves}}</option>
+                    <option>4</option>
+                    <option>6</option>
+                    <option>8</option>
+                    <option>10</option>
+                    {% elif the_recipe.serves == "4" %}
+                    <option selected>{{the_recipe.serves}}</option>
+                    <option>2</option>
+                    <option>6</option>
+                    <option>8</option>
+                    <option>10</option>
+                    {% elif the_recipe.serves == "6" %}
+                    <option selected>{{the_recipe.serves}}</option>
+                    <option>2</option>
+                    <option>4</option>
+                    <option>8</option>
+                    <option>10</option>
+                    {% elif the_recipe.serves == "8" %}
+                    <option selected>{{the_recipe.serves}}</option>
+                    <option>2</option>
+                    <option>4</option>
+                    <option>6</option>
+                    <option>10</option>
+                    {% elif the_recipe.serves == "10" %}
                     <option selected>{{the_recipe.serves}}</option>
                     <option>2</option>
                     <option>4</option>
                     <option>6</option>
                     <option>8</option>
-                    <option>10</option>
+                    {% endif %}
                 </select>
             </div>
         </div>
@@ -80,10 +105,19 @@
                 <label for="difficulty">Difficulty</label>
                 <select required value="{{the_recipe.difficulty}}" id="difficulty" name="difficulty"
                     class="form-control">
+                    {% if the_recipe.difficulty == "Easy" %}
+                    <option selected>{{the_recipe.difficulty}}</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                    {% elif the_recipe.difficulty == "Medium" %}
+                    <option selected>{{the_recipe.difficulty}}</option>
+                    <option>Easy</option>
+                    <option>Hard</option>
+                    {% else %}
                     <option selected>{{the_recipe.difficulty}}</option>
                     <option>Easy</option>
                     <option>Medium</option>
-                    <option>Hard</option>
+                    {% endif %}
                 </select>
             </div>
         </div>
