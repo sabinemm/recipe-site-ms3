@@ -28,7 +28,7 @@ users_collection = mongo.db.users
 # ---- USER ----- #
 
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def index():
     return render_template("index.html")
 
@@ -149,7 +149,7 @@ def sub():
     flash("Sucessfully Subscribed")
     return redirect(url_for('index'))
 
-## ---- SEARCH ----- #
+# ---- SEARCH ----- #
 
 
 @app.route('/search', methods=["GET", "POST"])
@@ -161,7 +161,7 @@ def search():
     if result_num > 0:
         return render_template("search_results.html", result=result, query=query)
     else:
-        return render_template("search_results.html", message="No results found. Please try again")
+        return render_template("search_results.html", result=result, query=query, message="No results found. Please try again")
 
 # ---- ERRORS ----- #
 

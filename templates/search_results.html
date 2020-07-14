@@ -5,7 +5,7 @@
 </div>
 
 <div class="container">
-    {% for res in result[:10] %}
+    {% for res in result %}
     <section class="col-xs-12 col-sm-6 col-md-12 pb-2 pt-2 bg-light mb-2">
         <article class="search-result row">
             <div class="col-xs-12 col-sm-12 col-md-3 product-box-search ">
@@ -26,11 +26,6 @@
             </div>
         </article>
     </section>
-    {% if not res.title %}
-    <p>nono</p>
-    {% endif %}
-    {% endfor %}
-
 </div>
 
 <p class="pb-5">{{ message }}</p>
