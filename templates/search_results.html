@@ -5,10 +5,10 @@
 </div>
 
 <div class="container">
-    {% for res in result %}
-    <section class="col-xs-12 col-sm-6 col-md-12 pb-2 pt-2 bg-light">
+    {% for res in result[:10] %}
+    <section class="col-xs-12 col-sm-6 col-md-12 pb-2 pt-2 bg-light mb-2">
         <article class="search-result row">
-            <div class="col-xs-12 col-sm-12 col-md-3 product-box-search">
+            <div class="col-xs-12 col-sm-12 col-md-3 product-box-search ">
                 <a href="{{url_for('get_recipe', recipe_id=res._id)}}" title="{{res.title}}"><img
                         src="{{res.image_url}}" alt="{{res.title}} photo" /></a>
             </div>

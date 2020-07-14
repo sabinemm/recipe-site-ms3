@@ -1,29 +1,21 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="recipe-headline">
-    <h2>All Recipes</h2>
+    <h2>{{ page_title }}</h2>
 </div>
 
-<div class="">
-    <div class="row">
-        {% for category in categories %}
-        <div class="col-sm-6 col-md-3 mx-auto p-3 pt-4 text-center text-uppercase">
-            <h6> {{category.category_name}}</h6>
-        </div>
-        {% endfor %}
-    </div>
-</div>
+
 
 <div class="row">
     {% for rec in recipe %}
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12 pt-3">
+    <div class="col-lg-4 col-md-6 col-sm-6 col-12 pt-3 pb-5">
         <div class="product-box">
             <div class="image-wrapper">
                 <a href="{{url_for('get_recipe', recipe_id=rec._id)}}"></a>
                 <img src="{{rec.image_url}}">
             </div>
             <div class="item-content">
-                <h3 class="item-title"><a href="{{url_for('get_recipe', recipe_id=rec._id)}}">{{rec.title}}</a>
+                <h3 class="item-title pt-2"><a href="{{url_for('get_recipe', recipe_id=rec._id)}}">{{rec.title}}</a>
                 </h3>
                 <p>{{rec.description}}</p>
                 <div class="row entry-data">
