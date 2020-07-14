@@ -13,15 +13,13 @@ font-weight: 700;
 font-style: italic;
 */
 
-
 html {
     box-sizing: border-box;
-  }
-  
+}
+
 body {
     font-family: 'Arimo', sans-serif;
-  }
-
+}
 
 @media (max-width: 767.98px) {
     .wrapp {
@@ -29,6 +27,7 @@ body {
         padding-right: 3%;
     }
 }
+
 @media (min-width: 768px) {
     .wrapp {
         padding-left: 10%;
@@ -41,14 +40,14 @@ body {
 a {
     text-decoration: none;
     color: rgb(53, 53, 53)!important;
-    cursor:pointer;
+    cursor: pointer;
     font-weight: 600;
-  }
+}
 
 a:hover {
     color: rgb(14, 14, 14);
-     text-decoration:none; 
-     cursor:pointer;  
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .container {
@@ -59,11 +58,11 @@ a:hover {
 .form-control:focus {
     border-color: #83A153!important;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25)!important;
-} 
+}
 
 .form-control {
     border-radius: 0!important;
-    } 
+}
 
 .btn {
     border-radius: 0!important;
@@ -72,12 +71,13 @@ a:hover {
 /* FIRST NAV */
 
 .site-header {
-background-color: rgb(228, 226, 226);
+    background-color: rgb(228, 226, 226);
 }
 
 .small-link {
     font-size: small;
 }
+
 .py-2 {
     margin-left: 5%;
 }
@@ -87,10 +87,10 @@ background-color: rgb(228, 226, 226);
 .main-logo img {
     padding-right: 0%;
     padding-left: 0%;
-    }
-    
+}
+
 /* MAIN NAV */
-    
+
 .navbar-light {
     border-top: 2px solid rgb(19, 19, 19);
     border-bottom: 2px solid rgb(19, 19, 19);
@@ -99,7 +99,7 @@ background-color: rgb(228, 226, 226);
 /* SEARCH BAR */
 
 #custom-search-form {
-    margin:0;
+    margin: 0;
     margin-top: 0px;
     padding: 0;
 }
@@ -119,25 +119,26 @@ background-color: rgb(228, 226, 226);
     margin-bottom: 0;
 }
 
-.search-query:focus + button {
-    z-index: 3;   
+.search-query:focus+button {
+    z-index: 3;
 }
 
 /* FOOTER */
 
 .footer_area {
-	padding:60px 0 20px;
-	position: relative;
-	color: rgb(53, 53, 53);
-	background: rgb(228, 226, 226);
+    padding: 60px 0 20px;
+    position: relative;
+    color: rgb(53, 53, 53);
+    background: rgb(228, 226, 226);
     word-wrap: break-word;
 }
 
-.single_ftr form{
-	margin-top: 8px;
+.single_ftr form {
+    margin-top: 8px;
 }
-.single_ftr p{
-	margin-bottom: 10px;
+
+.single_ftr p {
+    margin-bottom: 10px;
 }
 
 .newsletter_form .form-control {
@@ -146,35 +147,37 @@ background-color: rgb(228, 226, 226);
     margin: 0;
     padding: 8px 20px;
     width: 100%;
-	position: relative;
-	background: transparent;
-	color: #fff;
-	border-radius: 0;
+    position: relative;
+    background: transparent;
+    color: #fff;
+    border-radius: 0;
 }
 
 .newsletter_form button {
-	border: inherit;
-	border-radius: 0;
-	background: transparent;
-	color: #6C757D;
-	text-transform: uppercase;
-	box-shadow: none;
-	border: 1px solid #d6d5d5;
-	transition: 0.5s;
-	position: relative;
-	padding: 12px 17px;
-	transition: .5s;
+    border: inherit;
+    border-radius: 0;
+    background: transparent;
+    color: #6C757D;
+    text-transform: uppercase;
+    box-shadow: none;
+    border: 1px solid #d6d5d5;
+    transition: 0.5s;
+    position: relative;
+    padding: 12px 17px;
+    transition: .5s;
 }
-.newsletter_form button:hover,
-.newsletter_form button:hover{
-	background: transparent;
-	color: #83A153;
-	opacity: .9;
+
+.newsletter_form button:hover, .newsletter_form button:hover {
+    background: transparent;
+    color: #83A153;
+    opacity: .9;
 }
+
 .newsletter_form ::-webkit-input-placeholder {
     color: #fff;
     opacity: 1
 }
+
 .ftr_social_icon ul {
     padding-inline-start: 0;
 }
@@ -183,17 +186,19 @@ background-color: rgb(228, 226, 226);
     padding-bottom: 7px;
     color: #fff;
 }
+
 .single_ftr a {
     color: #fff;
 }
+
 .single_ftr a:hover {
     color: #83A153;
 }
 
 .ftr_social_icon li {
-	display: inline-block;
-	text-align: center;
-	padding: 4px;
+    display: inline-block;
+    text-align: center;
+    padding: 4px;
 }
 
 .ftr_social_icon ul li a {
@@ -206,22 +211,23 @@ background-color: rgb(228, 226, 226);
     line-height: 32px;
     padding: 4px 8px;
     width: 40px;
-	transition: .5s;
+    transition: .5s;
 }
-.ftr_social_icon ul li a:hover{
-	background: #83A153;
-	border-color: #83A153;
-	color: #fff;
+
+.ftr_social_icon ul li a:hover {
+    background: #83A153;
+    border-color: #83A153;
+    color: #fff;
 }
 
 .ftr_btm_area {
-	background: transparent;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	border-top: 1px dotted #888;
-	margin-top: 28px;
-	z-index: 100;
-	position: relative;
+    background: transparent;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    border-top: 1px dotted #888;
+    margin-top: 28px;
+    z-index: 100;
+    position: relative;
 }
 
 .footer_area ul {
@@ -236,7 +242,7 @@ background-color: rgb(228, 226, 226);
 
 .recipe-headline p {
     font-size: 1rem;
-    color: #a4a4a4; 
+    color: #a4a4a4;
 }
 
 .recipe-headline h2 {
@@ -250,14 +256,15 @@ background-color: rgb(228, 226, 226);
 }
 
 .recipe-info {
-    background-color:rgb(238, 238, 238);
+    background-color: rgb(238, 238, 238);
     text-align: center;
 }
+
 .recipe-info h6 {
     font-size: 1rem;
     font-weight: 700;
     margin-top: 30px;
- }
+}
 
 .recipe-info p {
     color: #474747;
@@ -277,7 +284,8 @@ background-color: rgb(228, 226, 226);
 .single-preparation-step {
     position: relative;
     z-index: 1;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+}
 
 .single-preparation-step h4 {
     color: #474747;
@@ -285,7 +293,7 @@ background-color: rgb(228, 226, 226);
     max-width: 60px;
     width: 60px;
 }
-          
+
 .ingredients h4 {
     margin-bottom: 30px;
     margin-top: 50px;
@@ -299,7 +307,7 @@ background-color: rgb(228, 226, 226);
     margin-bottom: 100px;
 }
 
-.form-check , .btn-primary { 
+.form-check, .btn-primary {
     margin-bottom: 30px;
 }
 
@@ -313,13 +321,14 @@ background-color: rgb(228, 226, 226);
     flex-direction: row;
     overflow: hidden;
     position: relative;
-  }
-  .image-wrapper img {
-      object-fit: cover;
+}
+
+.image-wrapper img {
+    object-fit: cover;
     flex: 1;
     height: 100%;
     width: auto;
-  }
+}
 
 .entry-data {
     display: inline;
@@ -336,15 +345,15 @@ background-color: rgb(228, 226, 226);
 .jumbotron {
     background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594225831/vegansite/Vegan-Frittata__rxd4dw.png) center no-repeat;
     background-size: cover;
-   }
+}
 
-   .jumbotron h1 {
-    font-family: 'Playfair Display', serif; 
+.jumbotron h1 {
+    font-family: 'Playfair Display', serif;
     font-weight: 400;
     font-size: 3em;
-   }
+}
 
-   .square {
+.square {
     width: 100%;
     padding-bottom: 100%;
     background-size: cover;
@@ -352,46 +361,40 @@ background-color: rgb(228, 226, 226);
     margin-bottom: 30px;
 }
 
-
 /* LOGIN */
 
-
-/* .card-body {
-    border: 2px solid black;
-  } */
-  
-  .card-signin .card-title {
+.card-signin .card-title {
     margin-bottom: 2rem;
     font-weight: 400;
     font-size: 1.5rem;
-  }
-  
-  .card-signin .card-body {
+}
+
+.card-signin .card-body {
     padding: 2rem;
-  }
-  
-  .form-signin {
+}
+
+.form-signin {
     width: 100%;
-  }
-  
-  .form-signin .btn {
+}
+
+.form-signin .btn {
     font-size: 80%;
     border-radius: 0rem;
     letter-spacing: .1rem;
     font-weight: bold;
     padding: 1rem;
     transition: all 0.2s;
-  }
-  
-  .form-label-group {
+}
+
+.form-label-group {
     position: relative;
     margin-bottom: 1rem;
-  }
+}
 
-  .login-bg {
- background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/c_scale,q_65,w_1787/v1594225733/vegansite/close-up-photo-of-thyme-leaves-4113901-2_p62mvv.jpg);
- background-size: cover;
-    }
+.login-bg {
+    background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/c_scale,q_65,w_1787/v1594225733/vegansite/close-up-photo-of-thyme-leaves-4113901-2_p62mvv.jpg);
+    background-size: cover;
+}
 
 .thankyou {
     background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594292874/vegansite/white-table-with-tasty-scattered-almonds-4033328_copy_rxzu2a.jpg)
@@ -399,4 +402,21 @@ background-color: rgb(228, 226, 226);
 
 .shop img {
     width: 100%;
+}
+
+/* SEARCH RESULTS PAGE */
+
+.product-box-search {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+}
+
+.product-box-search a img {
+    object-fit: cover;
+    flex: 1;
+    width: 100%;
+    height: auto;
 }

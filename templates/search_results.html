@@ -4,27 +4,36 @@
     <h2>Search Results</h2>
 </div>
 
-
-
-<div class="row">
+<div class="container">
     {% for res in result %}
-    <div class="col-lg-4 col-md-6 col-sm-6 col-12 pt-3">
-        <div class="product-box">
-            <div class="image-wrapper">
-                <img src="{{res.image_url}}">
+    <section class="col-xs-12 col-sm-6 col-md-12 pb-2 pt-2 bg-light">
+        <article class="search-result row">
+            <div class="col-xs-12 col-sm-12 col-md-3 product-box-search">
+                <a href="{{url_for('get_recipe', recipe_id=res._id)}}" title="{{res.title}}"><img
+                        src="{{res.image_url}}" alt="{{res.title}} photo" /></a>
             </div>
-            <div class="item-content">
-                <h3 class="item-title"><a href="">{{res.title}}</a>
-                </h3>
-                <p>{{res.description}}</p>
-                <div class="row entry-data">
-                    <div class="col-6"><i class="fas fa-clock"></i>{{res.cooks}}</div>
-                    <div class="col-6"><i class="fas fa-user"></i>by Jane</div>
+            <div class="col-xs-12 col-sm-12 col-md-2">
+                <div class="entry-data">
+                    <div class="col-12"><i class="fas fa-clock"></i>{{res.cooks}}</div>
+                    <div class="col-12"><i class="fas fa-user"></i>by Jane</div>
                 </div>
             </div>
-        </div>
-    </div>
+            <div class="col-xs-12 col-sm-12 col-md-7">
+                <h3><a href="{{url_for('get_recipe', recipe_id=res._id)}}" title="{{res.title}}">{{res.title}}</a></h3>
+                <p>{{res.description}}</p>
+                <p style="text-overflow: ellipsis;overflow: hidden; white-space: nowrap;">
+                    {{res.instructions}}</p>
+            </div>
+        </article>
+    </section>
+    {% if not res.title %}
+    <p>nono</p>
+    {% endif %}
     {% endfor %}
+
 </div>
+
+<p class="pb-5">{{ message }}</p>
+
 
 {% endblock %}

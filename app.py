@@ -59,10 +59,14 @@ def search():
     mongo.db.recipe.create_index([('$**', 'text')])
     query = request.form.get("query")
     result = mongo.db.recipe.find({"$text": {"$search": query}})
-    return render_template("search_results.html", result=result, query=query)
+    result_num = mongo.db.recipe.find({"$text": {"$search": query}}).count()
+    if result_num > 0:
+        return render_template("search_results.html", result=result, query=query)
+    else:
+        return render_template("search_results.html", message="No results found. Please try again")
 
 
-@app.route('/recipe/<recipe_id>')
+@ app.route('/recipe/<recipe_id>')
 def get_recipe(recipe_id):
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     return render_template("recipe.html", recipe=recipe)
