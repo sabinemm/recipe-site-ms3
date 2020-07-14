@@ -56,12 +56,9 @@ def get_all():
 
 @app.route('/search', methods=["GET", "POST"])
 def search():
-    #indexes = mongo.db.recipe.create_index({"query": "text"})
-    mongo.db.recipe.create_index(
-        {"ingredients": "text", "description": "text"})
+    mongo.db.recipe.create_index([('$**', 'text')])
     query = request.form.get("query")
-    print("query: {}".format(str(query)))
-    result = list(mongo.db.recipe.find({"$text": {"$search": query}}))
+    result = mongo.db.recipe.find({"$text": {"$search": query}})
     return render_template("search_results.html", result=result, query=query)
 
 
@@ -121,7 +118,6 @@ def update_recipe(recipe_id):
                       'difficulty': request.form.get('difficulty'),
                       'instructions': request.form.get('instructions'),
                       'tips': request.form.get('tips'),
-
                   }})
 
     return redirect(url_for('thank_you'))
