@@ -1,7 +1,6 @@
 
 import os
 from flask import Flask, render_template, redirect, request, url_for, session, flash
-from flask_login import LoginManager, UserMixin
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
