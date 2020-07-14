@@ -29,7 +29,7 @@ users_collection = mongo.db.users
 # ---- USER ----- #
 
 
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/')
 def index():
     return render_template("index.html")
 
