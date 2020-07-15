@@ -335,7 +335,7 @@ a:hover {
     padding-right: 1em;
 }
 
-/* HOMEPAGE */
+/* INDEX PAGE */
 
 .jumbotron {
     background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594225831/vegansite/Vegan-Frittata__rxd4dw.png) center no-repeat;
@@ -354,6 +354,7 @@ a:hover {
     background-size: cover;
     background-position: center;
     margin-bottom: 30px;
+    position: relative;
 }
 
 /* LOGIN */
@@ -411,7 +412,6 @@ a:hover {
 
 .product-box-search a img {
     object-fit: cover;
-    flex: 1;
     width: 100%;
     height: auto;
 }

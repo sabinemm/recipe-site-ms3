@@ -48,6 +48,11 @@ I kept the color pallette very simple and clean because the content of the page 
 ### Functionality
 ### Existing features
 ### Future features
+
+[] Pagination
+[] Google login 
+[] Lazy loading images 
+
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
 
@@ -102,7 +107,7 @@ Below are a list of the programming languages, technologies, frameworks and reso
     * Flask
 * MongoDB
 * Bootstrap
-* Visual Studio Code development environment
+* Visual Studio Code
     * Live Server Extension
     * Color Picker Extension
     * Markdown Preview Extension
@@ -113,7 +118,6 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * Google Fonts
 * Adobe Fonts
 * Google Chrome Developer tools
-* Firefox Inspector
 * Safari Web Inspector
 * Adobe Suite CC
 * Cloudinary.com
@@ -234,6 +238,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Login](https://startbootstrap.com/snippets/login/)
 
 [Flash](https://pythonprogramming.net/flash-flask-tutorial/)
+
+[Dissapearing message](https://stackoverflow.com/questions/1911290/make-div-text-disappear-after-5-seconds-using-jquery)
 
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
