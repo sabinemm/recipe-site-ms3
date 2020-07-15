@@ -1,7 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="recipe-headline">
-    <h2>Edit Recipe</h2>
+    <h2>{{ page_title }}</h2>
 </div>
 
 <form method="POST" action="{{ url_for('update_recipe', recipe_id=the_recipe._id) }}" class="pb-5">
@@ -35,7 +35,7 @@
         <label for="image_url">Image Url</label>
         <input required value="{{the_recipe.image_url}}" type="text" class="form-control" name="image_url"
             id="image_url" aria-describedby="recipe description">
-        <small id="" class="form-text text-muted">Picture of the dish. Use a valid URL
+        <small class="form-text text-muted">Picture of the dish. Use a valid URL
             - for example - shared picture
             hosted on Google Drive</small>
     </div>
@@ -64,38 +64,12 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="serves">Amount of Servings</label>
-                <select required value="" id="serves" name="serves" class="form-control">
-                    {% if the_recipe.serves == "2" %}
-                    <option selected>{{the_recipe.serves}}</option>
-                    <option>4</option>
-                    <option>6</option>
-                    <option>8</option>
-                    <option>10</option>
-                    {% elif the_recipe.serves == "4" %}
-                    <option selected>{{the_recipe.serves}}</option>
-                    <option>2</option>
-                    <option>6</option>
-                    <option>8</option>
-                    <option>10</option>
-                    {% elif the_recipe.serves == "6" %}
-                    <option selected>{{the_recipe.serves}}</option>
-                    <option>2</option>
-                    <option>4</option>
-                    <option>8</option>
-                    <option>10</option>
-                    {% elif the_recipe.serves == "8" %}
-                    <option selected>{{the_recipe.serves}}</option>
-                    <option>2</option>
-                    <option>4</option>
-                    <option>6</option>
-                    <option>10</option>
-                    {% elif the_recipe.serves == "10" %}
-                    <option selected>{{the_recipe.serves}}</option>
-                    <option>2</option>
-                    <option>4</option>
-                    <option>6</option>
-                    <option>8</option>
-                    {% endif %}
+                <select required value="serves" id="serves" name="serves" class="form-control">
+                    <option {% if the_recipe.serves == "2" %} selected {% endif %}>2</option>
+                    <option {% if the_recipe.serves == "4" %} selected {% endif %}>4</option>
+                    <option {% if the_recipe.serves == "6" %} selected {% endif %}>6</option>
+                    <option {% if the_recipe.serves == "8" %} selected {% endif %}>8</option>
+                    <option {% if the_recipe.serves == "10" %} selected {% endif %}>10</option>
                 </select>
             </div>
         </div>
@@ -103,21 +77,10 @@
         <div class="col-sm-12 col-md-6">
             <div class="form-group">
                 <label for="difficulty">Difficulty</label>
-                <select required value="{{the_recipe.difficulty}}" id="difficulty" name="difficulty"
-                    class="form-control">
-                    {% if the_recipe.difficulty == "Easy" %}
-                    <option selected>{{the_recipe.difficulty}}</option>
-                    <option>Medium</option>
-                    <option>Hard</option>
-                    {% elif the_recipe.difficulty == "Medium" %}
-                    <option selected>{{the_recipe.difficulty}}</option>
-                    <option>Easy</option>
-                    <option>Hard</option>
-                    {% else %}
-                    <option selected>{{the_recipe.difficulty}}</option>
-                    <option>Easy</option>
-                    <option>Medium</option>
-                    {% endif %}
+                <select class="form-control" value="difficulty" name="difficulty" id="difficulty">
+                    <option {% if the_recipe.difficulty == "Easy" %} selected {% endif %}>Easy</option>
+                    <option {% if the_recipe.difficulty == "Medium" %} selected {% endif %}>Medium</option>
+                    <option {% if the_recipe.difficulty == "Hard" %} selected {% endif %}>Hard</option>
                 </select>
             </div>
         </div>
@@ -161,7 +124,7 @@
         <label class="form-check-label" for="exampleCheck1">Yes, I have double checked spelling and grammar. The recipe
             is plant based and gluten-free.</label>
     </div>
-    <button type="submit" class="btn btn-success">Submit Edit</button>
+    <button type="submit" class="btn btn-success">Submit</button>
 
 </form>
 

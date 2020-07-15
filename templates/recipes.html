@@ -1,10 +1,8 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="recipe-headline">
+<div class="recipe-headline text-capitalize">
     <h2>{{ page_title }}</h2>
 </div>
-
-
 
 <div class="row">
     {% if recipe.count() > 0 %}
@@ -28,7 +26,7 @@
     </div>
     {% endfor %}
     {% else %}
-    <div>No recipes found</div>
+    <p class="pb-5">No recipes found!</p>
     {% endif %}
 </div>
 

@@ -76,10 +76,7 @@ a:hover {
 
 .small-link {
     font-size: small;
-}
-
-.py-2 {
-    margin-left: 5%;
+    padding-right: 5%;
 }
 
 /* SITE LOGO */

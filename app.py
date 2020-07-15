@@ -50,6 +50,8 @@ def get_all(category):
     if category == "all":
         category = "All recipes"
         recipe = mongo.db.recipe.find()
+    elif category == "other":
+        recipe = mongo.db.recipe.find({"category_name": "Other"})
     else:
         recipe = mongo.db.recipe.find({"$text": {"$search": category}})
     return render_template("recipes.html", recipe=recipe, page_title=category)
@@ -61,10 +63,10 @@ def get_recipe(recipe_id):
     return render_template("recipe.html", recipe=recipe)
 
 
-@ app.route('/submit_recipe')
-def submit_recipe():
+@ app.route('/add_recipe')
+def add_recipe():
     categories = mongo.db.categories.find()
-    return render_template("submit_recipe.html", categories=categories)
+    return render_template("recipe_form.html", categories=categories, the_recipe={}, page_title="Add Recipe")
 
 
 @ app.route('/send_recipe', methods=['POST'])
@@ -90,7 +92,7 @@ def edit_recipe(recipe_id):
 
 @ app.route('/delete_recipe/<recipe_id>')
 def delete_recipe(recipe_id):
-    the_recipe = mongo.db.recipe.remove({"_id": ObjectId(recipe_id)})
+    the_recipe = mongo.db.recipe.delete_one({"_id": ObjectId(recipe_id)})
     return render_template('index.html', the_recipe=the_recipe)
 
 
@@ -98,20 +100,20 @@ def delete_recipe(recipe_id):
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     categories_cursor = mongo.db.categories.find()
-    recipe.update({"_id": ObjectId(recipe_id)},
-                  {'$set': {
-                      'title': request.form.get('title'),
-                      'category_name': request.form.get('category_name'),
-                      'description': request.form.get('description'),
-                      'image_url': request.form.get('image_url'),
-                      'ingredients': request.form.get('ingredients'),
-                      'serves': request.form.get('serves'),
-                      'prep': request.form.get('prep'),
-                      'cooks': request.form.get('cooks'),
-                      'difficulty': request.form.get('difficulty'),
-                      'instructions': request.form.get('instructions'),
-                      'tips': request.form.get('tips'),
-                  }})
+    recipe.update_one({"_id": ObjectId(recipe_id)},
+                      {'$set': {
+                          'title': request.form.get('title'),
+                          'category_name': request.form.get('category_name'),
+                          'description': request.form.get('description'),
+                          'image_url': request.form.get('image_url'),
+                          'ingredients': request.form.get('ingredients'),
+                          'serves': request.form.get('serves'),
+                          'prep': request.form.get('prep'),
+                          'cooks': request.form.get('cooks'),
+                          'difficulty': request.form.get('difficulty'),
+                          'instructions': request.form.get('instructions'),
+                          'tips': request.form.get('tips'),
+                      }})
 
     return redirect(url_for('thank_you'))
 
@@ -127,7 +129,7 @@ def sub():
     return_data = request.form.to_dict()
     sub.insert_one(return_data)
     flash("Sucessfully Subscribed")
-    return redirect(url_for('index'))
+    return redirect(request.referrer)
 
 # ---- SEARCH ----- #
 
