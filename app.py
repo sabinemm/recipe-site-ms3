@@ -45,34 +45,14 @@ def register():
 # ---- RECIPE PAGES ----- #
 
 
-@app.route('/all')
-def get_all():
-    recipe = mongo.db.recipe.find()
-    return render_template("all.html", recipe=recipe, page_title="All Recipes")
-
-
-@ app.route('/mains')
-def mains():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "mains"}})
-    return render_template("all.html", recipe=recipe, page_title="Mains")
-
-
-@ app.route('/appetizers')
-def appetizers():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "appetizers"}})
-    return render_template("all.html", recipe=recipe, page_title="Appetizers")
-
-
-@ app.route('/desserts')
-def desserts():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "desserts"}})
-    return render_template("all.html", recipe=recipe, page_title="Desserts")
-
-
-@ app.route('/other')
-def other():
-    recipe = mongo.db.recipe.find({"$text": {"$search": "other"}})
-    return render_template("all.html", recipe=recipe, page_title="Other")
+@app.route('/recipes/<category>')
+def get_all(category):
+    if category == "all":
+        category = "All recipes"
+        recipe = mongo.db.recipe.find()
+    else:
+        recipe = mongo.db.recipe.find({"$text": {"$search": category}})
+    return render_template("recipes.html", recipe=recipe, page_title=category)
 
 
 @ app.route('/recipe/<recipe_id>')

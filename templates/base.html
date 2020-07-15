@@ -45,19 +45,19 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="{{ url_for('get_all') }}">ALL</a>
+                        <a class="nav-link" href="{{ url_for('get_all', category='all') }}">ALL</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('mains') }}">MAINS</a>
+                        <a class="nav-link" href="{{ url_for('get_all', category='mains') }}">MAINS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('appetizers') }}">APPETIZERS</a>
+                        <a class="nav-link" href="{{ url_for('get_all', category='appetizers') }}">APPETIZERS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('desserts') }}">DESSERTS</a>
+                        <a class="nav-link" href="{{ url_for('get_all', category='desserts') }}">DESSERTS</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ url_for('other') }}">OTHER</a>
+                        <a class="nav-link" href="{{ url_for('get_all', category='other') }}">OTHER</a>
                     </li>
                 </ul>
                 <!---SEARCH BAR-->
@@ -95,7 +95,7 @@
                     <div class="single_ftr">
                         <ul>
                             <li><a href="{{ url_for('index') }}">HOME</a></li>
-                            <li><a href="{{ url_for('get_all') }}">ALL RECIPES</a></li>
+                            <li><a href="">ALL RECIPES</a></li>
                             <li><a href="{{ url_for('submit_recipe') }}">SUBMIT RECIPE</a></li>
                             <li><a href="{{ url_for('shop') }}">SHOP</a></li>
                         </ul>
@@ -117,7 +117,7 @@
                                 {% with messages = get_flashed_messages() %}
                                 {% if messages %}
                                 {% for message in messages %}
-                                <div class="alert alert-dark alert-dismissible" role="alert">
+                                <div class="alert alert-warning alert-dismissible" role="alert">
                                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                                             aria-hidden="true">×</span></button>
                                     {{message}}
