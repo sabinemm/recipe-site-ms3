@@ -104,17 +104,16 @@
 
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="single_ftr content" id="subscribe">
-                        <div class="newsletter_form input-group md-form form-sm form-2 pl-0">
-                            <a>SIGN UP FOR WEEKLY RECIPE IDEAS</a>
-                            <form method="POST" action="{{url_for('sub')}}" class="form-inline">
-                                <input required type="email" class="form-control my-0 py-1"
-                                    placeholder="Enter your email" name="sub_email" id="sub_email">
-                                <div class="input-group-append">
+                        <div class="newsletter_form row">
+                            <div class="col-12">
+                                <a class="pr-5">SIGN UP FOR WEEKLY RECIPE IDEAS</a>
+                                <form method="POST" action="{{url_for('sub')}}" class="form-inline">
+                                    <input type="email" class="form-control" placeholder="Enter your email"
+                                        name="sub_email" id="sub_email">
                                     <span class="input-group-btn">
-                                        <button class="btn border-left-0 border" type="submit"><i
-                                                class="fas fa-check"></i></button>
+                                        <button class="btn" type="submit"><i class="fas fa-check"></i></button>
                                     </span>
-                                </div>
+                                </form>
                                 {% with messages = get_flashed_messages() %}
                                 {% if messages %}
                                 {% for message in messages %}
@@ -126,8 +125,8 @@
                                 {% endfor %}
                                 {% endif %}
                                 {% endwith %}
-                            </form>
-
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>

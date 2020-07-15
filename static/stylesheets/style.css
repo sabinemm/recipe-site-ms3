@@ -144,9 +144,7 @@ a:hover {
 .newsletter_form .form-control {
     height: 50px;
     line-height: 50px;
-    margin: 0;
-    padding: 8px 20px;
-    width: 100%;
+    width: 86%;
     position: relative;
     background: transparent;
     color: #fff;

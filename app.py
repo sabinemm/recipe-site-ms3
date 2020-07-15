@@ -28,7 +28,7 @@ users_collection = mongo.db.users
 # ---- USER ----- #
 
 
-@app.route('/', methods=["GET", "POST"])
+@app.route('/')
 def index():
     return render_template("index.html")
 
@@ -152,7 +152,7 @@ def sub():
 # ---- SEARCH ----- #
 
 
-@app.route('/search', methods=["GET", "POST"])
+@ app.route('/search', methods=["GET", "POST"])
 def search():
     mongo.db.recipe.create_index([('$**', 'text')])
     query = request.form.get("query")
@@ -166,12 +166,12 @@ def search():
 # ---- ERRORS ----- #
 
 
-@app.errorhandler(404)
+@ app.errorhandler(404)
 def not_found(error):
     return render_template('errors/404.html'), 404
 
 
-@app.errorhandler(500)
+@ app.errorhandler(500)
 def internal_error(error):
     return render_template('errors/500.html'), 500
 
