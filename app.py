@@ -5,7 +5,9 @@ from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
 from dotenv import load_dotenv, find_dotenv
 from os import getenv
+from functools import wraps
 from datetime import datetime
+#from werkzeug.security import generate_password_hash, check_password_hash
 load_dotenv()
 
 # ---- CONFIG ----- #
@@ -28,14 +30,47 @@ users_collection = mongo.db.users
 # ---- USER ----- #
 
 
+def login_required(f):
+    @wraps(f)
+    def wrap(*args, **kwargs):
+        if 'logged_in' in session:
+            return f(*args, **kwargs)
+        else:
+            flash('You need to login first.')
+            return redirect(url_for('login'))
+    return wrap
+
+
 @app.route('/')
+@login_required
 def index():
     return render_template("index.html")
 
 
-@app.route('/login')
+@app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template("login.html")
+    error = None
+    if request.method == 'POST':
+        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
+            error = 'Invalid username or password. Please try again!'
+        else:
+            session['logged_in'] = True
+            flash('You were just logged in')
+            return redirect(url_for('welcome'))
+    return render_template("users/login.html", error=error)
+
+
+@app.route('/welcome')
+def welcome():
+    return render_template("users/welcome.html")
+
+
+@ app.route('/logout')
+@login_required
+def logout():
+    session.pop('logged_in', None)
+    flash('You were logged out.')
+    return redirect(url_for('index'))
 
 
 @app.route('/register')
@@ -138,7 +173,7 @@ def sub():
 def search():
     mongo.db.recipe.create_index([('$**', 'text')])
     query = request.form.get("query")
-    result = mongo.db.recipe.find({"$text": {"$search": query}})
+    result = mongo.db.recipe.find({"$text": {"$search": query}}).limit(10)
     result_num = mongo.db.recipe.find({"$text": {"$search": query}}).count()
     if result_num > 0:
         return render_template("search_results.html", result=result, query=query)

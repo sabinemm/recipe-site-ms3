@@ -52,6 +52,7 @@ I kept the color pallette very simple and clean because the content of the page 
 [] Pagination
 [] Google login 
 [] Lazy loading images 
+[] Prevent duplicate subscribers
 
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
@@ -240,6 +241,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Flash](https://pythonprogramming.net/flash-flask-tutorial/)
 
 [Dissapearing message](https://stackoverflow.com/questions/1911290/make-div-text-disappear-after-5-seconds-using-jquery)
+
+[Login](https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/)
 
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
