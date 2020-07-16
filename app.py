@@ -33,7 +33,7 @@ users_collection = mongo.db.users
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
-        if 'logged_in' in session:
+        if 'user' in session:
             return f(*args, **kwargs)
         else:
             flash('You need to login first.')
@@ -42,7 +42,6 @@ def login_required(f):
 
 
 @app.route('/')
-@login_required
 def index():
     return render_template("index.html")
 
@@ -92,6 +91,7 @@ def login():
 
 
 @app.route('/profile/<username>', methods=["GET", "POST"])
+@login_required
 def profile(username):
     recipe = mongo.db.recipe.find()
     username = mongo.db.users.find_one(
@@ -103,10 +103,10 @@ def profile(username):
 
 
 @ app.route('/logout')
-@ login_required
 def logout():
-    session.pop('logged_in', None)
-    return redirect(url_for('index'))
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for('login'))
 
 # ---- RECIPE PAGES ----- #
 
