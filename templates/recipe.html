@@ -77,13 +77,16 @@
 
     </div>
 </div>
-
+{% if user|lower == username|lower %}
 <div class="pb-5">
     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"><button class="btn btn-dark text-uppercase">
             EDIT</button></a>
     <button type="button" class="btn btn-dark text-uppercase" data-toggle="modal" data-target="#delete">
         DELETE</button>
 </div>
+{% endif %}
+
+
 
 <!-- Modal -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete_recipe" aria-hidden="true">

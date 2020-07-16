@@ -93,12 +93,13 @@ def login():
 @app.route('/profile/<username>', methods=["GET", "POST"])
 @login_required
 def profile(username):
-    recipe = mongo.db.recipe.find()
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
-
+    recipe = mongo.db.recipe.find({"username": username})
     if session["user"]:
         return render_template("users/profile.html", recipe=recipe, username=username)
+        if user == 'admin':
+            recipe = recipe = mongo.db.recipe.find()
     return render_template("users/login.html")
 
 
@@ -125,8 +126,11 @@ def get_all(category):
 
 @ app.route('/recipe/<recipe_id>')
 def get_recipe(recipe_id):
+    user = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    return render_template("recipe.html", recipe=recipe)
+    username = recipe.get("username")
+    return render_template("recipe.html", recipe=recipe, user=user, username=username)
 
 
 @ app.route('/add_recipe')
