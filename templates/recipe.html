@@ -2,8 +2,15 @@
 
 <div class="recipe-headline">
     <h2>{{recipe.title}}</h2>
-    <p>Posted: {{recipe.date_added}}</p>
-    <p>Category: {{recipe.category_name}}</p>
+    <div class="row pl-3">
+        <p>Posted by: </p>
+        <span>
+            <p class="text-capitalize">&nbsp;{{recipe.username}}&nbsp;</p>
+        </span>
+        <p class="text-lowercase"> at {{recipe.date_added}} in category:
+            {{recipe.category_name}}</p>
+    </div>
+
 </div>
 
 <!-- Receipe Img -->
@@ -77,7 +84,7 @@
 
     </div>
 </div>
-{% if user|lower == username|lower %}
+{% if user|lower == username|lower or user|lower == "admin"|lower %}
 <div class="pb-5">
     <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"><button class="btn btn-dark text-uppercase">
             EDIT</button></a>

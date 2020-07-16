@@ -1,17 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Playfair+Display:wght@400;500&display=swap');
 @import url("https://use.typekit.net/ofu8gcr.css");
-/*
-font-family: 'Arimo', sans-serif;
-font-family: 'Playfair Display', serif;
-
-font-family: linotype-didot-headline, serif;
-font-weight: 400;
-font-style: normal;
-
-font-family: linotype-didot, serif;
-font-weight: 700;
-font-style: italic;
-*/
 
 html {
     box-sizing: border-box;
@@ -241,6 +228,16 @@ a:hover {
 }
 
 .recipe-headline h2 {
+    font-family: linotype-didot-headline, serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2rem;
+    color: rgb(14, 14, 14);
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.ad-headline h2 {
     font-family: linotype-didot, serif;
     font-weight: 700;
     font-style: italic;

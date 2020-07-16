@@ -38,6 +38,8 @@
 ### Research
 ### Wireframes
 ### Design
+
+Fonts used: [Dazzle Unicase](https://fonts.adobe.com/fonts/dazzle-unicase), [Playfair Display](https://fonts.adobe.com/fonts/playfair), [Linotype Didot](https://fonts.adobe.com/fonts/linotype-didot), [Arimo](https://fonts.adobe.com/fonts/arimo)
 ### Color Scheme
 
 I kept the color pallette very simple and clean because the content of the page is inevitably very colorful.
@@ -247,6 +249,10 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Sign up](https://github.com/TravelTimN/flask-task-manager-project/blob/master/app.py)
 
 [Password Hash](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
+
+[Message flashing](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
+
+[How to store passwords securely using Werkzeug](https://techmonger.github.io/4/secure-passwords-werkzeug/)
 
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
