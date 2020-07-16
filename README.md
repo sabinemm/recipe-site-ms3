@@ -244,6 +244,10 @@ After that process, the app was live and running remotely in Heroku's servers.
 
 [Login](https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/)
 
+[Sign up](https://github.com/TravelTimN/flask-task-manager-project/blob/master/app.py)
+
+[Password Hash](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
+
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
 

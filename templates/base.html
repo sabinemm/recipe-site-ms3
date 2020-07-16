@@ -19,7 +19,8 @@
             <a class="small-link" href="{{ url_for('index') }}">HOME</a>
             <a class="small-link" href="{{ url_for('shop') }}">SHOP</a>
             <a class="small-link" href="#sub_email">SUBSCRIBE</a>
-            <a class="small-link" href="{{ url_for('login') }}">LOGIN/SIGNUP</a>
+            <a class="small-link" href="{{ url_for('login') }}">LOGIN</a>
+            <a class="small-link" href="{{ url_for('signup') }}">SIGNUP</a>
             <a class="small-link" href="{{ url_for('logout') }}">LOGOUT</a>
             <p class="small-link">{% for message in get_flashed_messages() %}
                 {{ message }}

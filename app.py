@@ -7,7 +7,7 @@ from dotenv import load_dotenv, find_dotenv
 from os import getenv
 from functools import wraps
 from datetime import datetime
-#from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 load_dotenv()
 
 # ---- CONFIG ----- #
@@ -47,40 +47,71 @@ def index():
     return render_template("index.html")
 
 
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+
+        if existing_user:
+            flash("Username already exists")
+            return redirect(url_for("signup"))
+
+        signup = {
+            "email": request.form.get("email").lower(),
+            "username": request.form.get("username").lower(),
+            "password": generate_password_hash(request.form.get("password"))}
+        mongo.db.users.insert_one(signup)
+
+        session["user"] = request.form.get("username").lower()
+        flash("Signup Successful!")
+        return redirect(url_for("profile", username=session["user"]))
+    return render_template("users/signup.html")
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    error = None
-    if request.method == 'POST':
-        if request.form['username'] != 'admin' or request.form['password'] != 'admin':
-            error = 'Invalid username or password. Please try again!'
+    if request.method == "POST":
+        existing_user = mongo.db.users.find_one(
+            {"username": request.form.get("username").lower()})
+        if existing_user:
+            if check_password_hash(
+                    existing_user["password"], request.form.get("password")):
+                session["user"] = request.form.get("username").lower()
+                flash("Welcome, {}".format(
+                    request.form.get("username")))
+                return redirect(url_for(
+                    "profile", username=session["user"]))
+            else:
+                flash("Incorrect Username and/or Password")
+                return redirect(url_for("login"))
         else:
             session['logged_in'] = True
-            flash('You were just logged in')
-            return redirect(url_for('welcome'))
-    return render_template("users/login.html", error=error)
+            return redirect(url_for('profile'))
+    return render_template("users/login.html")
 
 
-@app.route('/welcome')
-def welcome():
-    return render_template("users/welcome.html")
+@app.route('/profile/<username>', methods=["GET", "POST"])
+def profile(username):
+    recipe = mongo.db.recipe.find()
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+
+    if session["user"]:
+        return render_template("users/profile.html", recipe=recipe, username=username)
+    return render_template("users/login.html")
 
 
 @ app.route('/logout')
-@login_required
+@ login_required
 def logout():
     session.pop('logged_in', None)
-    flash('You were logged out.')
     return redirect(url_for('index'))
-
-
-@app.route('/register')
-def register():
-    return render_template("register.html")
 
 # ---- RECIPE PAGES ----- #
 
 
-@app.route('/recipes/<category>')
+@ app.route('/recipes/<category>')
 def get_all(category):
     if category == "all":
         category = "All recipes"
