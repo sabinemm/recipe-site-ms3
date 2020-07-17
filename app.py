@@ -25,7 +25,6 @@ mongo = PyMongo(app)
 
 now = datetime.now()
 dt_string = now.strftime("%d/%m/%Y %H:%M")
-users_collection = mongo.db.users
 
 # ---- USER ----- #
 
@@ -165,6 +164,8 @@ def send_recipe():
     recipe = mongo.db.recipe
     return_data = request.form.to_dict()
     return_data["date_added"] = dt_string
+    return_data["username"] = username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
     recipe.insert_one(return_data)
     return redirect(url_for('thank_you'))
 

@@ -4,7 +4,6 @@
 <div class="container">
     <h2 class="pt-5 pb-4 text-capitalize">Hi, {{ username }}!</h1>
 
-
         <h2>Your recipes:</h1>
             {% for res in recipe %}
             <p class="pt-2"><a href="{{url_for('get_recipe', recipe_id=res._id)}}"
