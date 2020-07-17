@@ -13,16 +13,18 @@
                         </div>
 
                         <div class="form-label-group">
-                            <input type="username" name="username" id="username" type="text" minlength="5"
+                            <input type="username" name="username" id="username" type="text" minlength="4"
                                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control"
                                 placeholder="Choose username" required value="{{ request.form.username }}"
                                 autocomplete="off">
+                            <small class="form-text text-muted">4-15 characters</small>
                         </div>
 
                         <div class="form-label-group">
                             <input type="password" name="password" id="password" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Set password"
                                 autocomplete="off" required value="{{ request.form.password }}">
+                            <small class="form-text text-muted">5-15 characters</small>
                         </div>
 
                         <div class="custom-control custom-checkbox mb-3">
@@ -32,7 +34,7 @@
                         </div>
 
                         {% for message in get_flashed_messages() %}
-                        {{ message }}
+                        <p class="text-danger">{{ message }}</p>
                         {% endfor %}
 
                         <button class="btn btn-lg btn-dark btn-block text-uppercase" value="login" type="submit">Sign

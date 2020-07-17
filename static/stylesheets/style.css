@@ -313,6 +313,8 @@ a:hover {
     flex-direction: row;
     overflow: hidden;
     position: relative;
+    border: 1px solid #f0f0f0;
+    padding: 5px; 
 }
 
 .image-wrapper img {
@@ -321,6 +323,11 @@ a:hover {
     height: 100%;
     width: auto;
 }
+
+  
+.image-wrapper:hover {
+    box-shadow: 0 0 2px 2px #a1b384;
+  }
 
 .entry-data {
     display: inline;
@@ -427,10 +434,10 @@ background-size: cover;}
 .rec-thumbnail a img {
     border: 1px solid #f0f0f0;
     padding: 5px; 
-    width: 150px; 
+    height: auto;
+    width: 150px;
   }
   
-
-.rec-thumbnail a img:hover {
+.rec-thumbnail a img:hover, .square:hover {
     box-shadow: 0 0 2px 2px #a1b384;
   }
