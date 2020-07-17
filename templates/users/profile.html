@@ -1,6 +1,5 @@
 {% extends 'base.html' %} {% block content %}
 
-
 <div class="container pt-5">
     <div class="profile_banner pb-3">
         <h2 class="pt-5 pl-5 pb-4 text-capitalize">Hi, {{ username }}!
@@ -13,36 +12,27 @@
             {% endfor %}
             {% endif %}
             {% endwith %}</h1>
-
     </div>
 
-
     <div class="p-5">
-
-
+        {% if recipe.count() %}
         <h2 class="pb-3">Your recipes:</h2>
-
-
-
         <div class="row">
-
             {% for res in recipe %}
-            {% if recipe == {} %}
-            <h2 class="pb-3">Nothing here yet!</h2>
-            <a href="{{ url_for('add_recipe') }}"><button class="btn btn-dark text-uppercase">
-                    Submit recipe</button></a>
-            {% else %}
             <div class="rec-thumbnail col-xs-6 col-sm-4 col-md-4 col-lg-3">
                 <a href="{{url_for('get_recipe', recipe_id=res._id)}}" title="{{res.title}}">
                     <img src="{{res.image_url}}" alt="{{res.title}} thumbnail">
                     <p class="pt-2">{{res.title}}</p>
                 </a>
             </div>
-            {% endif %}
             {% endfor %}
         </div>
+        {% else %}
+        <h2 class="pb-3">Nothing here yet!</h2>
+        <a href="{{ url_for('add_recipe') }}"><button class="btn btn-dark text-uppercase">
+                Submit recipe</button></a>
+        {% endif %}
     </div>
-
 </div>
 
 {% endblock %}

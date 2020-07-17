@@ -72,63 +72,29 @@ def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-        flash("Welcome back!")
-
         if existing_user:
-
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 return redirect(url_for(
                     "profile", username=session["user"]))
-
             else:
                 flash("Incorrect Username and/or Password!")
                 return redirect(url_for("login"))
-
-        else:
-            session['logged_in'] = True
-            return redirect(url_for('profile'))
+        flash("Incorrect Username and/or Password!")
     return render_template("users/login.html")
 
 
 @app.route('/profile/<username>', methods=["GET", "POST"])
 @login_required
 def profile(username):
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
-    recipe = mongo.db.recipe.find({"username": username})
-
     if session["user"]:
-
         if session["user"] == "admin":
             recipe = mongo.db.recipe.find()
-            return render_template("users/profile.html", recipe=recipe, username=username)
-
+        else:
+            recipe = mongo.db.recipe.find({"username": username})
         return render_template("users/profile.html", recipe=recipe, username=username)
-
     return render_template("users/login.html")
-
-
-""" @app.route('/edit_profile')
-@login_required
-def edit_profile():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
-    return render_template("users/edit_profile.html", username=username)
-
-
-@ app.route('/update_profile', methods=['POST'])
-@ login_required
-def update_profile():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
-    username.update(
-        {'$set': {
-            'upload_avatar': request.form.get('upload_avatar'),
-            'about_me': request.form.get('about_me'),
-        }})
-    return redirect(url_for('index')) """
 
 
 @ app.route('/logout')
@@ -154,8 +120,10 @@ def get_all(category):
 
 @ app.route('/recipe/<recipe_id>')
 def get_recipe(recipe_id):
-    user = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+    user = ""
+    if session.get("user"):
+        user = mongo.db.users.find_one(
+            {"username": session["user"]})["username"]
     recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
     username = recipe.get("username")
     return render_template("recipe.html", recipe=recipe, user=user, username=username)

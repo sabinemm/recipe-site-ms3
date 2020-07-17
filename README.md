@@ -51,11 +51,14 @@ I kept the color pallette very simple and clean because the content of the page 
 ### Existing features
 ### Future features
 
-[] Pagination
-[] Google login 
-[] Lazy loading images 
-[] Prevent duplicate subscribers
-[] "Remember me" checkbox
+- [ ] Pagination
+- [ ] Google login 
+- [ ] Lazy loading images 
+- [ ] Prevent duplicate subscribers
+- [ ] "Remember me" signup checkbox
+- [ ] Edit user profiles
+- [ ] Ability to click on other user profiles and see recipes they posted
+- [ ] 
  
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
