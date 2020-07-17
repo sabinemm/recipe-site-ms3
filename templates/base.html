@@ -93,7 +93,11 @@
                         <ul>
                             <li><a href="{{ url_for('index') }}">HOME</a></li>
                             <li><a href="">ALL RECIPES</a></li>
+                            {% if "user" in session %}
                             <li><a href="{{ url_for('add_recipe') }}">SUBMIT RECIPE</a></li>
+                            {% else %}
+                            <li><a href="{{ url_for('login') }}">LOG IN TO SUBMIT RECIPE</a></li>
+                            {% endif %}
                             <li><a href="{{ url_for('shop') }}">SHOP</a></li>
                         </ul>
                     </div>

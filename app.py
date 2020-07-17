@@ -96,8 +96,6 @@ def profile(username):
     username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
     recipe = mongo.db.recipe.find({"username": username})
-    the_user = mongo.db.users.find_one({"_id": ''})
-    print(the_user)
     if session["user"]:
         return render_template("users/profile.html", recipe=recipe, username=username)
         if user == 'admin':
@@ -105,27 +103,25 @@ def profile(username):
     return render_template("users/login.html")
 
 
-@app.route('/edit_profile')
+""" @app.route('/edit_profile')
 @login_required
 def edit_profile():
     username = mongo.db.users.find_one(
         {"username": session["user"]})
-    print(username)
     return render_template("users/edit_profile.html", username=username)
 
 
-""" @ app.route('/edit_recipe/<recipe_id>')
-def edit_recipe(recipe_id):
-    the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    categories_cursor = mongo.db.categories.find()
-    return render_template('edit_recipe.html', the_recipe=the_recipe, categories=categories_cursor)
- """
-
-
-@ app.route('/update_profile')
+@ app.route('/update_profile', methods=['POST'])
 @ login_required
 def update_profile():
-    return redirect(url_for(profile))
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})
+    username.update(
+        {'$set': {
+            'upload_avatar': request.form.get('upload_avatar'),
+            'about_me': request.form.get('about_me'),
+        }})
+    return redirect(url_for('index')) """
 
 
 @ app.route('/logout')
