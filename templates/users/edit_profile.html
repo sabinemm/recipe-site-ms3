@@ -1,0 +1,28 @@
+{% extends 'base.html' %} {% block content %}
+<div class="recipe-headline text-capitalize">
+    <h2>Edit Profile</h2>
+</div>
+
+<form class="pb-5" action="">
+    <div class="form-group">
+        <label for="formGroupExampleInput">Email</label>
+        <input disabled type="text" class="form-control" id="formGroupExampleInput" placeholder="{{ username.email }}">
+    </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Username</label>
+        <input disabled type="text" class="form-control" id="formGroupExampleInput"
+            placeholder="{{ username.username }}">
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlFile1">Upload an avatar</label>
+        <input type="file" id="upload_avatar" id="upload_avatar" class="file-upload form-control-file"
+            data-max-file-size="2M" />
+    </div>
+    <div class="form-group">
+        <label for="exampleFormControlTextarea1">About Me</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">{{ username.about_me }}</textarea>
+    </div>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+{% endblock %}

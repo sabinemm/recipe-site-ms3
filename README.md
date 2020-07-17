@@ -266,7 +266,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y)
 
 ## Acknowledgements
-A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support, Slack
+A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support (especially [
+Tim Nelson](https://github.com/TravelTimN) for login and tips), Slack, my friend Reinis for explaining Python and debugging to me
 
 ## Disclaimer
 I had accidentally committed mongodb password but changed it and hid it later. All secure.
