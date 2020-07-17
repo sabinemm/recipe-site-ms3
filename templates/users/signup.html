@@ -1,6 +1,6 @@
 {% extends 'base.html' %} {% block content %}
 
-<div class="container login-bg mt-5 mb-5">
+<div class="container signup-bg mt-5 mb-5">
     <div class="row">
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto pb-5 pt-3">
             <div class="card card-signin my-5">
@@ -9,25 +9,32 @@
                     <form method="POST" action="{{ url_for('signup') }}" class="form-signin">
                         <div class="form-label-group">
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email"
-                                required autofocus value="{{ request.form.email }}">
+                                required autofocus value="{{ request.form.email }}" autocomplete="off">
                         </div>
 
                         <div class="form-label-group">
                             <input type="username" name="username" id="username" type="text" minlength="5"
                                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control"
-                                placeholder="Choose username" required autofocus value="{{ request.form.username }}">
+                                placeholder="Choose username" required value="{{ request.form.username }}"
+                                autocomplete="off">
                         </div>
 
                         <div class="form-label-group">
                             <input type="password" name="password" id="password" minlength="5" maxlength="15"
-                                pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Set password" required
-                                value="{{ request.form.password }}">
+                                pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Set password"
+                                autocomplete="off" required value="{{ request.form.password }}">
                         </div>
 
                         <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Remember password</label>
+                            <input required type="checkbox" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">By registering I agree to
+                                <a href="{{url_for('terms')}}">terms and conditions</a></label>
                         </div>
+
+                        {% for message in get_flashed_messages() %}
+                        {{ message }}
+                        {% endfor %}
+
                         <button class="btn btn-lg btn-dark btn-block text-uppercase" value="login" type="submit">Sign
                             up</button>
                         <!--                         <hr class="my-4">
@@ -36,9 +43,6 @@
 
                     </form>
 
-                    {% for message in get_flashed_messages() %}
-                    {{ message }}
-                    {% endfor %}
                 </div>
             </div>
         </div>

@@ -19,10 +19,9 @@
                                 value="{{ request.form.password }}">
                         </div>
 
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                            <label class="custom-control-label" for="customCheck1">Remember password</label>
-                        </div>
+                        {% for message in get_flashed_messages() %}
+                        <p class="text-danger">{{ message }}</p>
+                        {% endfor %}
                         <button class="btn btn-lg btn-dark btn-block text-uppercase" value="login" type="submit">Sign
                             in</button>
                         <!--                         <hr class="my-4">
@@ -30,10 +29,6 @@
                                 class="fab fa-google mr-2"></i> Sign in with Google</button> -->
 
                     </form>
-
-                    {% for message in get_flashed_messages() %}
-                    {{ message }}
-                    {% endfor %}
                 </div>
             </div>
         </div>

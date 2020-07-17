@@ -55,7 +55,8 @@ I kept the color pallette very simple and clean because the content of the page 
 [] Google login 
 [] Lazy loading images 
 [] Prevent duplicate subscribers
-
+[] "Remember me" checkbox
+ 
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
 
@@ -88,6 +89,8 @@ Users Collection
 "users":{
     "_id": "ObjectId()"
     "user_name": "<string>",
+    "email": "<string>",
+    "password": "<string>",
 }
 ```
 Subscribers Collection
@@ -182,29 +185,31 @@ After pressing Enter the project will be created and cloned locally.
 
 (Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.)
 
-Create a free account on MongoDb and reproduce the 3 collections as described [here](#Information-Architecture).
+Create a free account on MongoDb and reproduce the 4 collections as described [here](#Information-Architecture).
 
 Make sure to upgrade PIP. 
 ```
 pip install -U pip 
 ```
 
-
-
 Install all dependencies
 ```
 pip3 install -r requirements.txt
 ```
-Create `.env` file with following data
-```
-MONGO_URI=mongodb+srv://..."
-```
-add your .env file to .gitignore
-
 Activate virtual environment 
 ```
 source env/bin/activate
 ```
+Create `.env` file with following data
+```
+MONGO_URI=mongodb+srv://...
+MONGO_DBNAME=yourdatabasename
+SECRET_KEY=superdupersecret
+
+```
+add your .env file to .gitignore
+
+
 
 You will then be able to run the app locally by typing python app.py or   flask run. 
 
@@ -264,6 +269,16 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Book](https://unsplash.com/photos/CXYPfveiuis)
 
 [Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y)
+
+[Papaya](https://www.pexels.com/photo/sliced-lemon-and-black-berries-on-white-surface-4113798/)
+
+[Melon Smoothie](https://www.pexels.com/photo/photo-of-glasses-near-sliced-melon-4051452/)
+
+[Asparagus](https://www.pexels.com/photo/fresh-ripe-asparagus-pods-in-bunch-4033003/)
+
+### content 
+
+[Terms](https://www.termsandconditionsgenerator.com/)
 
 ## Acknowledgements
 A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support (especially [

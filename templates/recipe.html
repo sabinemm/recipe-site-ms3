@@ -73,7 +73,7 @@
         </div>
         {% endfor %}
 
-        {% if recipe.tips is defined %}
+        {% if recipe.tips %}
         <h4>Tips</h4>
         {% for tip in recipe.tips.splitlines() %}
         <p class="font-italic">{{ tip }}</p>
@@ -114,6 +114,5 @@
         </div>
     </div>
 </div>
-
 
 {% endblock %}

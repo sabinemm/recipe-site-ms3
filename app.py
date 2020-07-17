@@ -81,7 +81,7 @@ def login():
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:
-                flash("Incorrect Username and/or Password")
+                flash("Incorrect Username and/or Password!")
                 return redirect(url_for("login"))
         else:
             session['logged_in'] = True
@@ -154,12 +154,14 @@ def get_recipe(recipe_id):
 
 
 @ app.route('/add_recipe')
+@login_required
 def add_recipe():
     categories = mongo.db.categories.find()
     return render_template("recipe_form.html", categories=categories, the_recipe={}, page_title="Add Recipe")
 
 
 @ app.route('/send_recipe', methods=['POST'])
+@login_required
 def send_recipe():
     recipe = mongo.db.recipe
     return_data = request.form.to_dict()
@@ -213,6 +215,11 @@ def update_recipe(recipe_id):
 @ app.route('/shop')
 def shop():
     return render_template("shop.html")
+
+
+@ app.route('/terms')
+def terms():
+    return render_template("users/terms.html")
 
 
 @ app.route('/sub', methods=['POST'])

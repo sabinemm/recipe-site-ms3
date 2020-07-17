@@ -389,6 +389,11 @@ a:hover {
     background-size: cover;
 }
 
+.signup-bg {
+    background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/c_scale,q_auto:eco,w_1581/v1594981655/vegansite/sliced-lemon-and-black-berries-on-white-surface-4113798_lslkiv.jpg);
+    background-size: cover; 
+}
+
 .thankyou {
     background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594292874/vegansite/white-table-with-tasty-scattered-almonds-4033328_copy_rxzu2a.jpg)
 }
@@ -412,3 +417,20 @@ a:hover {
     width: 100%;
     height: auto;
 }
+
+/* PROFILE */
+.profile_banner { 
+background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594985096/vegansite/sparris2_cgaxwq.jpg);
+background-size: cover;}
+
+
+.rec-thumbnail a img {
+    border: 1px solid #f0f0f0;
+    padding: 5px; 
+    width: 150px; 
+  }
+  
+
+.rec-thumbnail a img:hover {
+    box-shadow: 0 0 2px 2px #a1b384;
+  }
