@@ -14,13 +14,10 @@
     <div class="form-group">
         <label for="category_name">Category</label>
         <select required name="category_name" id="category_name" class="form-control">
-            {% for category in categories %}
-            {% if category == the_recipe.category_name %}
-            <option value="{{category.category_name}}" selected>{{category.category_name}}</option>
-            {% else %}
-            <option value="{{category.category_name}}">{{category.category_name}}</option>
-            {% endif %}
-            {% endfor %}
+            <option {% if the_recipe.category_name == "Mains" %} selected {% endif %}>Mains</option>
+            <option {% if the_recipe.category_name == "Appetizers" %} selected {% endif %}>Appetizers</option>
+            <option {% if the_recipe.category_name == "Desserts" %} selected {% endif %}>Desserts</option>
+            <option {% if the_recipe.category_name == "Other" %} selected {% endif %}>Other</option>
         </select>
     </div>
 

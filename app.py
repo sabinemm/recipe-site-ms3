@@ -28,6 +28,8 @@ dt_string = now.strftime("%d/%m/%Y %H:%M")
 
 # ---- USER ----- #
 
+# throws users that are not logged in to Login page if they try to access certain pages
+
 
 def login_required(f):
     @wraps(f)
@@ -50,7 +52,7 @@ def signup():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
-
+        # Check first if user already exists
         if existing_user:
             flash("Username already exists! Please try again.")
             return redirect(url_for("signup"))
@@ -72,6 +74,7 @@ def login():
     if request.method == "POST":
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
+        # Check if user already exists
         if existing_user:
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
@@ -89,6 +92,7 @@ def login():
 @login_required
 def profile(username):
     if session["user"]:
+        # allows admin to access  all recipes
         if session["user"] == "admin":
             recipe = mongo.db.recipe.find()
         else:
@@ -111,6 +115,7 @@ def get_all(category):
     if category == "all":
         category = "All recipes"
         recipe = mongo.db.recipe.find()
+    # specifically filters Other because MongoDB find() does not return certain words
     elif category == "other":
         recipe = mongo.db.recipe.find({"category_name": "Other"})
     else:
@@ -120,6 +125,7 @@ def get_all(category):
 
 @ app.route('/recipe/<recipe_id>')
 def get_recipe(recipe_id):
+    # only user that posted recipe or admin has access to edit/delete buttons
     user = ""
     if session.get("user"):
         user = mongo.db.users.find_one(
@@ -141,6 +147,7 @@ def add_recipe():
 def send_recipe():
     recipe = mongo.db.recipe
     return_data = request.form.to_dict()
+    # adds date and username that posted recipe
     return_data["date_added"] = dt_string
     return_data["username"] = username = mongo.db.users.find_one(
         {"username": session["user"]})["username"]
@@ -154,22 +161,25 @@ def thank_you():
 
 
 @ app.route('/edit_recipe/<recipe_id>')
+@login_required
 def edit_recipe(recipe_id):
     the_recipe = mongo.db.recipe.find_one({"_id": ObjectId(recipe_id)})
-    categories_cursor = mongo.db.categories.find()
-    return render_template('edit_recipe.html', the_recipe=the_recipe, categories=categories_cursor)
+    return render_template('edit_recipe.html', the_recipe=the_recipe)
 
 
 @ app.route('/delete_recipe/<recipe_id>')
+@login_required
 def delete_recipe(recipe_id):
     the_recipe = mongo.db.recipe.delete_one({"_id": ObjectId(recipe_id)})
     return render_template('index.html', the_recipe=the_recipe)
 
 
 @ app.route('/update_recipe/<recipe_id>', methods=['POST'])
+@login_required
 def update_recipe(recipe_id):
     recipe = mongo.db.recipe
     categories_cursor = mongo.db.categories.find()
+    # updates only fields that have been changed
     recipe.update_one({"_id": ObjectId(recipe_id)},
                       {'$set': {
                           'title': request.form.get('title'),
@@ -184,7 +194,6 @@ def update_recipe(recipe_id):
                           'instructions': request.form.get('instructions'),
                           'tips': request.form.get('tips'),
                       }})
-
     return redirect(url_for('thank_you'))
 
 
@@ -196,6 +205,8 @@ def shop():
 @ app.route('/terms')
 def terms():
     return render_template("users/terms.html")
+
+# ---- NEWSLETTER SUBSCRIPTION FORM ----- #
 
 
 @ app.route('/sub', methods=['POST'])
@@ -213,6 +224,7 @@ def sub():
 def search():
     mongo.db.recipe.create_index([('$**', 'text')])
     query = request.form.get("query")
+    # limits to search results to 10 recipes because there is no pagination yet
     result = mongo.db.recipe.find({"$text": {"$search": query}}).limit(10)
     result_num = mongo.db.recipe.find({"$text": {"$search": query}}).count()
     if result_num > 0:

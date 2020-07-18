@@ -58,7 +58,7 @@ I kept the color pallette very simple and clean because the content of the page 
 - [ ] "Remember me" signup checkbox
 - [ ] Edit user profiles
 - [ ] Ability to click on other user profiles and see recipes they posted
-- [ ] 
+- [ ] Page loading animation
  
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
@@ -169,6 +169,7 @@ Validators and linters
 * PEP8
 
 ### Manual testing
+
 ### Errors
 ## Deployment
 

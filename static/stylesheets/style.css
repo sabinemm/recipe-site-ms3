@@ -119,6 +119,8 @@ a:hover {
 
 .single_ftr form {
     margin-top: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .single_ftr p {
@@ -128,7 +130,7 @@ a:hover {
 .newsletter_form .form-control {
     height: 50px;
     line-height: 50px;
-    width: 86%;
+    width: 82%;
     position: relative;
     background: transparent;
     color: #fff;
