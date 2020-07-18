@@ -78,6 +78,7 @@ Recipes Collection
     "instructions": "<string>",
     "tips": "<string>",
     "date_added": "<string>",
+    "username": "<string>",
 }
 ```
 Categories Collection
@@ -91,7 +92,7 @@ Users Collection
 ```
 "users":{
     "_id": "ObjectId()"
-    "user_name": "<string>",
+    "username": "<string>",
     "email": "<string>",
     "password": "<string>",
 }
@@ -265,6 +266,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 
 [Back to top](http://www.voidynullness.net/blog/2015/05/29/jquery-smooth-scrolling-floating-scroll-to-top-button/)
 
+[Overlay title](https://www.w3schools.com/howto/howto_css_image_overlay_title.asp)
+
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
 
@@ -281,6 +284,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 [Melon Smoothie](https://www.pexels.com/photo/photo-of-glasses-near-sliced-melon-4051452/)
 
 [Asparagus](https://www.pexels.com/photo/fresh-ripe-asparagus-pods-in-bunch-4033003/)
+
+[Book 2](https://www.pexels.com/photo/white-book-near-food-on-plate-2237798/)
 
 ### content 
 

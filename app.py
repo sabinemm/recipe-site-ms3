@@ -64,7 +64,7 @@ def signup():
         mongo.db.users.insert_one(signup)
 
         session["user"] = request.form.get("username").lower()
-        flash("Signup Successful!")
+        flash("Welcome!")
         return redirect(url_for("profile", username=session["user"]))
     return render_template("users/signup.html")
 
@@ -79,6 +79,7 @@ def login():
             if check_password_hash(
                     existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
+                flash("Welcome back!")
                 return redirect(url_for(
                     "profile", username=session["user"]))
             else:

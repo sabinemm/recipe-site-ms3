@@ -9,25 +9,28 @@
     {% for rec in recipe %}
     <div class="col-xl-4 col-lg-6 col-sm-12 pt-3 pb-3">
         <div class="product-box">
-            <div class="image-wrapper">
-                <a href="{{url_for('get_recipe', recipe_id=rec._id)}}"></a>
-                <img src="{{rec.image_url}}">
-            </div>
-            <div class="item-content">
-                <h3 class="item-title pt-2"><a href="{{url_for('get_recipe', recipe_id=rec._id)}}">{{rec.title}}</a>
-                </h3>
-                <p>{{rec.description}}</p>
-                <div class="row entry-data">
-                    <div class="col-6"><i class="fas fa-clock"></i>{{rec.cooks}}</div>
-                    <div class="col-6"><i class="fas fa-user"></i>{{rec.username}}</div>
+            <a href="{{url_for('get_recipe', recipe_id=rec._id)}}">
+                <div class="image-wrapper">
+                    <img src="{{rec.image_url}}">
                 </div>
+                <div class="item-content">
+                    <h3 class="item-title pt-2">{{rec.title}}
+            </a>
+            </h3>
+            <p>{{rec.description}}</p>
+            <div class="row entry-data">
+                <div class="col-6"><i class="fas fa-clock"></i>{{rec.cooks}}</div>
+                <div class="col-6"><i class="fas fa-user"></i>{{rec.username}}</div>
             </div>
         </div>
     </div>
-    {% endfor %}
-    {% else %}
-    <p class="pb-5">No recipes found!</p>
-    {% endif %}
 </div>
+{% endfor %}
+{% else %}
+<p class="pb-5">No recipes found!</p>
+{% endif %}
+</div>
+
+{% include "ad.html" ignore missing without context %}
 
 {% endblock %}

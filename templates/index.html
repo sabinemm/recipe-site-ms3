@@ -17,44 +17,62 @@
 
     <div class="row">
         <div class="col-sm-6 col-md-4">
-            <a href="http://0.0.0.0:5000/recipe/5f0a2a3a8bc4ad11dd598353">
-                <div class="square"
-                    style="background-image: url('https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/113777.jpg')">
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f1338868ba517be0dc5c084') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1595095152/vegansite/paleo-lemon-cookies-7-650x975_bpsyo5.jpg')">
+                    <div class="overlay">Lemon Cookies</div>
                 </div>
             </a>
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="square"
-                style="background-image: url('https://www.greenqueen.com.hk/wp-content/uploads/2020/03/pure-vegan-heaven-1.jpg')">
-            </div>
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f11803255f13d4669aac2f8') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1594982412/vegansite/photo-of-glasses-near-sliced-melon-4051452_tgogda.jpg')">
+                    <div class="overlay">Melon Smoothie</div>
+                </div>
+            </a>
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="square" style="background-image: url('https://fstvls.s3.amazonaws.com/67/67099.jpg')">
-            </div>
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f1339828ba517be0dc5c085') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1595095415/vegansite/vegan-mince-stuffed-eggplants-plate-800x1200_qdj2wr.jpg')">
+                    <div class="overlay">Mince Stuffed Eggplants</div>
+                </div>
+            </a>
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="square"
-                style="background-image: url('https://www.bbcgoodfood.com/sites/default/files/recipe-collections/collection-image/2013/05/113777.jpg')">
-            </div>
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f1337668ba517be0dc5c083') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1595094872/vegansite/b09fa0144192f9bf42417f12c50e6fbc_zvgc2e.jpg')">
+                    <div class="overlay">Spinach and Tofu Salad</div>
+                </div>
+            </a>
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="square"
-                style="background-image: url('https://www.greenqueen.com.hk/wp-content/uploads/2020/03/pure-vegan-heaven-1.jpg')">
-            </div>
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f133b2d8ba517be0dc5c086') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1595095741/vegansite/IMG_8158_jiu5fu.jpg')">
+                    <div class="overlay">Vegan Omelette</div>
+                </div>
+            </a>
         </div>
 
         <div class="col-sm-6 col-md-4">
-            <div class="square" style="background-image: url('https://fstvls.s3.amazonaws.com/67/67099.jpg')">
-            </div>
+            <a href="{{ url_for( 'get_recipe', recipe_id='5f133d888ba517be0dc5c087') }}">
+                <div class="square image"
+                    style="background-image: url('https://res.cloudinary.com/www-madine-se/image/upload/v1595096423/vegansite/Buffalo-Cauliflower-Tacos-7-2_tijzpa.jpg')">
+                    <div class="overlay">Buffalo Cauliflower Tacos</div>
+                </div>
+            </a>
         </div>
     </div>
 </section>
 
-<div class="ad-headline text-center mb-5">
+<div class="ad-headline text-center pt-4 pb-5">
     <h2>100% plant-based = 100% delicious </h2>
     <p><a href="{{ url_for('shop') }}">Shop our Cook Book</a></p>
 </div>

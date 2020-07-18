@@ -19,7 +19,7 @@
             <a class="small-link" href="{{ url_for('index') }}">HOME</a>
             <a class="small-link" href="{{ url_for('shop') }}">SHOP</a>
             {% if session.user %}
-            <a class="small-link" href="{{ url_for('add_recipe') }}">SUMBIT RECIPE</a>
+            <a class="small-link" href="{{ url_for('add_recipe') }}">SUBMIT RECIPE</a>
             <a class="small-link" href="{{ url_for('profile', username=session.user) }}">PROFILE</a>
             <a class="small-link" href="{{ url_for('logout') }}">LOGOUT</a>
             {% else %}

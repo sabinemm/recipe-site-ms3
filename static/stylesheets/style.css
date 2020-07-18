@@ -246,8 +246,6 @@ a:hover {
     font-style: italic;
     font-size: 2rem;
     color: rgb(14, 14, 14);
-    margin-top: 50px;
-    margin-bottom: 20px;
 }
 
 .recipe-info {
@@ -327,7 +325,6 @@ a:hover {
     width: auto;
 }
 
-  
 .image-wrapper:hover {
     box-shadow: 0 0 2px 2px #a1b384;
   }
@@ -364,7 +361,25 @@ a:hover {
     position: relative;
 }
 
-/* LOGIN */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgb(64,64,64);
+    background: linear-gradient(0deg, rgba(64,64,64,1) 0%, rgba(65,66,75,0.7847514005602241) 35%, rgba(255,255,255,0) 100%);    color: #f1f1f1;
+    width: 100%;
+    transition: .5s ease-in-out;
+    opacity:0;
+    color: white;
+    font-size: 1.2em;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .col-sm-6:hover .overlay {
+    opacity: 1;
+  }
+
+/* LOGIN & SIGNUP */
 
 .card-signin .card-title {
     margin-bottom: 2rem;
@@ -441,7 +456,7 @@ background-size: cover;}
     width: 150px;
   }
   
-.rec-thumbnail a img:hover, .square:hover {
+.rec-thumbnail a img:hover {
     box-shadow: 0 0 2px 2px #a1b384;
   }
 
@@ -459,4 +474,19 @@ background-size: cover;}
 
 .to-top{
 	margin-top:22px;
+}
+
+/* COOKBOOK AD */
+
+.ad {
+    height: 150px;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.ad img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 }
