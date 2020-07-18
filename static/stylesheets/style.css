@@ -2,6 +2,7 @@
 
 html {
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -210,7 +211,7 @@ a:hover {
     padding-bottom: 20px;
     border-top: 1px dotted #888;
     margin-top: 28px;
-    z-index: 100;
+    z-index: 98;
     position: relative;
 }
 
@@ -443,3 +444,19 @@ background-size: cover;}
 .rec-thumbnail a img:hover, .square:hover {
     box-shadow: 0 0 2px 2px #a1b384;
   }
+
+/* BACK TO TOP BUTTON */
+
+.to-top{
+    z-index: 100;
+	position:fixed;
+	bottom:40px;
+	right:40px;
+	color:#83A153;
+    font-size: 2em;
+    display: none;
+}
+
+.to-top{
+	margin-top:22px;
+}

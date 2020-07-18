@@ -263,6 +263,8 @@ After that process, the app was live and running remotely in Heroku's servers.
 
 [How to store passwords securely using Werkzeug](https://techmonger.github.io/4/secure-passwords-werkzeug/)
 
+[Back to top](http://www.voidynullness.net/blog/2015/05/29/jquery-smooth-scrolling-floating-scroll-to-top-button/)
+
 ### Images
 [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
 
