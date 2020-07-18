@@ -11,9 +11,8 @@
             </span>
             {% endfor %}
             {% endif %}
-            {% endwith %}</h1>
+            {% endwith %}</h2>
     </div>
-
     <div class="p-5">
         {% if recipe.count() %}
         <h2 class="pb-3">Your recipes:</h2>
@@ -29,8 +28,7 @@
         </div>
         {% else %}
         <h2 class="pb-3">Nothing here yet!</h2>
-        <a href="{{ url_for('add_recipe') }}"><button class="btn btn-dark text-uppercase">
-                Submit recipe</button></a>
+        <a href="{{ url_for('add_recipe') }}" class="btn btn-dark text-uppercase">Submit recipe</a>
         {% endif %}
     </div>
 </div>

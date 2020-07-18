@@ -11,40 +11,30 @@
                             <input type="email" name="email" id="email" class="form-control" placeholder="Email"
                                 required autofocus value="{{ request.form.email }}" autocomplete="off">
                         </div>
-
                         <div class="form-label-group">
                             <input type="username" name="username" id="username" type="text" minlength="4"
-                                maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control"
+                                maxlength="15" pattern="^[a-zA-Z0-9]{4,15}$" class="form-control"
                                 placeholder="Choose username" required value="{{ request.form.username }}"
                                 autocomplete="off">
                             <small class="form-text text-muted">4-15 characters</small>
                         </div>
-
                         <div class="form-label-group">
                             <input type="password" name="password" id="password" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Set password"
                                 autocomplete="off" required value="{{ request.form.password }}">
                             <small class="form-text text-muted">5-15 characters</small>
                         </div>
-
                         <div class="custom-control custom-checkbox mb-3">
                             <input required type="checkbox" class="custom-control-input" id="customCheck1">
                             <label class="custom-control-label" for="customCheck1">By registering I agree to
                                 <a href="{{url_for('terms')}}">terms and conditions</a></label>
                         </div>
-
                         {% for message in get_flashed_messages() %}
                         <p class="text-danger">{{ message }}</p>
                         {% endfor %}
-
                         <button class="btn btn-lg btn-dark btn-block text-uppercase" value="login" type="submit">Sign
                             up</button>
-                        <!--                         <hr class="my-4">
-                        <button class="btn btn-lg btn-block text-uppercase" type="submit"><i
-                                class="fab fa-google mr-2"></i> Sign in with Google</button> -->
-
                     </form>
-
                 </div>
             </div>
         </div>

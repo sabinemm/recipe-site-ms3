@@ -163,9 +163,13 @@ Devices and platforms used for testing:
 
 Validators and linters
 
-* W3C HTML Validator
-* W3C CSS Validator
-* CSS Lint
+* [W3C HTML Validator](https://validator.w3.org/#validate_by_input)
+
+
+* [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
+Passed tests without issues
+
+* CSS Lint VSCode extension
 * JSHint
 * PEP8
 

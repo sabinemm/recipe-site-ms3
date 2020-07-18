@@ -3,10 +3,7 @@
 <div class="recipe-headline">
     <h2>{{recipe.title}}</h2>
     <div class="row pl-3">
-        <p>Posted by: </p>
-        <span>
-            <p class="text-capitalize">&nbsp;{{recipe.username}}&nbsp;</p>
-        </span>
+        <p>Posted by: {{recipe.username}}</p>
         <p class="text-lowercase"> at {{recipe.date_added}} in category:
             {{recipe.category_name}}</p>
     </div>
@@ -42,33 +39,29 @@
     </div>
 </div>
 
-
 <!-- Ingredients -->
 
 <div class="ingredients">
     <h4>Ingredients</h4>
     <ul>
-        <!-- Ingredient -->
+        <!-- For each ingredient line -->
         {% for line in recipe.ingredients.splitlines() %}
-        <div class="ingredient">
-            <li>
-                <p>{{line}}</p>
-            </li>
-        </div>
+        <li class="ingredient">
+            <p>{{line}}</p>
+        </li>
         {% endfor %}
     </ul>
 </div>
 
-<!-- Preparation -->
+<!-- Instructions -->
 
 <div class="row instructions">
     <div class="col-12">
         <h4>Instructions</h4>
-
+        <!-- For Each Instruction Step -->
         {% for line in recipe.instructions.splitlines() %}
-        <!-- Single Preparation Step -->
         <div class="single-preparation-step d-flex">
-            <h4><i class="far fa-circle"></i></h4>
+            <h4><i class="fas fa-leaf"></i></h4>
             <p>{{line}}</p>
         </div>
         {% endfor %}
@@ -80,18 +73,17 @@
         {% else %}
         {% endfor %}
         {% endif %}
-
     </div>
 </div>
+
 {% if user|lower == username|lower or user|lower == "admin"|lower %}
 <div class="pb-5">
-    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}"><button class="btn btn-dark text-uppercase">
-            EDIT</button></a>
+    <a href="{{url_for('edit_recipe', recipe_id=recipe._id)}}" class="btn btn-dark text-uppercase">
+        EDIT</a>
     <button type="button" class="btn btn-dark text-uppercase" data-toggle="modal" data-target="#delete">
         DELETE</button>
 </div>
 {% endif %}
-
 
 <!-- Modal -->
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete_recipe" aria-hidden="true">

@@ -5,6 +5,10 @@ html {
     scroll-behavior: smooth;
 }
 
+*, *:before, *:after {
+    box-sizing: inherit;
+    }
+
 body {
     font-family: 'Arimo', sans-serif;
 }
@@ -32,9 +36,13 @@ a {
     font-weight: 600;
 }
 
+.btn-dark {
+    color: #fff!important;
+}
+
 a:hover {
     color: rgb(14, 14, 14);
-    text-decoration: none;
+    text-decoration: underline;
     cursor: pointer;
 }
 
@@ -63,8 +71,8 @@ a:hover {
 }
 
 .small-link {
-    font-size: small;
-    padding-right: 20px;
+    font-size: 14px;
+    padding: 5px 20px 5px 0;
 }
 
 /* SITE LOGO */
@@ -158,15 +166,6 @@ a:hover {
     opacity: .9;
 }
 
-.newsletter_form ::-webkit-input-placeholder {
-    color: #fff;
-    opacity: 1
-}
-
-.ftr_social_icon ul {
-    padding-inline-start: 0;
-}
-
 .single_ftr li {
     padding-bottom: 7px;
     color: #fff;
@@ -201,7 +200,6 @@ a:hover {
 
 .ftr_social_icon ul li a:hover {
     background: #83A153;
-    border-color: #83A153;
     color: #fff;
 }
 
@@ -249,7 +247,7 @@ a:hover {
 }
 
 .recipe-info {
-    background-color: rgb(238, 238, 238);
+    background: rgb(241, 237, 237);
     text-align: center;
 }
 
@@ -277,11 +275,11 @@ a:hover {
 .single-preparation-step {
     position: relative;
     z-index: 1;
-    margin-bottom: 30px;
+    margin-bottom: 15px;
 }
 
 .single-preparation-step h4 {
-    color: #474747;
+    color: #83A153;
     flex: 0 0 60px;
     max-width: 60px;
     width: 60px;
@@ -290,6 +288,7 @@ a:hover {
 .ingredients h4 {
     margin-bottom: 30px;
     margin-top: 50px;
+    color: ;
 }
 
 .instructions h4, .ingredients {
@@ -344,6 +343,7 @@ a:hover {
 .jumbotron {
     background: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594225831/vegansite/Vegan-Frittata__rxd4dw.png) center no-repeat;
     background-size: cover;
+    border-radius: 0!important;
 }
 
 .jumbotron h1 {
@@ -364,14 +364,14 @@ a:hover {
 .overlay {
     position: absolute;
     bottom: 0;
-    background: rgb(64,64,64);
-    background: linear-gradient(0deg, rgba(64,64,64,1) 0%, rgba(65,66,75,0.7847514005602241) 35%, rgba(255,255,255,0) 100%);    color: #f1f1f1;
+    background: rgb(54,54,60);
+    background: linear-gradient(0deg, rgba(54,54,60,0.8673844537815126) 0%, rgba(86,93,101,0.8141631652661064) 51%, rgba(255,255,255,0) 100%);
+    color: #f1f1f1!important;
     width: 100%;
     transition: .5s ease-in-out;
     opacity:0;
-    color: white;
     font-size: 1.2em;
-    padding: 30px;
+    padding: 25px 0 15px 0;
     text-align: center;
   }
   
@@ -427,6 +427,7 @@ a:hover {
     width: 100%;
 }
 
+
 /* SEARCH RESULTS PAGE */
 
 .product-box-search {
@@ -444,10 +445,11 @@ a:hover {
 }
 
 /* PROFILE */
-.profile_banner { 
-background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594985096/vegansite/sparris2_cgaxwq.jpg);
-background-size: cover;}
 
+.profile_banner { 
+    background-image: url(https://res.cloudinary.com/www-madine-se/image/upload/v1594985096/vegansite/sparris2_cgaxwq.jpg);
+    background-size: cover;
+}
 
 .rec-thumbnail a img {
     border: 1px solid #f0f0f0;
@@ -477,6 +479,10 @@ background-size: cover;}
 }
 
 /* COOKBOOK AD */
+
+.ad-container {
+    background: rgb(241, 237, 237);
+}
 
 .ad {
     height: 150px;

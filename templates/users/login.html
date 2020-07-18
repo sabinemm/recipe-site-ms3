@@ -5,29 +5,23 @@
         <div class="col-sm-9 col-md-7 col-lg-5 mx-auto pb-5 pt-3">
             <div class="card card-signin my-5">
                 <div class="card-body">
-                    <h5 class="card-title text-center">Sign In</h5>
+                    <h5 class="card-title text-center">Log In</h5>
                     <form method="POST" action="{{ url_for('login') }}" class="form-signin">
                         <div class="form-label-group">
                             <input type="username" name="username" id="username" type="text" minlength="5"
                                 maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Username"
                                 required autofocus value="{{ request.form.username }}">
                         </div>
-
                         <div class="form-label-group">
                             <input type="password" name="password" id="password" minlength="5" maxlength="15"
                                 pattern="^[a-zA-Z0-9]{5,15}$" class="form-control" placeholder="Password" required
                                 value="{{ request.form.password }}">
                         </div>
-
                         {% for message in get_flashed_messages() %}
                         <p class="text-danger">{{ message }}</p>
                         {% endfor %}
                         <button class="btn btn-lg btn-dark btn-block text-uppercase" value="login" type="submit">Sign
                             in</button>
-                        <!--                         <hr class="my-4">
-                        <button class="btn btn-lg btn-block text-uppercase" type="submit"><i
-                                class="fab fa-google mr-2"></i> Sign in with Google</button> -->
-
                     </form>
                 </div>
             </div>
