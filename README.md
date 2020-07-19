@@ -1,7 +1,6 @@
 ## Code Institute Data Centric Development Milestone Project
-
-Vegan Minus Gluten is an online cookbook where users can browse recipes and registered users can submit, edit and delete recipes they have posted. Clean and simple - without unnecesarry long essays about inpiration etc.
-
+# Vegan Minus Gluten
+Vegan Minus Gluten is an online cookbook where users can browse recipes and registered users can submit, edit and delete recipes they have posted. Clean and simple - without unnecesarry long essays about inpiration etc. Catered to host plant-based gluten-free recipes.
 
 ![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1595172156/vegansite/readme/bannerreadme_detb2e.jpg)
 
@@ -17,7 +16,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
   - [Design](#Design)
     - [Research](#Research)
     - [Wireframes](#Wireframes)
-    - [Color Scheme](#Color-Scheme)
+    - [Color Palette](#Color-Palette)
 - [**Features**](#Features)
     - [Functionality](#Functionality)
     - [Existing features](#Existing-features)
@@ -91,7 +90,9 @@ Initial [mockup]()
 
 And after [simplifying]()
 
-#### Color Scheme
+During development I simplified even more. I viewed mockup as a guide and did not stick to it to the pixel as I did not find it necessary. There is too little difference (3 columns become 2 for example) between desktop and tablet version therefore I omitted making tablet wireframes.
+
+#### Color Palette
 
 I kept the color pallette very simple and clean because the content of the page is inevitably very colorful.
 
@@ -104,8 +105,9 @@ Images I used for design (not recipes) are mostly from Pexels and follow similar
 Red is used for warning messages in Login and Signup pages.
 
 ## Features
-
-Note: Admin features will not be available for accessors for security reasons. Admin is able to browse, edit and delete all recipes.
+## Notes
+* Admin features will not be available for CI assessment for security reasons. Admin is able to browse, edit and delete all recipes.
+* I had accidentaly commited MongoDB URI but got that fixed and changed password.
 
 ### Existing features
 
@@ -130,7 +132,10 @@ Note: Admin features will not be available for accessors for security reasons. A
 - [x] Recipes displayed in list have title, description, cooking time and user information
 - [x] Single recipe page have full recipe information, the date and time it was first created, image and list.
 - [x] Single recipe page displays tips only if they have been defined. All other fields are required.
-- [x] Submit recipe and edit recipe forms have clear instructions and character limits for certain fields.
+- [x] Submit recipe and edit recipe forms have clear instructions and character limits for certain fields. 
+- [x] If password is too short or email is invalid etc tooltip appears
+- [x] Favicon
+- [x] Bootrstrap input field validation
 
 ### Future features
 
@@ -152,14 +157,20 @@ Note: Admin features will not be available for accessors for security reasons. A
 - [ ] Admin recipe review to either accept or reject recipe for it to be public.
 - [ ] More categories
 - [ ] Admin able to add/edit/delete categories
+- [ ] Sort recipes by tag, cousine, cook or prep time, even more specific dietary needs
+- [ ] Nutrition calculations
+- [ ] Server side credential validation
+- [ ] SSL certificate
+
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
 
 Current schema: 
 
 ![Schema](https://res.cloudinary.com/www-madine-se/image/upload/v1595169619/vegansite/readme/Screenshot_2020-07-19_at_16.40.03_qdsabq.png)
-[.txt](https://res.cloudinary.com/www-madine-se/raw/upload/v1595169852/vegansite/readme/schema_eqzj7h.txt)
-[.pdf](https://res.cloudinary.com/www-madine-se/image/upload/v1595169899/vegansite/readme/QuickDBD-Free_Diagram_bfo0kv.pdf)
+Other file versions - 
+[.txt](https://res.cloudinary.com/www-madine-se/raw/upload/v1595169852/vegansite/readme/schema_eqzj7h.txt),
+[.pdf](https://res.cloudinary.com/www-madine-se/image/upload/v1595169899/vegansite/readme/QuickDBD-Free_Diagram_bfo0kv.pdf).
 
 And what it [should be ](https://res.cloudinary.com/www-madine-se/image/upload/v1595169338/vegansite/readme/Screenshot_2020-07-19_at_16.16.21_lccftm.png)in a real world project.
 
@@ -176,8 +187,10 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * jQuery
 * Python 3.8.2
     * Flask
+    * Jinja 
+    * Werkzeug security
 * MongoDB
-* Bootstrap4 from CDN
+* Bootstrap CDN
 * Visual Studio Code
     * Live Server Extension
     * Color Picker Extension
@@ -191,8 +204,8 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * Google Chrome Developer tools
 * Safari Web Inspector
 * Adobe Suite CC
-* Cloudinary.com
-* Favicon.io
+* Cloudinary.com to store all images
+* Favicon.io convert favicon
 * EZGIF
 
 ## Testing
@@ -222,7 +235,7 @@ Devices and platforms used for testing:
 * Huawei P20 Pro
     - Chrome
 
-Validators and linters
+### Validators and linters
 
 * [W3C HTML Validator](https://validator.w3.org/#validate_by_input) Passed tests without issues
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
@@ -234,11 +247,74 @@ Passed tests without issues
 
 ### Manual testing
 
+I extensively tested the page on laptop, mobile and iPad Pro 13" tablet after every major development test. I use VSCode Live Sever extension and autosave to speed up the process, force refreshed the page in Chrome, Firefox and used Private Window on Safari.
+
+Extensively used Crome Developer tools to test form submissions through network tab etc.
+
+Used lots of `print()` to test python code.
+
+1. Visiting page
+    * Test if navigation bar works correctly on phone, tablet and desktop browsers
+    * Test if page is responsive at all sizes
+    * Test footer social icon links (links open homepages)
+    * Attempt accessing a page that does not exist by typing random letters and get: 
+
+        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190178/vegansite/readme/Screenshot_2020-07-19_at_22.22.51_w6ow8y.png" alt="404" width="300"/>
+    * Verify that shop page looks as it should.
+    * Press Subscribe for newsletter button - redirects to footer form
+    * Try submitting empty form or invalid email (shows tooltip "Enter an email adress")
+2. Sign Up
+    * Try registering with empty form/inputs (shows tooltip "Fill out this field")
+    * Try to register with invalid email ("Enter an email adress")
+    * Attempt to use username/password that is too long or too short ("Match the requested format!")
+3. Login 
+    * Try using empty form (shows tooltip "Fill out this field")
+    * Try to use not existing or wrong credentials ("Incorrect Username and/or Password!")
+4. Submit recipe
+    * Go to the "Submit Recipe" page
+    * Try to submit empty form and verify that no recipe has been added to any category page.
+    * Try to submit filled out form and verify that fields appear correctly, there is no missing information
+    * Try to submit recipe with empty fields
+5. Edit recipe
+    * Try to submit recipe with empty fields
+    * Test edit button, submit edit button
+    * Check if changes have been made and displayed correctly
+6. Delete recipe
+    * Visit recently posted recipe and try the Delete button
+    * Delete button opens a modal:
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595189947/vegansite/readme/Screenshot_2020-07-19_at_22.18.56_kmxqv1.png" alt="delete button" width="300"/>
+    * Test cancel button 
+    * Test delete button 
+    * Verify that recipe has been deleted
+7. Logout
+    * Log out
+    * Test accessing pages available only for logged in users e.g. profile page or thank you page (Wraps redirects to Login page)
+
+
+I wanted to try PyTest automated testing, got sample to run and work but decided not to write tests due to time constraints.
+
 ### Errors
+
+Most of the errors I encountered along the way were simply syntax mistakes.
+
+These are current issues:
 
 * In profile page viewed from [Safari](https://res.cloudinary.com/www-madine-se/image/upload/v1595179660/vegansite/readme/Screenshot_2020-07-19_at_19.27.33_tvrhjr.png) some CSS does not apply, but is not important enough to correct right now.  Correct styling from [Chrome](https://res.cloudinary.com/www-madine-se/image/upload/v1595179678/vegansite/readme/Screenshot_2020-07-19_at_19.27.23_t5uuet.png)
 * When searching for recipe title "Easy Baked Beans", search returns not the most relevant results. 
-* Is it an error or a feature? When searching for words like "and, or, if" etc search returns no results. 
+* Is it a bug or feature?! When searching for words like "and, or, if" etc search returns no results. 
+* Images don't load smoothly and at the same time, because they come from many different sources.
+
+* Bootstrap tooltip from mobile Safari on Iphone X
+
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190726/vegansite/readme/IMG_2972_mim2tv.png" alt="broken" width="200"/> 
+
+I did not change styling of that and it displays correctly on any other browser/device.
+
+* If image is posted with broken link, it looks exacly like that:
+
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595188923/vegansite/readme/Screenshot_2020-07-19_at_22.01.56_rzvsbf.png" alt="broken" width="200"/>
+
+I would have liked to implement submission verification and/or have a placeholder image instead.
 
 ## Deployment
 
@@ -250,10 +326,24 @@ Visit this [repository link](https://github.com/sabinemm/recipe-site-ms3.git) an
 
 ![clone](https://res.cloudinary.com/www-madine-se/image/upload/v1594582454/vegansite/Screenshot_2020-07-12_at_21.33.47_k4rvyg.png)
 
-In your IDE, open a Terminal window and change to the directory where you want to clone this project and type:
+In your IDE, open a Terminal window and change to the directory where you want to clone this [repository](https://github.com/sabinemm/recipe-site-ms3.git) and type:
 
-Git clone [repository link](https://github.com/sabinemm/recipe-site-ms3.git)
+for macOS:
+```
+$ cd /Users/user/my_project
+```
+for Windows:
+```
+$ cd C:/Users/user/my_project
+```
+and type:
+```
+$ git init
+```
 
+```
+$ git clone https://github.com/sabinemm/recipe-site-ms3.git
+```
 After pressing Enter the project will be created and cloned locally.
 
 (Alternatively you can download the zipped file, decompress it and use your IDE of choice to access it.)
@@ -262,29 +352,26 @@ Create a free account on MongoDb and reproduce the 4 collections as described [h
 
 Make sure to upgrade PIP. 
 ```
-pip install -U pip 
+$ pip install -U pip 
 ```
 
 Install all dependencies
 ```
-pip3 install -r requirements.txt
+$ pip3 install -r requirements.txt
 ```
 Activate virtual environment 
 ```
-source env/bin/activate
+$ source env/bin/activate
 ```
-Create `.env` file with following data
+Create .env file with following data
 ```
 MONGO_URI=mongodb+srv://...
 MONGO_DBNAME=yourdatabasename
-SECRET_KEY=superdupersecret
-
+SECRET_KEY=superdupersecretkey
 ```
-add your .env file to .gitignore
+Add your .env file to .gitignore
 
-
-
-You will then be able to run the app locally by typing python app.py or   flask run. 
+You will then be able to run the app locally by typing `python app.py` or  `flask run`. 
 
 ### Heroku
 
@@ -295,7 +382,7 @@ In Heroku, created an app. The app must have a unique name.
 Linked that app to the GitHub repository by going to the "Deploy" tab in the main app menu.
 
 
-In the Settings tab, added the corresponding Config Variables as present in my local development:
+In the Settings tab, add the corresponding Config Variables as present in local development:
 
 ```
 MONGO_URI mongodb+srv://...
@@ -303,69 +390,52 @@ IP 0.0.0.0
 PORT 5000
 ```
 
-I also created a "Procfile" by typing 
+Created "Procfile" by typing:
 ```
-echo web: python run.py > Procfile
+$ echo web: python app.py > Procfile
 ```
-
-
-After that process, the app was live and running remotely in Heroku's servers.
-
+Push repo to Heroku
+```
+$ git push heroku master
+```
+After these steps the app is live and running remotely in Heroku's servers.
 
 ## Credits
 ### Code
-[Datetime](https://www.programiz.com/python-programming/datetime/current-datetime)
+* [Datetime](https://www.programiz.com/python-programming/datetime/current-datetime) (submission date and time)
 
-[Login](https://startbootstrap.com/snippets/login/)
+* [Login](https://startbootstrap.com/snippets/login/), [Login2](https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/),  
+[Sign up](https://github.com/TravelTimN/flask-task-manager-project/blob/master/app.py), [Password Hash](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins), [How to store passwords securely using Werkzeug](https://techmonger.github.io/4/secure-passwords-werkzeug/)
 
-[Flash](https://pythonprogramming.net/flash-flask-tutorial/)
+* [Flash](https://pythonprogramming.net/flash-flask-tutorial/), [Dissapearing message](https://stackoverflow.com/questions/1911290/make-div-text-disappear-after-5-seconds-using-jquery), [Message flashing](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
 
-[Dissapearing message](https://stackoverflow.com/questions/1911290/make-div-text-disappear-after-5-seconds-using-jquery)
+* [Back to top](http://www.voidynullness.net/blog/2015/05/29/jquery-smooth-scrolling-floating-scroll-to-top-button/)
 
-[Login](https://realpython.com/introduction-to-flask-part-2-creating-a-login-page/)
+* [Overlay title](https://www.w3schools.com/howto/howto_css_image_overlay_title.asp)
 
-[Sign up](https://github.com/TravelTimN/flask-task-manager-project/blob/master/app.py)
-
-[Password Hash](https://blog.miguelgrinberg.com/post/the-flask-mega-tutorial-part-v-user-logins)
-
-[Message flashing](https://flask.palletsprojects.com/en/1.1.x/patterns/flashing/)
-
-[How to store passwords securely using Werkzeug](https://techmonger.github.io/4/secure-passwords-werkzeug/)
-
-[Back to top](http://www.voidynullness.net/blog/2015/05/29/jquery-smooth-scrolling-floating-scroll-to-top-button/)
-
-[Overlay title](https://www.w3schools.com/howto/howto_css_image_overlay_title.asp)
+* And loads of tiny snippets from Stack Overflow and Google, MongoDB documentation
 
 ### Images
-[Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/)
 
-[Thyme](https://www.pexels.com/photo/close-up-photo-of-thyme-leaves-4113901/)
+* Backgrounds: [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/), [Thyme](https://www.pexels.com/photo/close-up-photo-of-thyme-leaves-4113901/), [Almonds](https://www.pexels.com/photo/white-table-with-tasty-scattered-almonds-4033328/), [Papaya](https://www.pexels.com/photo/sliced-lemon-and-black-berries-on-white-surface-4113798/), [Asparagus](https://www.pexels.com/photo/fresh-ripe-asparagus-pods-in-bunch-4033003/)
 
-[Almonds](https://www.pexels.com/photo/white-table-with-tasty-scattered-almonds-4033328/)
+* Ad: [Book](https://unsplash.com/photos/CXYPfveiuis), [Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y), [Book 2](https://www.pexels.com/photo/white-book-near-food-on-plate-2237798/)
 
-[Book](https://unsplash.com/photos/CXYPfveiuis)
+* Recipes: [Melon Smoothie](https://www.pexels.com/photo/photo-of-glasses-near-sliced-melon-4051452/)
 
-[Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y)
+### Content 
 
-[Papaya](https://www.pexels.com/photo/sliced-lemon-and-black-berries-on-white-surface-4113798/)
-
-[Melon Smoothie](https://www.pexels.com/photo/photo-of-glasses-near-sliced-melon-4051452/)
-
-[Asparagus](https://www.pexels.com/photo/fresh-ripe-asparagus-pods-in-bunch-4033003/)
-
-[Book 2](https://www.pexels.com/photo/white-book-near-food-on-plate-2237798/)
-
-### content 
-
-[Terms](https://www.termsandconditionsgenerator.com/)
+* [Terms](https://www.termsandconditionsgenerator.com/)
+* Recipes taken from various websites, some of them linked in the Tips section.
 
 ## Acknowledgements
 A thanks to my mentor [Maranatha Ilesanmi](https://github.com/mbilesanmi), Code Institute Tutor support (especially [
 Tim Nelson](https://github.com/TravelTimN) for login and tips), Slack, my friend Reinis for explaining Python and debugging to me
 
 ## Disclaimer
-I had accidentally committed mongodb password but changed it and hid it later. All secure.
-This project is for educational purposes only.
 
+If there are any issues with copyright of content, please contact me. I will fix that as soon as possible. 
+
+This project is for educational purposes only.
 
 [Back to top ↑](#Vegan-Minus-Gluten)
