@@ -104,18 +104,34 @@ Images I used for design (not recipes) are mostly from Pexels and follow similar
 Red is used for warning messages in Login and Signup pages.
 
 ## Features
+
 Note: Admin features will not be available for accessors for security reasons. Admin is able to browse, edit and delete all recipes.
-### Functionality
+
 ### Existing features
 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
-- [x] 
+- [x] Search: users are able to search for recipes by username, title or any other text. If no results are found message "No results found. Please try again".
+- [x] Sorting by category by clicking navigation links.
+- [x] Acess Shop page with in Navbar or Footer
+- [x] Index page greets the user with an inspiring jumbotron
+- [x] Ads for shop are scattered across the pages
+- [x] Index page features curated recipes
+- [x] Signup
+- [x] Login
+- [x] Sign up for a weekly newsletter
+- [x] Access to user profile with all users recipes
+- [x] If user has not posted anything yet, the page title reads "Nothing here yet" and has "SUMBIT RECIPE" button. 
+- [x] Whenever user has logged in user is greeted with a 5 second flash welcome message
+- [x] When user is first registerd user is greeted with 5 second "Signup Successful" flashed message.
+- [x] Profile page displays username in banner
+- [x] Thank you page with a "Back Home" button that appears after user has edited or submitted a recipe
+- [x] Only registered and logged in users allowed to sumbit/edit and delete recipes.
+- [x] Only user that posted the recipe or admin can delete and/or edit it.
+- [x] Social icons with links in the page footer
+- [x] Recipes displayed in list have title, description, cooking time and user information
+- [x] Single recipe page have full recipe information, the date and time it was first created, image and list.
+- [x] Single recipe page displays tips only if they have been defined. All other fields are required.
+- [x] Submit recipe and edit recipe forms have clear instructions and character limits for certain fields.
+
 ### Future features
 
 - [ ] Pagination
@@ -134,11 +150,13 @@ Note: Admin features will not be available for accessors for security reasons. A
  - [ ] Contact form and admin to be able to see all recieved messages directly in the admin console
 - [ ] Recipe image url validation
 - [ ] Admin recipe review to either accept or reject recipe for it to be public.
-
+- [ ] More categories
+- [ ] Admin able to add/edit/delete categories
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
 
 Current schema: 
+
 ![Schema](https://res.cloudinary.com/www-madine-se/image/upload/v1595169619/vegansite/readme/Screenshot_2020-07-19_at_16.40.03_qdsabq.png)
 [.txt](https://res.cloudinary.com/www-madine-se/raw/upload/v1595169852/vegansite/readme/schema_eqzj7h.txt)
 [.pdf](https://res.cloudinary.com/www-madine-se/image/upload/v1595169899/vegansite/readme/QuickDBD-Free_Diagram_bfo0kv.pdf)
@@ -217,6 +235,11 @@ Passed tests without issues
 ### Manual testing
 
 ### Errors
+
+* In profile page viewed from [Safari](https://res.cloudinary.com/www-madine-se/image/upload/v1595179660/vegansite/readme/Screenshot_2020-07-19_at_19.27.33_tvrhjr.png) some CSS does not apply, but is not important enough to correct right now.  Correct styling from [Chrome](https://res.cloudinary.com/www-madine-se/image/upload/v1595179678/vegansite/readme/Screenshot_2020-07-19_at_19.27.23_t5uuet.png)
+* When searching for recipe title "Easy Baked Beans", search returns not the most relevant results. 
+* Is it an error or a feature? When searching for words like "and, or, if" etc search returns no results. 
+
 ## Deployment
 
 ### Local Development
