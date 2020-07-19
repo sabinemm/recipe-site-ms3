@@ -11,19 +11,20 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 - [**Demo**](#Demo)
 - [**UX**](#UX)
   - [Project goals](#Project-goals)
-  - [Developer goals](#Developer-goals)
   - [User Stories](#User-Stories)
+  - [Developer goals](#Developer-goals)
   - [Design](#Design)
     - [Research](#Research)
     - [Wireframes](#Wireframes)
     - [Color Palette](#Color-Palette)
 - [**Features**](#Features)
-    - [Functionality](#Functionality)
+    - [Notes](#Notes)
     - [Existing features](#Existing-features)
     - [Future features](#Future-features)
 - [**Information Architecture**](#Information-Architecture)
 - [**Technologies used**](#Technologies-used)
 - [**Testing**](#Testing)
+    - [Validators and linters](#Validators-and-linters)
     - [Manual testing](#Testing)
     - [Errors](#Errors)
 - [**Deployment**](#Deployment)
@@ -34,6 +35,13 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 - [**Disclaimer**](#Disclaimer)
 
 ## Demo
+
+<p align="center">
+  <img width="799"  src="https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif">
+</p>
+
+[Video link](https://res.cloudinary.com/www-madine-se/video/upload/v1595200322/vegansite/readme/demovegan_gyowyo.mp4)
+
 ## UX
 ### Project goals
 Vegan Minus gluten is milestone project for Code Institute Data Centric Development module. The goal of this project is to create, store, edit and delete recipes (CRUD). Target audience for this project is people that are gluten allergic/intolerant or are simply interested in gluten-free and vegan cooking. My goal was to create online cookbook without any unnecesarry long descriptions - only straight-to-the-point recipes. A secondary goal is to sell a theoretical physical cookbook by scattering ads across the site.
@@ -64,11 +72,10 @@ As an admin I would like to do all of the above plus:
  * Improve Bootstrap and JavaScript knowledge.
  * Learn to use Heroku Pages
 
-### Research
-
-I browsed many other online recipe sites to gain insight on how pages are created, their functionality and the way information is displayed and organised. Personally I find it irritating to have to scroll through pages on pages of text and photos only to get to recipe ingredients and instructions, therefore this is a subjective take on a recipe site. I observed that my friends feel the same way and decided to make a minimalistic site.
-
 ### Design
+
+![Demo Picture](https://res.cloudinary.com/www-madine-se/image/upload/c_scale,w_2144/v1595199372/vegansite/readme/demostatic_elwtwp.jpg)
+
 Main inspiration for the page design comes from [Cookie and Kate](https://cookieandkate.com) site and the idea to create it specifically vegan + gluten-free comes from my friends asking for recipe ideas.
 
 I chose to override all B4 round corners on images, forms and buttons to suit my design. I chose calm and neutral colors because the colors of recipe images are very vibrant and all over the spectrum. 
@@ -82,15 +89,42 @@ I used Adobe Photoshop to create cookbook ( [1](https://res.cloudinary.com/www-m
 
  Fonts used: [Dazzle Unicase](https://fonts.adobe.com/fonts/dazzle-unicase), [Playfair Display](https://fonts.adobe.com/fonts/playfair), [Linotype Didot](https://fonts.adobe.com/fonts/linotype-didot), [Arimo](https://fonts.adobe.com/fonts/arimo) imported from Adobe Fonts.
 
+#### Research
+
+I browsed many other online recipe sites to gain insight on how pages are created, their functionality and the way information is displayed and organised. Personally I find it irritating to have to scroll through pages on pages of text and photos only to get to recipe ingredients and instructions, therefore this is a subjective take on a recipe site. I observed that my friends feel the same way and decided to make a minimalistic site.
+
 #### Wireframes
 
 After browsing lots of recipe sites I had a very clear idea of what I wanted the site to look and created wireframes with Adobe XD directly. 
 
-Initial [mockup]()
+Initial wireframes for [homepage](https://res.cloudinary.com/www-madine-se/image/upload/v1595196757/vegansite/readme/initial%20mockups/Web_1920_1_sqlmhn.png), [recipe](https://res.cloudinary.com/www-madine-se/image/upload/v1595196757/vegansite/readme/initial%20mockups/Web_1920_3_hevjef.png), [form](https://res.cloudinary.com/www-madine-se/image/upload/v1595196756/vegansite/readme/initial%20mockups/Web_1920_4_jrd626.png),[recipe list](https://res.cloudinary.com/www-madine-se/image/upload/v1595196756/vegansite/readme/initial%20mockups/Web_1920_2_ifp82a.png). At first I had come up with a different name, but after some googling I found that that site  with same name already exists.
 
-And after [simplifying]()
+I realised that making forms with those fields would be too time consuming so I simplified.
 
-During development I simplified even more. I viewed mockup as a guide and did not stick to it to the pixel as I did not find it necessary. There is too little difference (3 columns become 2 for example) between desktop and tablet version therefore I omitted making tablet wireframes.
+During development I simplified even more. I viewed mockup as a guide and did not stick to it to the pixel as I did not find it necessary. There is too little difference (3 columns become 2 for example) between desktop and tablet version therefore I omitted making tablet wireframes, shop page wireframes, signup page (same template, different input fields) and profile page (just a list of images with titles).
+
+Index page
+  <p align="center">
+  <img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
+  </p>
+
+  Wireframes for:
+ [search results](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_6_rpgg2q.png), [recipe list](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_2_iwbsbx.png), [single recipe](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_3_l4lgig.png), [login](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_5_kwgbqu.png), [recipe form](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_4_e6iufv.png).
+  
+
+  Mobile: 
+  
+
+<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_1_2x_e8m5td.png"> 
+
+
+<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_2_2x_vpm1ye.png"> 
+
+Toggled navbar:
+
+<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_3_2x_j8xizg.png"> 
+
+As I mentioned before, I did not find the need to create extensive wireframes/mockups, because the design follows the same pattern.
 
 #### Color Palette
 
@@ -105,7 +139,7 @@ Images I used for design (not recipes) are mostly from Pexels and follow similar
 Red is used for warning messages in Login and Signup pages.
 
 ## Features
-## Notes
+### Notes
 * Admin features will not be available for CI assessment for security reasons. Admin is able to browse, edit and delete all recipes.
 * I had accidentaly commited MongoDB URI but got that fixed and changed password.
 
@@ -261,7 +295,7 @@ Used lots of `print()` to test python code.
     * Test footer social icon links (links open homepages in a new window)
     * Attempt accessing non-existant endpoints:
 
-        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190178/vegansite/readme/Screenshot_2020-07-19_at_22.22.51_w6ow8y.png" alt="404" width="400"/>
+        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190178/vegansite/readme/Screenshot_2020-07-19_at_22.22.51_w6ow8y.png" alt="404 error" width="400"/>
 
         Correctly returns 404.html with access to go back to homepage
     * Verify that shop page looks as it should.
@@ -330,7 +364,6 @@ I would have liked to implement submission verification and/or have a placeholde
 
 ## Deployment
 
-### Local Development
 
 This project can be ran locally by following the following steps: 
 (Steps may differ in GitPod/Windows/Linux. I used Visual Studio Code on MacOS)
@@ -436,6 +469,8 @@ After these steps the app is live and running remotely in Heroku's servers.
 * Backgrounds: [Vegetable fritatta](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/), [Thyme](https://www.pexels.com/photo/close-up-photo-of-thyme-leaves-4113901/), [Almonds](https://www.pexels.com/photo/white-table-with-tasty-scattered-almonds-4033328/), [Papaya](https://www.pexels.com/photo/sliced-lemon-and-black-berries-on-white-surface-4113798/), [Asparagus](https://www.pexels.com/photo/fresh-ripe-asparagus-pods-in-bunch-4033003/)
 
 * Ad: [Book](https://unsplash.com/photos/CXYPfveiuis), [Oranges](https://unsplash.com/photos/S3_D7Q9vz0Y), [Book 2](https://www.pexels.com/photo/white-book-near-food-on-plate-2237798/)
+
+* [Demo](https://www.freepik.com/free-psd/set-digital-devices-screen-mockup_3766951.htm#query=mockup-computer&position=0) for video and [Static](https://www.freepik.com/free-photo/laptop-coffee-cup-mobile-phone-cake-white-background_3317839.htm#page=1&query=mockup)
 
 * Recipes: [Melon Smoothie](https://www.pexels.com/photo/photo-of-glasses-near-sliced-melon-4051452/)
 
