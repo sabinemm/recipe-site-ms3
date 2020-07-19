@@ -35,10 +35,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 - [**Disclaimer**](#Disclaimer)
 
 ## Demo
-
-<p align="center">
-  <img width="799"  src="https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif">
-</p>
+![](https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif)
 
 [Video link](https://res.cloudinary.com/www-madine-se/video/upload/v1595200322/vegansite/readme/demovegan_gyowyo.mp4)
 
@@ -104,9 +101,9 @@ I realised that making forms with those fields would be too time consuming so I 
 During development I simplified even more. I viewed mockup as a guide and did not stick to it to the pixel as I did not find it necessary. There is too little difference (3 columns become 2 for example) between desktop and tablet version therefore I omitted making tablet wireframes, shop page wireframes, signup page (same template, different input fields) and profile page (just a list of images with titles).
 
 Index page
-  <p align="center">
-  <img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
-  </p>
+
+<img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
+
 
   Wireframes for:
  [search results](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_6_rpgg2q.png), [recipe list](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_2_iwbsbx.png), [single recipe](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_3_l4lgig.png), [login](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_5_kwgbqu.png), [recipe form](https://res.cloudinary.com/www-madine-se/image/upload/v1595196812/vegansite/readme/final%20mockups/Web_1920_4_e6iufv.png).
@@ -358,7 +355,7 @@ I did not change styling of that and it displays correctly on any other browser/
 
 * If image is posted with broken link, it looks exacly like that - broken and sad:
 
-    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595188923/vegansite/readme/Screenshot_2020-07-19_at_22.01.56_rzvsbf.png" alt="broken" width="400"/>
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595188923/vegansite/readme/Screenshot_2020-07-19_at_22.01.56_rzvsbf.png" alt="broken" width="300"/>
 
 I would have liked to implement submission verification and/or have a placeholder image instead.
 
