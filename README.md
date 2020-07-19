@@ -35,7 +35,11 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 - [**Disclaimer**](#Disclaimer)
 
 ## Demo
-![](https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif)
+![Demo](https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif)
+
+![demo2](https://res.cloudinary.com/www-madine-se/image/upload/v1595203055/vegansite/readme/ezgif.com-crop-4_xi2tc7.gif)
+
+![demo3](https://res.cloudinary.com/www-madine-se/image/upload/v1595203110/vegansite/readme/ezgif.com-crop-4_ivzkps.gif)
 
 [Video link](https://res.cloudinary.com/www-madine-se/video/upload/v1595200322/vegansite/readme/demovegan_gyowyo.mp4)
 
@@ -102,7 +106,7 @@ During development I simplified even more. I viewed mockup as a guide and did no
 
 Index page
 
-<img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
+<img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/c_scale,w_1260/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
 
 
   Wireframes for:
