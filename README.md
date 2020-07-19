@@ -4,7 +4,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 
 ![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1595172156/vegansite/readme/bannerreadme_detb2e.jpg)
 
-[Deployed site](https://vegan-gluten.herokuapp.com)
+[Visit deployed site](https://vegan-gluten.herokuapp.com)
 
 ## Table of Contents
 
@@ -135,7 +135,7 @@ Red is used for warning messages in Login and Signup pages.
 - [x] Submit recipe and edit recipe forms have clear instructions and character limits for certain fields. 
 - [x] If password is too short or email is invalid etc tooltip appears
 - [x] Favicon
-- [x] Bootrstrap input field validation
+- [x] Bootstrap input field validation
 
 ### Future features
 
@@ -161,6 +161,7 @@ Red is used for warning messages in Login and Signup pages.
 - [ ] Nutrition calculations
 - [ ] Server side credential validation
 - [ ] SSL certificate
+- [ ] Recipe Comments
 
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
@@ -168,6 +169,7 @@ MongoDB Atlas is used for storing data for this web site.
 Current schema: 
 
 ![Schema](https://res.cloudinary.com/www-madine-se/image/upload/v1595169619/vegansite/readme/Screenshot_2020-07-19_at_16.40.03_qdsabq.png)
+
 Other file versions - 
 [.txt](https://res.cloudinary.com/www-madine-se/raw/upload/v1595169852/vegansite/readme/schema_eqzj7h.txt),
 [.pdf](https://res.cloudinary.com/www-madine-se/image/upload/v1595169899/vegansite/readme/QuickDBD-Free_Diagram_bfo0kv.pdf).
@@ -189,7 +191,7 @@ Below are a list of the programming languages, technologies, frameworks and reso
     * Flask
     * Jinja 
     * Werkzeug security
-* MongoDB
+* MongoDB and MongoDB Compass
 * Bootstrap CDN
 * Visual Studio Code
     * Live Server Extension
@@ -256,10 +258,12 @@ Used lots of `print()` to test python code.
 1. Visiting page
     * Test if navigation bar works correctly on phone, tablet and desktop browsers
     * Test if page is responsive at all sizes
-    * Test footer social icon links (links open homepages)
-    * Attempt accessing a page that does not exist by typing random letters and get: 
+    * Test footer social icon links (links open homepages in a new window)
+    * Attempt accessing non-existant endpoints:
 
-        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190178/vegansite/readme/Screenshot_2020-07-19_at_22.22.51_w6ow8y.png" alt="404" width="300"/>
+        <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190178/vegansite/readme/Screenshot_2020-07-19_at_22.22.51_w6ow8y.png" alt="404" width="400"/>
+
+        Correctly returns 404.html with access to go back to homepage
     * Verify that shop page looks as it should.
     * Press Subscribe for newsletter button - redirects to footer form
     * Try submitting empty form or invalid email (shows tooltip "Enter an email adress")
@@ -282,20 +286,28 @@ Used lots of `print()` to test python code.
 6. Delete recipe
     * Visit recently posted recipe and try the Delete button
     * Delete button opens a modal:
-    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595189947/vegansite/readme/Screenshot_2020-07-19_at_22.18.56_kmxqv1.png" alt="delete button" width="300"/>
+
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595189947/vegansite/readme/Screenshot_2020-07-19_at_22.18.56_kmxqv1.png" alt="delete button" width="400"/>
+
     * Test cancel button 
     * Test delete button 
     * Verify that recipe has been deleted
 7. Logout
     * Log out
     * Test accessing pages available only for logged in users e.g. profile page or thank you page (Wraps redirects to Login page)
+8. Search
+    * Search a recipe by ingredient or title 
+    * If no recipes are found, user is notified "No results found. Please try again"
 
+    Note: search does not return results for words like "and", "if", "other", "after"
 
 I wanted to try PyTest automated testing, got sample to run and work but decided not to write tests due to time constraints.
 
 ### Errors
 
 Most of the errors I encountered along the way were simply syntax mistakes.
+
+Something I had done or installed had set .vscode/launch.json to `"--no-debugger"` that set flask to production mode. Fixed that by commenting out that line. 
 
 These are current issues:
 
@@ -306,13 +318,13 @@ These are current issues:
 
 * Bootstrap tooltip from mobile Safari on Iphone X
 
-    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190726/vegansite/readme/IMG_2972_mim2tv.png" alt="broken" width="200"/> 
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190726/vegansite/readme/IMG_2972_mim2tv.png" alt="broken" width="400"/> 
 
 I did not change styling of that and it displays correctly on any other browser/device.
 
-* If image is posted with broken link, it looks exacly like that:
+* If image is posted with broken link, it looks exacly like that - broken and sad:
 
-    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595188923/vegansite/readme/Screenshot_2020-07-19_at_22.01.56_rzvsbf.png" alt="broken" width="200"/>
+    <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595188923/vegansite/readme/Screenshot_2020-07-19_at_22.01.56_rzvsbf.png" alt="broken" width="400"/>
 
 I would have liked to implement submission verification and/or have a placeholder image instead.
 
@@ -320,7 +332,10 @@ I would have liked to implement submission verification and/or have a placeholde
 
 ### Local Development
 
-This project can be ran locally by following the following steps:
+This project can be ran locally by following the following steps: 
+(Steps may differ in GitPod/Windows/Linux. I used Visual Studio Code on MacOS)
+
+Create a free account on Cloudinary.com download my media or create your own.
 
 Visit this [repository link](https://github.com/sabinemm/recipe-site-ms3.git) and click on the Clone or Download button to copy the link provided.
 
@@ -366,10 +381,11 @@ $ source env/bin/activate
 Create .env file with following data
 ```
 MONGO_URI=mongodb+srv://...
-MONGO_DBNAME=yourdatabasename
 SECRET_KEY=superdupersecretkey
 ```
 Add your .env file to .gitignore
+
+In the last line of app.py file change from `debug=False` to `debug=True`
 
 You will then be able to run the app locally by typing `python app.py` or  `flask run`. 
 
@@ -377,10 +393,9 @@ You will then be able to run the app locally by typing `python app.py` or  `flas
 
 Heroku was chosen as the deployment platform for this project. The steps to deploy the local app to Heroku were as follow:
 
-In Heroku, created an app. The app must have a unique name.
+In Heroku, create an app. The app must have a unique name.
 
-Linked that app to the GitHub repository by going to the "Deploy" tab in the main app menu.
-
+Link that app to the GitHub repository by going to the "Deploy" tab in the main app menu.
 
 In the Settings tab, add the corresponding Config Variables as present in local development:
 
@@ -388,6 +403,7 @@ In the Settings tab, add the corresponding Config Variables as present in local 
 MONGO_URI mongodb+srv://...
 IP 0.0.0.0
 PORT 5000
+SECRET_KEY superdupersecretkey
 ```
 
 Created "Procfile" by typing:
@@ -413,7 +429,7 @@ After these steps the app is live and running remotely in Heroku's servers.
 
 * [Overlay title](https://www.w3schools.com/howto/howto_css_image_overlay_title.asp)
 
-* And loads of tiny snippets from Stack Overflow and Google, MongoDB documentation
+* And loads of tiny snippets from Stack Overflow,  Google, MongoDB documentation, W3Schools and CSS Tricks
 
 ### Images
 
@@ -437,5 +453,9 @@ Tim Nelson](https://github.com/TravelTimN) for login and tips), Slack, my friend
 If there are any issues with copyright of content, please contact me. I will fix that as soon as possible. 
 
 This project is for educational purposes only.
+
+Sabine Madara 
+
+2020
 
 [Back to top ↑](#Vegan-Minus-Gluten)

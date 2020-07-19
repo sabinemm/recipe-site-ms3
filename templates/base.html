@@ -91,7 +91,7 @@
             <div class="row">
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="single_ftr">
-                        <ul>
+                        <ul class="ftr-url-list">
                             <li><a href="{{ url_for('index') }}">HOME</a></li>
                             <li><a href="{{ url_for('get_all', category='all') }}">ALL RECIPES</a></li>
                             {% if "user" in session %}
@@ -137,10 +137,14 @@
                 <div class="ftr_social_icon col align-self-center">
                     <div class="text-center">
                         <ul>
-                            <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://www.google.com/"><i class="fa fa-google"></i></a></li>
-                            <li><a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"><i
+                                        class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://www.google.com/" target="_blank" rel="noopener"><i
+                                        class="fa fa-google"></i></a></li>
+                            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"><i
+                                        class="fa fa-instagram"></i></a></li>
+                            <li><a href="https://twitter.com/" target="_blank" rel="noopener"><i
+                                        class="fa fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>

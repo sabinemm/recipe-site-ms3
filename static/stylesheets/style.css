@@ -120,6 +120,10 @@ a:hover {
 
 /* FOOTER */
 
+.ftr-url-list {
+    margin-left: 50px
+}
+
 .footer_area {
     padding: 60px 0 20px;
     position: relative;
@@ -217,6 +221,7 @@ a:hover {
 
 .footer_area ul {
     list-style: none;
+    padding: 0;
 }
 
 /* RECIPE STYLE */
@@ -452,7 +457,6 @@ a:hover {
 .shop img {
     width: 100%;
 }
-
 
 /* SEARCH RESULTS PAGE */
 
