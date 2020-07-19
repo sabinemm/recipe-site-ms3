@@ -1,19 +1,23 @@
 ## Code Institute Data Centric Development Milestone Project
 
-![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png)
+Vegan Minus Gluten is an online cookbook where users can browse recipes and registered users can submit, edit and delete recipes they have posted. Clean and simple - without unnecesarry long essays about inpiration etc.
+
+
+![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1595172156/vegansite/readme/bannerreadme_detb2e.jpg)
 
 [Deployed site](https://vegan-gluten.herokuapp.com)
 
 ## Table of Contents
 
-- [**About**](#About)
 - [**Demo**](#Demo)
 - [**UX**](#UX)
+  - [Project goals](#Project-goals)
+  - [Developer goals](#Developer-goals)
   - [User Stories](#User-Stories)
-  - [Research](#Research)
-  - [Wireframes](#Wireframes)
   - [Design](#Design)
-  - [Color Scheme](#Color-Scheme)
+    - [Research](#Research)
+    - [Wireframes](#Wireframes)
+    - [Color Scheme](#Color-Scheme)
 - [**Features**](#Features)
     - [Functionality](#Functionality)
     - [Existing features](#Existing-features)
@@ -30,24 +34,88 @@
 - [**Acknowledgements**](#Acknowledgements)
 - [**Disclaimer**](#Disclaimer)
 
-## About
 ## Demo
 ## UX
-### User Stories
-### Research
-### Wireframes
-### Design
+### Project goals
+Vegan Minus gluten is milestone project for Code Institute Data Centric Development module. The goal of this project is to create, store, edit and delete recipes (CRUD). Target audience for this project is people that are gluten allergic/intolerant or are simply interested in gluten-free and vegan cooking. My goal was to create online cookbook without any unnecesarry long descriptions - only straight-to-the-point recipes. A secondary goal is to sell a theoretical physical cookbook by scattering ads across the site.
 
-Fonts used: [Dazzle Unicase](https://fonts.adobe.com/fonts/dazzle-unicase), [Playfair Display](https://fonts.adobe.com/fonts/playfair), [Linotype Didot](https://fonts.adobe.com/fonts/linotype-didot), [Arimo](https://fonts.adobe.com/fonts/arimo)
-### Color Scheme
+### User Stories
+
+As a User I would like to:
+- [x] Access the site from both mobile devices and desktop browsers.
+- [x] Be able to register to have my own profile.
+- [x] Be able to browse and navigate information easily.
+- [x] Be able to search recipes by ingredients or name etc.
+- [x] Browse recipes by category
+- [x] Submit my own recipes
+- [x] Subscribe for a newsletter if I do not wish to Sign Up
+- [x] Sign up or Sign in with user friendly form
+- [x] Edit and delete my own recipes, without others tampering with my submitted recipes.
+- [x] Get feedback for submitting/editing/logging in/logging out
+- [x] Access a list of all recipes
+- [x] Get error messages in case user has done something wrong or there is an issue with database.
+
+As an admin I would like to do all of the above plus:
+- [x] Be able to access, edit and delete ALL recipes from admin profile
+
+### Developer goals
+
+ * Provide a simple, easy to use online cookbook where user can browse, post, edit and delete recipes, filter them by categories, search by text, subscribe and have profile.
+ * By practice learn Jinja templating, Python, non-relational database MongoDb 
+ * Improve Bootstrap and JavaScript knowledge.
+ * Learn to use Heroku Pages
+
+### Research
+
+I browsed many other online recipe sites to gain insight on how pages are created, their functionality and the way information is displayed and organised. Personally I find it irritating to have to scroll through pages on pages of text and photos only to get to recipe ingredients and instructions, therefore this is a subjective take on a recipe site. I observed that my friends feel the same way and decided to make a minimalistic site.
+
+### Design
+Main inspiration for the page design comes from [Cookie and Kate](https://cookieandkate.com) site and the idea to create it specifically vegan + gluten-free comes from my friends asking for recipe ideas.
+
+I chose to override all B4 round corners on images, forms and buttons to suit my design. I chose calm and neutral colors because the colors of recipe images are very vibrant and all over the spectrum. 
+
+To build the design of the page I used Bootstrap 4, FontAwesome, Adobe Illustrator and Adobe Photoshop. 
+
+To design page [logo](https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png) and favicon I used Adobe Illustrator. 
+
+I used Adobe Photoshop to create cookbook ( [1](https://res.cloudinary.com/www-madine-se/image/upload/v1594563548/vegansite/cookbook_dkpywm.jpg), [2](https://res.cloudinary.com/www-madine-se/image/upload/v1595090139/vegansite/book_banner_vj3xtf.jpg) )  design and photoshopped that onto images of books. For the index page jumbotron I had to extend and adjust the background for the text over it to fit nicely ([original](https://www.crowdedkitchen.com/spring-vegetable-frittata-vegan/) vs my [jumbotron](https://res.cloudinary.com/www-madine-se/image/upload/v1594225831/vegansite/Vegan-Frittata__rxd4dw.png)).
+
+
+ Fonts used: [Dazzle Unicase](https://fonts.adobe.com/fonts/dazzle-unicase), [Playfair Display](https://fonts.adobe.com/fonts/playfair), [Linotype Didot](https://fonts.adobe.com/fonts/linotype-didot), [Arimo](https://fonts.adobe.com/fonts/arimo) imported from Adobe Fonts.
+
+#### Wireframes
+
+After browsing lots of recipe sites I had a very clear idea of what I wanted the site to look and created wireframes with Adobe XD directly. 
+
+Initial [mockup]()
+
+And after [simplifying]()
+
+#### Color Scheme
 
 I kept the color pallette very simple and clean because the content of the page is inevitably very colorful.
 
 ![Color Palette](https://res.cloudinary.com/www-madine-se/image/upload/v1594581862/vegansite/palette-2_bhhqtr.png)
 
+For the navigation, all larger text I used black, Jet grey for secondary information and paragraphs, platinum light grey for background and moss green for accents.
+
+Images I used for design (not recipes) are mostly from Pexels and follow similar convention - neutral background and with fresh, clean coloured food. I used more vibrant greens and ochre tones to energize the page appearance. 
+
+Red is used for warning messages in Login and Signup pages.
+
 ## Features
+Note: Admin features will not be available for accessors for security reasons. Admin is able to browse, edit and delete all recipes.
 ### Functionality
 ### Existing features
+
+- [x] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
+- [x] 
 ### Future features
 
 - [ ] Pagination
@@ -56,54 +124,30 @@ I kept the color pallette very simple and clean because the content of the page 
 - [ ] Prevent duplicate subscribers
 - [ ] "Remember me" signup checkbox
 - [ ] Edit user profiles
+- [ ] User profiles with description, avatar, post list
 - [ ] Ability to click on other user profiles and see recipes they posted
 - [ ] Page loading animation
- 
+- [ ] Third party search engine
+- [ ] Subscription letters
+- [ ] Filter emails so that there are no duplicates for subscription letters
+- [ ] Admin console
+ - [ ] Contact form and admin to be able to see all recieved messages directly in the admin console
+- [ ] Recipe image url validation
+- [ ] Admin recipe review to either accept or reject recipe for it to be public.
+
 ### Information Architecture
 MongoDB Atlas is used for storing data for this web site.
 
-Recipes Collection
+Current schema: 
+![Schema](https://res.cloudinary.com/www-madine-se/image/upload/v1595169619/vegansite/readme/Screenshot_2020-07-19_at_16.40.03_qdsabq.png)
+[.txt](https://res.cloudinary.com/www-madine-se/raw/upload/v1595169852/vegansite/readme/schema_eqzj7h.txt)
+[.pdf](https://res.cloudinary.com/www-madine-se/image/upload/v1595169899/vegansite/readme/QuickDBD-Free_Diagram_bfo0kv.pdf)
 
-```
-"recipe":{
-    "_id": "ObjectId()"
-    "title": "<string>",
-    "category_name": "<string>",
-    "description": "<string>",
-    "image_url": "<string>",
-    "prep": "<string>",
-    "cooks": "<string>",
-    "difficulty": "<string>",
-    "instructions": "<string>",
-    "tips": "<string>",
-    "date_added": "<string>",
-    "username": "<string>",
-}
-```
-Categories Collection
-```
-"categories":{
-    "_id": "ObjectId()"
-    "category_name": "<string>",
-}
-```
-Users Collection
-```
-"users":{
-    "_id": "ObjectId()"
-    "username": "<string>",
-    "email": "<string>",
-    "password": "<string>",
-}
-```
-Subscribers Collection
-```
-"subscribers":{
-    "_id": "ObjectId()"
-    "sub_email": "<string>",
-}
-```
-For the needs of this website I did not find the need to use other data types in MongoDB.
+And what it [should be ](https://res.cloudinary.com/www-madine-se/image/upload/v1595169338/vegansite/readme/Screenshot_2020-07-19_at_16.16.21_lccftm.png)in a real world project.
+
+For the needs of this website I did not find the need to use other data types in MongoDB. In a real world application I would add image file uploads, dynamic input fields and rich text editing.
+
+Subscriber collection is currently not connected to anything else because that is a future feature.
 
 ## Technologies used
 
@@ -115,7 +159,7 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * Python 3.8.2
     * Flask
 * MongoDB
-* Bootstrap
+* Bootstrap4 from CDN
 * Visual Studio Code
     * Live Server Extension
     * Color Picker Extension
@@ -162,15 +206,13 @@ Devices and platforms used for testing:
 
 Validators and linters
 
-* [W3C HTML Validator](https://validator.w3.org/#validate_by_input)
-
-
+* [W3C HTML Validator](https://validator.w3.org/#validate_by_input) Passed tests without issues
 * [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input)
 Passed tests without issues
-
 * CSS Lint VSCode extension
-* JSHint
-* PEP8
+* [JSHint](https://jshint.com) Passed tests without issues
+* JSHint VSCode extension
+* [PEP8](http://pep8online.com) and AUTOPEP8. Online PEP8 warns about lines being too long but when I attempted to fix that, AUTOPEP8 would break the code, otherwise no issues.
 
 ### Manual testing
 

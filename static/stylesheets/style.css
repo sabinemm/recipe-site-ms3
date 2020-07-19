@@ -269,17 +269,24 @@ a:hover {
 .recipe-info {
     background: rgb(241, 237, 237);
     text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .recipe-info h6 {
     font-size: 1rem;
     font-weight: 700;
     margin-top: 30px;
+    word-wrap: break-word;
 }
 
 .recipe-info p {
     color: #474747;
     margin-bottom: 30px;
+}
+
+.recipe-info .col-3 {
+    padding:5px;
 }
 
 .description h6 {
@@ -473,8 +480,9 @@ a:hover {
 .rec-thumbnail a img {
     border: 1px solid #f0f0f0;
     padding: 5px; 
-    height: auto;
+    height: 150px;
     width: 150px;
+    object-fit: cover;
   }
   
 .rec-thumbnail a img:hover {

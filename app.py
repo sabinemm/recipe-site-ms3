@@ -157,6 +157,7 @@ def send_recipe():
 
 
 @ app.route('/thank_you')
+@login_required
 def thank_you():
     return render_template("thank_you.html")
 
@@ -248,4 +249,4 @@ def internal_error(error):
 
 if __name__ == '__main__':
     app.run(host=os.getenv("IP", "0.0.0.0"),
-            port=int(os.getenv("PORT", "5000")), debug=True)
+            port=int(os.getenv("PORT", "5000")), debug=False)
