@@ -1,4 +1,3 @@
-# Vegan Minus Gluten
 ## Code Institute Data Centric Development Milestone Project
 
 ![site logo](https://res.cloudinary.com/www-madine-se/image/upload/v1592952530/vegansite/Screenshot_2020-06-24_at_00.47.43_upejzd.png)

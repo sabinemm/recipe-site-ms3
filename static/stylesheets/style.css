@@ -13,6 +13,13 @@ body {
     font-family: 'Arimo', sans-serif;
 }
 
+@media (min-width: 768px) {
+    .wrapp {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}
+
 @media (max-width: 767.98px) {
     .wrapp {
         padding-left: 3%;
@@ -20,12 +27,7 @@ body {
     }
 }
 
-@media (min-width: 768px) {
-    .wrapp {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-}
+
 
 /* Overriding Bootstrap styles */
 
@@ -122,7 +124,7 @@ a:hover {
     padding: 60px 0 20px;
     position: relative;
     color: rgb(53, 53, 53);
-    background: rgb(228, 226, 226);
+    background-color: rgb(228, 226, 226);
     word-wrap: break-word;
 }
 
@@ -220,7 +222,25 @@ a:hover {
 /* RECIPE STYLE */
 
 .recipe-pic {
-    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+@media (min-width: 768px) {
+    .recipe-pic {
+        min-height: 80vh;
+        max-height: 100vh;
+        max-width: 80vw;
+        width: auto;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .recipe-pic {
+        max-width: 80vw;
+        height: auto;
+        display: block;
+    }
 }
 
 .recipe-headline p {
@@ -288,7 +308,6 @@ a:hover {
 .ingredients h4 {
     margin-bottom: 30px;
     margin-top: 50px;
-    color: ;
 }
 
 .instructions h4, .ingredients {
