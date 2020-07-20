@@ -9,7 +9,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 ## Table of Contents
 
 - [**Demo**](#Demo)
-- [**UX**](#UX)
+- [**UI/UX**](#UI/UX)
   - [Project goals](#Project-goals)
   - [User Stories](#User-Stories)
   - [Developer goals](#Developer-goals)
@@ -17,6 +17,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
     - [Research](#Research)
     - [Wireframes](#Wireframes)
     - [Color Palette](#Color-Palette)
+  - [Defensive design](#Defensive-design)
 - [**Features**](#Features)
     - [Notes](#Notes)
     - [Existing features](#Existing-features)
@@ -41,7 +42,7 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 
 [Video link](https://res.cloudinary.com/www-madine-se/video/upload/v1595200322/vegansite/readme/demovegan_gyowyo.mp4)
 
-## UX
+## UI/UX
 ### Project goals
 Vegan Minus gluten is milestone project for Code Institute Data Centric Development module. The goal of this project is to create, store, edit and delete recipes (CRUD). Target audience for this project is people that are gluten allergic/intolerant or are simply interested in gluten-free and vegan cooking. My goal was to create online cookbook without any unnecesarry long descriptions - only straight-to-the-point recipes. A secondary goal is to sell a theoretical physical cookbook by scattering ads across the site.
 
@@ -136,10 +137,20 @@ Images I used for design (not recipes) are mostly from Pexels and follow similar
 
 Red is used for warning messages in Login and Signup pages.
 
+### Defensive design
+
+* User is not able to break the site by clicking buttons out of the expected order.
+* All forms handle empty input fields by warning the user and not permitting recipe submission.
+* Navigating between pages via the back/forward buttons does not break the site. 
+* User errors do not cause database errors
+* User is given feedback for actions/errors
+
+
 ## Features
 ### Notes
 * Admin features will not be available for CI assessment for security reasons. Admin is able to browse, edit and delete all recipes.
 * I had accidentaly commited MongoDB URI but got that fixed and changed password.
+* I did not find the need to use more JavaScript for this project, except I would like to implement dynamic input fields but that is a future feature.
 
 ### Existing features
 
@@ -344,15 +355,16 @@ Something I had done or installed had set .vscode/launch.json to `"--no-debugger
 These are current issues:
 
 * In profile page viewed from [Safari](https://res.cloudinary.com/www-madine-se/image/upload/v1595179660/vegansite/readme/Screenshot_2020-07-19_at_19.27.33_tvrhjr.png) some CSS does not apply, but is not important enough to correct right now.  Correct styling from [Chrome](https://res.cloudinary.com/www-madine-se/image/upload/v1595179678/vegansite/readme/Screenshot_2020-07-19_at_19.27.23_t5uuet.png)
-* When searching for recipe title "Easy Baked Beans", search returns not the most relevant results. 
+* When searching for recipe title "Easy Baked Beans", search returns not the most relevant results. I would use a third party search engine for the next project.
 * Is it a bug or feature?! When searching for words like "and, or, if" etc search returns no results. 
-* Images don't load smoothly and at the same time, because they come from many different sources.
+* Images don't load smoothly and at the same time, because they come from many different sources. I would like to use lazy loading (didn't have the time).
+* After submitting recipe and using browser back button and forward, same recipe can be submitted several times.
 
 * Bootstrap tooltip from mobile Safari on Iphone X
 
     <img src="https://res.cloudinary.com/www-madine-se/image/upload/v1595190726/vegansite/readme/IMG_2972_mim2tv.png" alt="broken" width="400"/> 
 
-I did not change styling of that and it displays correctly on any other browser/device.
+I did not change styling of that and it displays correctly on all other browser/device.
 
 * If image is posted with broken link, it looks exacly like that - broken and sad:
 
@@ -361,7 +373,6 @@ I did not change styling of that and it displays correctly on any other browser/
 I would have liked to implement submission verification and/or have a placeholder image instead.
 
 ## Deployment
-
 
 This project can be ran locally by following the following steps: 
 (Steps may differ in GitPod/Windows/Linux. I used Visual Studio Code on MacOS)
