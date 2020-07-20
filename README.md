@@ -35,11 +35,9 @@ Vegan Minus Gluten is an online cookbook where users can browse recipes and regi
 - [**Disclaimer**](#Disclaimer)
 
 ## Demo
-![Demo](https://res.cloudinary.com/www-madine-se/image/upload/v1595200821/vegansite/readme/ezgif.com-crop-4_j0r7un.gif)
 
 ![demo2](https://res.cloudinary.com/www-madine-se/image/upload/v1595203055/vegansite/readme/ezgif.com-crop-4_xi2tc7.gif)
 
-![demo3](https://res.cloudinary.com/www-madine-se/image/upload/v1595203110/vegansite/readme/ezgif.com-crop-4_ivzkps.gif)
 
 [Video link](https://res.cloudinary.com/www-madine-se/video/upload/v1595200322/vegansite/readme/demovegan_gyowyo.mp4)
 
@@ -114,7 +112,6 @@ Index page
   
 
   Mobile: 
-  
 
 <img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_1_2x_e8m5td.png"> 
 
@@ -125,7 +122,7 @@ Toggled navbar:
 
 <img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_3_2x_j8xizg.png"> 
 
-As I mentioned before, I did not find the need to create extensive wireframes/mockups, because the design follows the same pattern.
+As I mentioned above, I did not find the need to create extensive wireframes/mockups, because the design follows the same pattern.
 
 #### Color Palette
 
