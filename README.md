@@ -105,7 +105,7 @@ During development I simplified even more. I viewed mockup as a guide and did no
 
 Index page
 
-<img width="80%" src="https://res.cloudinary.com/www-madine-se/image/upload/c_scale,w_1260/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
+<img width="90%" src="https://res.cloudinary.com/www-madine-se/image/upload/c_scale,w_1260/v1595196813/vegansite/readme/final%20mockups/Web_1920_1_2x_aiydsy.png"> 
 
 
   Wireframes for:
@@ -114,14 +114,13 @@ Index page
 
   Mobile: 
 
-<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_1_2x_e8m5td.png"> 
+<img width="50%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_1_2x_e8m5td.png"> 
 
+Footer:
 
-<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_2_2x_vpm1ye.png"> 
+<img width="50%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_2_2x_vpm1ye.png"> 
 
-Toggled navbar:
-
-<img width="49%" src="https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_3_2x_j8xizg.png"> 
+[Toggled navbar](https://res.cloudinary.com/www-madine-se/image/upload/v1595196811/vegansite/readme/final%20mockups/iPhone_XR-XS_Max_3_2x_j8xizg.png)
 
 As I mentioned above, I did not find the need to create extensive wireframes/mockups, because the design follows the same pattern.
 
@@ -148,8 +147,8 @@ Red is used for warning messages in Login and Signup pages.
 
 ## Features
 ### Notes
-* Admin features will not be available for CI assessment for security reasons. Admin is able to browse, edit and delete all recipes.
-* I had accidentaly commited MongoDB URI but got that fixed and changed password.
+* Admin features will not be available publicly for security reasons. Admin is able to browse, edit and delete all recipes.
+* I had accidentaly commited MongoDB URI - fixed and changed password.
 * I did not find the need to use more JavaScript for this project, except I would like to implement dynamic input fields but that is a future feature.
 
 ### Existing features
@@ -247,11 +246,12 @@ Below are a list of the programming languages, technologies, frameworks and reso
 * Google Fonts
 * Adobe Fonts
 * Google Chrome Developer tools
+* Firefox Developer tools
 * Safari Web Inspector
 * Adobe Suite CC
 * Cloudinary.com to store all images
 * Favicon.io convert favicon
-* EZGIF
+* EZGIF to convert demo video to gif
 
 ## Testing
 Devices and platforms used for testing:

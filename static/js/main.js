@@ -13,7 +13,7 @@ setTimeout(fade_out, 5000);
 // Back to top
 $(document).ready(function () {
     $("a[href='#top']").click(function () {
-        $("html, body").animate({ scrollTop: 0 }, "slow");
+        $("html, body").animate({ scrollTop: 0 }, 700, 'swing',);
         return false;
     });
 
